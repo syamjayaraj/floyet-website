@@ -353,7 +353,7 @@ function Home(props) {
                     <div className="item mobile">
                       <i className="fab fa-whatsapp"></i>
                       <a
-                        href="https://wa.me/917306585662?text=Hi, I'm interested to know more about digital branding and how it will my business.%0A%0A"
+                        href="https://wa.me/917306585662?text=Hi, I'm interested to know more about digital branding and how it will help my business.%0A%0A"
                         target="_blank"
                       >
                         +91 7306585662
