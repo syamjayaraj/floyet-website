@@ -4,7 +4,6 @@ import "./assets/scss/style.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { css } from "@emotion/core";
 import { ScaleLoader } from "react-spinners";
-// import "./assets/css/animate.css";
 import { Navigation, Footer } from "./components";
 import { LanguageModal } from "./modals";
 import { Home } from "./pages";
@@ -14,11 +13,8 @@ import Analytics from "react-router-ga";
 const override = css`
   display: block;
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  left: 45%;
+  top: 45%;
 `;
 
 function App() {
@@ -44,8 +40,7 @@ function App() {
           <ScaleLoader
             css={override}
             size={150}
-            //size={"150px"} this also works
-            color={"#d4994f"}
+            color={"#b2e5ff"}
             loading={showLoader}
           />
         </div>
