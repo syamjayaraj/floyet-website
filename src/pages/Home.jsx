@@ -59,9 +59,9 @@ function Home(props) {
                 </h1>
               </div>
             </div>
-            <a className="call-button" href="tel:+917306585662">
+            <a className="call-button" href="tel:+919946792650">
               <i className="fas fa-phone-volume" />
-              +91 7306585662
+              +91 9946792650
             </a>
           </div>
         </section>
@@ -347,16 +347,16 @@ function Home(props) {
                   <ScrollAnimation animateIn="fadeIn">
                     <div className="item">
                       <i className="fas fa-mobile-alt"></i>
-                      <a href="tel:+917306585662">+91 7306585662</a>
+                      <a href="tel:+919946792650">+91 9946792650</a>
                     </div>
 
                     <div className="item mobile">
                       <i className="fab fa-whatsapp"></i>
                       <a
-                        href="https://wa.me/917306585662?text=Hi, I'm interested to know more about digital branding and how it will help my business.%0A%0A"
+                        href="https://wa.me/919946792650?text=Hi, I'm interested to know more about digital branding and how it will help my business.%0A%0A"
                         target="_blank"
                       >
-                        +91 7306585662
+                        +91 9946792650
                       </a>
                     </div>
 
