@@ -83,7 +83,7 @@ export default function Home() {
                 <i className="fab fa-pinterest" />
               </a>
             </div> */}
-          <p className="m-0 small">Made with Love in God's own country</p>
+          <p className="m-0 small">Made with Love in God&apos;s own country</p>
           <p className="m-0 small copyright">
             Copyright &copy; <a href="https://floyet.com">FLOYET</a> 2024
           </p>
