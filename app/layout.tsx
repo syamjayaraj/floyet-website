@@ -7,7 +7,7 @@ import "font-awesome/css/font-awesome.min.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "FLOYET",
+  title: "FLOYET Labs & Technologies",
   description:
     "Making Life Easier with FLOYET - Simplifying Your Future with Technology",
 };
