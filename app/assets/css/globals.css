@@ -14,12 +14,12 @@ section#one {
 h1#logo {
   position: absolute;
   z-index: 0;
-  width: 65px;
-  height: 130px;
+  width: 160px;
+  height: 160px;
   background-color: #000;
   text-indent: -9999px;
-  top: 40%;
-  left: 50%;
+  top: 40vh;
+  left: 47%;
   margin-top: -65px;
   margin-left: -33px;
   background: url(../images/floyet_logo.png) center center no-repeat;
@@ -46,8 +46,8 @@ section#two {
   position: relative;
   width: 100%;
   text-align: center;
-  background-color: #000;
-  color: #fff;
+  /* background-color: #000; */
+  /* color: #fff; */
   padding-bottom: 180px;
 }
 
@@ -64,7 +64,7 @@ h3#future {
   box-sizing: border-box;
 }
 section#two a {
-  color: #fff;
+  /* color: #fff; */
   font-size: 24px;
   max-width: 700px;
   text-align: left;
@@ -98,6 +98,9 @@ a#sayhi {
 }
 .brand-container {
   margin-top: 4rem;
+}
+.brand-container .item {
+  margin-bottom: 4rem;
 }
 .brand-logo {
   width: 80%;

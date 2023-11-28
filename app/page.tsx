@@ -11,10 +11,10 @@ export default function Home() {
         </h2>
       </section>
       <section id="two">
-        <h3 id="future">Our Innovation Hub.</h3>
+        <h3 id="future">Innovations from our Lab.</h3>
         <div className="container brand-container">
           <div className="row">
-            <div className="col-lg-2 col-md-2 col-4 item">
+            <div className="col-lg-2 col-md-4 col-6 item">
               <a href="https://www.techomoro.com" target="_blank">
                 <img
                   className="brand-logo"
@@ -22,12 +22,12 @@ export default function Home() {
                 />
               </a>
             </div>
-            <div className="col-lg-2 col-md-2 col-4 item">
+            <div className="col-lg-2 col-md-4 col-6 item">
               <a href="https://codeariv.com" target="_blank">
                 <img className="brand-logo" src="/assets/images/codeariv.jpg" />
               </a>
             </div>
-            <div className="col-lg-2 col-md-2 col-4 item">
+            <div className="col-lg-2 col-md-4 col-6 item">
               <a href="https://kuty.me" target="_blank">
                 <img
                   className="brand-logo"
@@ -35,18 +35,18 @@ export default function Home() {
                 />
               </a>
             </div>
-            <div className="col-lg-2 col-md-2 col-4 item">
+            <div className="col-lg-2 col-md-4 col-6 item">
               <a href="https://onebest.in" target="_blank">
                 <img className="brand-logo" src="/assets/images/onebest.jpg" />
               </a>
             </div>
-            <div className="col-lg-2 col-md-2 col-4 item">
+            <div className="col-lg-2 col-md-4 col-6 item">
               <a href="https://floying.com" target="_blank">
                 <img className="brand-logo" src="/assets/images/floying.jpg" />
               </a>
             </div>
 
-            <div className="col-lg-2 col-md-2 col-4 item">
+            <div className="col-lg-2 col-md-4 col-6 item">
               <a href="https://youngmenu.com" target="_blank">
                 <img
                   className="brand-logo"
