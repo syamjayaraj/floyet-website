@@ -59,8 +59,8 @@ export default function Home() {
       </section>
 
       <section id="three">
-        <a href="mailto:hi@floyet.com" id="sayhi">
-          hi@floyet.com
+        <a href="mailto:info@floyet.com" id="sayhi">
+          info@floyet.com
         </a>
       </section>
       <footer className="footer text-faded text-center py-5">
