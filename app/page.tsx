@@ -1,3 +1,5 @@
+import ContactLinks from "@/components/ContactLinks";
+
 // get our fontawesome imports
 export default function Home() {
   return (
@@ -58,11 +60,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="three">
-        <a href="mailto:info@floyet.com" id="sayhi">
-          info@floyet.com
-        </a>
-      </section>
+      <ContactLinks />
       <footer className="footer text-faded text-center py-5">
         <div className="container">
           {/* <div className="social-icons">

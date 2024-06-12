@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: #000;
+  color: #bd1e2d;
 }
 section#one {
   display: block;
@@ -74,28 +74,65 @@ section#two a {
 }
 
 section#three {
-  display: block;
+  display: flex;
   position: relative;
   width: 100%;
-  text-align: center;
+  justify-content: center;
   min-height: 500px;
   background-color: #fff;
   color: #000;
 }
 
-a#sayhi {
+#three a {
   position: relative;
   margin-top: 230px;
   left: auto;
   right: auto;
   padding: 0px;
   font-weight: 300;
-  font-size: 30px;
+  font-size: 2em;
   display: inline-block;
   text-align: center;
   line-height: 40px;
-  border-bottom: 3px solid #ccc;
+  border-bottom: 3px solid #bd1e2d;
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+#three a {
+  position: absolute; /* Position the links absolutely for overlap */
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+#three a.show {
+  animation: fadeInUp 1s forwards;
+}
+
+#three a.hide {
+  animation: fadeOutUp 1s forwards;
+}
+
 .brand-container {
   margin-top: 4rem;
 }
