@@ -208,10 +208,25 @@ p {
 
 @media (max-width: 600px) {
   .header .dp {
-    margin-top: -7rem;
+    margin-top: 2rem;
+    width: 6rem;
+    height: 6rem;
+  }
+  .header .dp img {
+    width: 3rem;
+    height: 3rem;
+  }
+  .header .name {
+    font-size:2.2em;
   }
   .header .profile {
     font-size: 0.9em;
+  }
+  .menu .call {
+    font-size: .7em;
+  }
+  .menu .call:hover {
+    font-size: .7em;
   }
 }
 

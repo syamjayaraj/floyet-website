@@ -1,10 +1,10 @@
-export default function Works() {
+export default function Products() {
   return (
     <div className="works">
       <h2>Products</h2>
       <img src="/assets/svg/line.svg" className="line-icon" />
       <div className="row">
-        <div className="col col-md-6">
+        <div className="col-12 col-md-6">
           <div className="card custom-card">
             <a href="https://codeariv.com" target="_blank" rel="noreferrer">
               <img
@@ -61,7 +61,7 @@ export default function Works() {
             </a>
           </div>
         </div>
-        <div className="col col-md-6">
+        <div className="col-12 col-md-6">
           <div className="card custom-card">
             <a href="https://gymtie.com" target="_blank" rel="noreferrer">
               <img className="card-img" src="/assets/images/works/gymtie.png" />
@@ -80,7 +80,7 @@ export default function Works() {
             </a>
           </div>
         </div>
-        <div className="col col-md-6">
+        <div className="col-12 col-md-6">
           <div className="card custom-card">
             <a
               href="https://play.google.com/store/apps/details?id=com.onnich.parambath"
@@ -109,7 +109,7 @@ export default function Works() {
             </a>
           </div>
         </div>
-        <div className="col col-md-6">
+        <div className="col-12 col-md-6">
           <div className="card custom-card">
             <a href="https://youngmenu.com" target="_blank" rel="noreferrer">
               <img
@@ -132,7 +132,7 @@ export default function Works() {
             </a>
           </div>
         </div>
-        <div className="col col-md-6">
+        <div className="col-12 col-md-6">
           <div className="card custom-card">
             <a href="https://kuty.me" target="_blank" rel="noreferrer">
               <img className="card-img" src="/assets/images/works/kuty.png" />

@@ -4,7 +4,7 @@ export default function Clients() {
       <h2>Clients</h2>
       <img src="/assets/svg/line.svg" className="line-icon" />
       <div className="row">
-        <div className="col col-md-4">
+        <div className="col-12 col-md-4">
           <div className="card custom-card">
             <a
               href="https://mathilakamtemple.com"
@@ -54,7 +54,7 @@ export default function Clients() {
           </div>
         </div>
 
-        <div className="col col-md-4">
+        <div className="col-12 col-md-4">
           <div className="card custom-card">
             <a
               href="https://youngmenu.com/store/m-bakes"
@@ -84,7 +84,7 @@ export default function Clients() {
           </div>
         </div>
 
-        <div className="col col-md-4">
+        <div className="col-12 col-md-4">
           <div className="card custom-card">
             <a
               href="https://youngmenu.com/store/lachuz_cakes"

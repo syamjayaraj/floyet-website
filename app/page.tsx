@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Clients from "@/components/Clients";
-import Works from "@/components/Works";
+import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -26,7 +26,7 @@ export default function Home() {
           <Header />
           {/* <About />
           <Experience /> */}
-          <Works />
+          <Products />
           <Clients />
           <Contact />
           <Footer />
