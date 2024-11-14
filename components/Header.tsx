@@ -8,8 +8,9 @@ export default function Header() {
       <h1 className="name">Empowering the Future with Innovative Technology</h1>
 
       <p className="profile">
-        At Floyet Labs & Technologies, we're dedicated to building cutting-edge
-        products and services that simplify life and shape the future.
+        At Floyet Labs & Technologies, we&apos;re dedicated to building
+        cutting-edge products and services that simplify life and shape the
+        future.
       </p>
       <p className="profile">
         Explore our diverse range of brands and services, each designed to bring
