@@ -1,88 +1,37 @@
-import ContactLinks from "@/components/ContactLinks";
+import Header from "@/components/Header";
+import About from "@/components/About";
+import Experience from "@/components/Experience";
+import Clients from "@/components/Clients";
+import Works from "@/components/Works";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
-// get our fontawesome imports
 export default function Home() {
   return (
-    <main>
-      <section id="one">
-        <h1 id="logo">FLOYET</h1>
-        <h2 id="hello">
-          {" "}
-          <span className="hello_word">Hello.</span> You’ve&nbsp;reached the
-          FLOYET.
-        </h2>
-      </section>
-      <section id="two">
-        <h3 id="future">Innovations from our Lab.</h3>
-        <div className="container brand-container">
-          <div className="row">
-            <div className="col-lg-2 col-md-4 col-6 item">
-              <a href="https://codeariv.com" target="_blank">
-                <img className="brand-logo" src="/assets/images/codeariv.jpg" />
-              </a>
+    <div className="container">
+      <div className="card custom-card">
+        <div className="card-body">
+          <ul className="menu">
+            <div className="call">
+              <i className="bi bi-telephone call-icon"></i>
+              <div>
+                <div className="college">
+                  <a href="tel:+919746742650" target="_blank" rel="noreferrer">
+                    +91-9746742650
+                  </a>
+                </div>
+              </div>
             </div>
-            <div className="col-lg-2 col-md-4 col-6 item">
-              <a href="https://gymtie.com" target="_blank">
-                <img className="brand-logo" src="/assets/images/gymtie.png" />
-              </a>
-            </div>
-            <div className="col-lg-2 col-md-4 col-6 item">
-              <a href="https://youngmenu.com" target="_blank">
-                <img
-                  className="brand-logo"
-                  src="/assets/images/youngmenu.jpg"
-                />
-              </a>
-            </div>
-            <div className="col-lg-2 col-md-4 col-6 item">
-              <a href="https://kuty.me" target="_blank">
-                <img
-                  className="brand-logo"
-                  src="/assets/images/kuty_logo.png"
-                />
-              </a>
-            </div>
-            <div className="col-lg-2 col-md-4 col-6 item">
-              <a href="https://onebest.in" target="_blank">
-                <img className="brand-logo" src="/assets/images/onebest.jpg" />
-              </a>
-            </div>
-            <div className="col-lg-2 col-md-4 col-6 item">
-              <a href="https://floying.com" target="_blank">
-                <img className="brand-logo" src="/assets/images/floying.jpg" />
-              </a>
-            </div>
-          </div>
+          </ul>
+          <Header />
+          {/* <About />
+          <Experience /> */}
+          <Works />
+          <Clients />
+          <Contact />
+          <Footer />
         </div>
-      </section>
-
-      <ContactLinks />
-      <footer className="footer text-faded text-center py-5">
-        <div className="container">
-          {/* <div className="social-icons">
-              <a href="https://facebook.com/floyettechnologies">
-                <FontAwesomeIcon icon={faFacebook} width={25} height={25} />
-              </a>
-              <a href="https://instagram.com/floyettechnologies">
-                <FontAwesomeIcon
-                  icon={faInstagramSquare}
-                  width={25}
-                  height={25}
-                />
-              </a>
-              <a href="https://twitter.com/floyettechnologies">
-                <i className="fab fa-twitter" />
-              </a>
-              <a href="https://pinterest.com/floyettechnologies">
-                <i className="fab fa-pinterest" />
-              </a>
-            </div> */}
-          <p className="m-0 small">Made with Love in God&apos;s own country</p>
-          <p className="m-0 small copyright">
-            Copyright &copy; <a href="https://floyet.com">FLOYET</a> 2024
-          </p>
-        </div>
-      </footer>
-    </main>
+      </div>
+    </div>
   );
 }
