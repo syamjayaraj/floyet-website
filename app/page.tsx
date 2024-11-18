@@ -5,6 +5,7 @@ import Clients from "@/components/Clients";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
@@ -24,9 +25,10 @@ export default function Home() {
             </div>
           </ul>
           <Header />
-          {/* <About />
-          <Experience /> */}
+          {/* <About /> */}
+          {/* <Experience /> */}
           <Products />
+          <Services />
           <Clients />
           <Contact />
           <Footer />
