@@ -1,6 +1,4 @@
 import Header from "@/components/Header";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
 import Clients from "@/components/Clients";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";
@@ -25,8 +23,6 @@ export default function Home() {
             </div>
           </ul>
           <Header />
-          {/* <About /> */}
-          {/* <Experience /> */}
           <Products />
           <Services />
           <Clients />
