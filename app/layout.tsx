@@ -46,6 +46,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleAnalytics gaId={gaId} />
+      <head>
+        <link rel="icon" href="/assets/favicon.png" sizes="any" />
+      </head>
       <body className={montserrat.className}>{children}</body>
     </html>
   );

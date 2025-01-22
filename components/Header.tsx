@@ -1,10 +1,6 @@
 export default function Header() {
   return (
     <main className="header">
-      <div className="dp">
-        <img src="/assets/images/floyet-logo.png" />
-      </div>
-
       <h1 className="name">Empowering the Future with Innovative Technology</h1>
 
       <p className="profile">

@@ -6,13 +6,81 @@ export default function Products() {
       <div className="row">
         <div className="col-12 col-md-6">
           <div className="card custom-card">
+            <a href="https://gymtie.com" target="_blank" rel="noreferrer">
+              <img className="card-img" src="/assets/images/works/gymtie.png" />
+              <div className="card-body">
+                <div className="card-title title">GymTie App</div>
+                <p className="category">Android App</p>
+                <p className="card-text">
+                  Gym management app where gym owners can manage memberships and
+                  schedules
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div className="col-12 col-md-6">
+          <div className="card custom-card">
+            <a href="https://youngmenu.com" target="_blank" rel="noreferrer">
+              <img
+                className="card-img"
+                src="/assets/images/works/youngmenu.jpg"
+              />
+              <div className="card-body">
+                <div className="card-title title">YoungMenu</div>
+                <p className="category">
+                  Virtual menu card for Restaurants and home bakers
+                </p>
+                <p className="card-text">
+                  Virtual menu cards are easy to maintain and update. It can
+                  also provide the minute details of each item in a restaurant.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-md-6">
+          <div className="card custom-card">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.onnich.parambath"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="card-img"
+                src="/assets/images/works/parambathapp.png"
+              />
+              <div className="card-body">
+                <div className="card-title title">Parambath App</div>
+                <p className="category">Android App</p>
+                <p className="card-text">
+                  It is designed to provide instant access to services and
+                  notifications for people living in{" "}
+                  <a
+                    href="https://maps.app.goo.gl/skT7MiRKzEuDQBNj9"
+                    target="_blank"
+                  >
+                    Thalakkulathur village
+                  </a>
+                </p>
+                <p className="card-text">
+                  The app is completely in the Malayalam language.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div className="col-12 col-md-6">
+          <div className="card custom-card">
             <a href="https://codeariv.com" target="_blank" rel="noreferrer">
               <img
                 className="card-img"
                 src="/assets/images/works/codeariv.jpg"
               />
               <div className="card-body">
-                <div className="card-title title">CodeARIV.com</div>
+                <div className="card-title title">CodeARIV</div>
                 <p className="category">Blog</p>
                 <p className="card-text">
                   A technology blog mainly dealing with the latest trends in
@@ -63,81 +131,10 @@ export default function Products() {
         </div>
         <div className="col-12 col-md-6">
           <div className="card custom-card">
-            <a href="https://gymtie.com" target="_blank" rel="noreferrer">
-              <img className="card-img" src="/assets/images/works/gymtie.png" />
-              <div className="card-body">
-                <div className="card-title title">GymTie App</div>
-                <p className="category">Android App</p>
-                <p className="card-text">
-                  Gym management app where gym owners can manage memberships and
-                  schedules
-                </p>
-                <p className="card-text">
-                  Tools used: Expo, React Native, Strapi CMS, GraphQL, MySQL,
-                  TypeScript, Digitalocean.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6">
-          <div className="card custom-card">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.onnich.parambath"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                className="card-img"
-                src="/assets/images/works/parambathapp.png"
-              />
-              <div className="card-body">
-                <div className="card-title title">Parambath App</div>
-                <p className="category">Android App</p>
-                <p className="card-text">
-                  It is designed to provide instant access to services and
-                  notifications for people living in Thalakkulathur village
-                </p>
-                <p className="card-text">
-                  The app is completely in the Malayalam language.
-                </p>
-                <p className="card-text">
-                  Tools used: Expo, React Native, Strapi CMS, MySQL, TypeScript,
-                  Digitalocean.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6">
-          <div className="card custom-card">
-            <a href="https://youngmenu.com" target="_blank" rel="noreferrer">
-              <img
-                className="card-img"
-                src="/assets/images/works/youngmenu.jpg"
-              />
-              <div className="card-body">
-                <div className="card-title title">YoungMenu.com</div>
-                <p className="category">
-                  Virtual menu card for Restaurants and home bakers
-                </p>
-                <p className="card-text">
-                  Virtual menu cards are easy to maintain and update. It can
-                  also provide the minute details of each item in a restaurant.
-                </p>
-                <p className="card-text">
-                  Tools used: Next.js, Strapi CMS, MySQL, Vercel, Digitalocean.
-                </p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div className="col-12 col-md-6">
-          <div className="card custom-card">
             <a href="https://kuty.me" target="_blank" rel="noreferrer">
               <img className="card-img" src="/assets/images/works/kuty.png" />
               <div className="card-body">
-                <div className="card-title title">Kuty.me</div>
+                <div className="card-title title">Kuty</div>
                 <p className="category">URL Shortener</p>
                 <p className="card-text">
                   People don&apos;t like long and messy URLs. Kuty.me will help
@@ -146,10 +143,6 @@ export default function Products() {
                 <p className="card-text">
                   Other features in Kuty.me are Whatsapp link generator and Quiz
                   maker
-                </p>
-                <p className="card-text">
-                  Tools used: Next.js, Express.js, MongoDB, Cloudinary, Vercel,
-                  Digitalocean.
                 </p>
               </div>
             </a>

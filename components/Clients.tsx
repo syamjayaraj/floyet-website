@@ -114,7 +114,7 @@ export default function Clients() {
           </div>
         </div>
 
-        <div className="col col-md-5">
+        <div className="col col-md-4">
           <div className="card custom-card">
             <a
               href="https://maps.app.goo.gl/8nMa4oBk68xbC1YH8"

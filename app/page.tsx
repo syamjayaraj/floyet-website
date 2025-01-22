@@ -10,6 +10,7 @@ export default function Home() {
     <div className="container">
       <div className="card custom-card">
         <div className="card-body">
+          <img src="/assets/images/floyet-logo.png" className="logo" />
           <ul className="menu">
             <div className="call">
               <i className="bi bi-telephone call-icon"></i>
@@ -24,7 +25,7 @@ export default function Home() {
           </ul>
           <Header />
           <Products />
-          <Services />
+          {/* <Services /> */}
           <Clients />
           <Contact />
           <Footer />
