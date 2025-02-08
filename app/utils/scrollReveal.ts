@@ -1,6 +1,7 @@
 'use client';
 
 export const initScrollReveal = () => {
+  // Move the entire functionality inside useEffect in the component where this is used
   if (typeof window !== 'undefined') {
     const reveal = () => {
       const reveals = document.querySelectorAll('.reveal');

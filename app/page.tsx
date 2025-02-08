@@ -14,7 +14,7 @@ import Header from "./components/Header";
 export default function Home() {
   useEffect(() => {
     const cleanup = initScrollReveal();
-    return cleanup;
+    return () => cleanup?.();
   }, []);
 
   return (
