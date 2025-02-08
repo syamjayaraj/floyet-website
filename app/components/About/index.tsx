@@ -87,35 +87,9 @@ const About = () => {
                   objectFit: "cover",
                 }}
               />
-              {/* <div className="experience-badge">
-                <span className="years">4+</span>
-                <span className="text">
-                  Years of
-                  <br />
-                  Innovation
-                </span>
-              </div> */}
             </div>
           </div>
         </div>
-
-        {/* Products Grid */}
-        {/* <div className="row mb-5">
-          <div className="col-12">
-            <h3 className="text-center mb-4">Our Digital Products</h3>
-          </div>
-          {products.map((product, index) => (
-            <div key={index} className="col-lg-4">
-              <div className="product-card">
-                <div className="product-icon">
-                  <i className={`bi ${product.icon}`}></i>
-                </div>
-                <h4 className="product-name">{product.name}</h4>
-                <p className="product-description">{product.description}</p>
-              </div>
-            </div>
-          ))}
-        </div> */}
 
         {/* Achievements Grid */}
         <div className="achievements-grid">

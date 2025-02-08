@@ -108,33 +108,40 @@ a {
 }
 
 .hero-section {
-  position: relative;
+  min-height: 100vh;
+  padding: 120px 0;
   overflow: hidden;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  color: white;
 }
 
 .hero-title {
   font-family: var(--font-heading);
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title-span {
+  margin-top: 0.5rem;
 }
 
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 3vw, 1.25rem);
   font-weight: 400;
   line-height: 1.6;
   opacity: 0.9;
+  color: white;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 2rem;
 }
 
 .hero-buttons {
@@ -142,18 +149,18 @@ a {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .hero-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 1rem 2.5rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
   font-weight: 500;
   letter-spacing: 0.5px;
-  text-decoration: none;
   text-transform: uppercase;
   border-radius: 4px;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -259,17 +266,78 @@ a {
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
+  .hero-section {
+    padding: 80px 0;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding: 0 1rem;
+  }
+
   .hero-buttons {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
+    gap: 1rem;
   }
 
   .hero-btn {
     width: 100%;
     justify-content: center;
-    margin: 0 !important;
+  }
+
+  .hero-btn-primary {
+    margin-right: 0;
+  }
+
+  video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 2.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 576px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
   }
 }
 
@@ -1138,7 +1206,6 @@ a {
   color: #6b7280;
 }
 
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .products-section {
@@ -1701,90 +1768,90 @@ img {
   }
 }
 
-/* Global Responsive Styles */
-@media (max-width: 991px) {
-  .section-title {
-    font-size: clamp(2rem, 4vw, 2.5rem);
-  }
-
-  .py-6 {
-    padding: 80px 0;
-  }
-}
-
+/* Responsive Grid Adjustments */
 @media (max-width: 768px) {
-  /* Header & Navigation */
-  .navbar {
-    padding: 1rem;
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
-  .navbar-brand {
-    font-size: 1.5rem;
+  .achievement-card {
+    padding: 20px;
   }
 
-  .nav-link {
-    padding: 0.5rem 0;
+  .achievement-number {
+    font-size: 2rem;
   }
 
-  /* Hero Section */
-  .hero-section {
-    padding: 120px 0 80px;
-    text-align: center;
+  .achievement-label {
+    font-size: 0.9rem;
   }
 
-  .hero-title {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  .achievement-sublabel {
+    font-size: 0.8rem;
   }
 
-  .hero-image-wrapper {
-    margin-top: 3rem;
-  }
-
-  /* About Section */
+  /* About Section Mobile Adjustments */
   .about-content {
-    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: 2rem;
   }
 
-  .about-stats {
+  .about-image-container {
+    padding: 10px;
+    display: flex;
     justify-content: center;
   }
 
-  .stat-item {
-    text-align: center;
-    padding: 1rem;
+  .about-main-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
-  /* Services Section */
-  .service-card {
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .service-icon {
-    margin: 0 auto 1rem;
-  }
-
-  /* Products Section */
-  .product-card {
-    padding: 1.5rem;
-  }
-
-  .product-image-wrapper {
-    padding-top: 75%; /* 4:3 Aspect Ratio for mobile */
-  }
-
-  .product-content {
-    padding: 1.5rem;
+  .tech-stack-wrapper {
+    justify-content: center;
+    gap: 8px;
   }
 
   .tech-tag {
+    padding: 6px 12px;
     font-size: 0.8rem;
-    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
   }
 
-  /* Testimonials Section */
+  .achievement-content {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .section-description {
+    text-align: center;
+  }
+
+  .about-main-image {
+    max-width: 250px;
+  }
+}
+
+/* Testimonials Mobile Adjustments */
+@media (max-width: 768px) {
   .testimonial-card {
-    padding: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .testimonial-quote {
@@ -1792,174 +1859,60 @@ img {
   }
 
   .testimonial-product {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 0.75rem;
   }
 
+  .product-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .author-image {
-    width: 40px;
-    height: 40px;
+    margin: 0 auto;
   }
 
-  /* Contact Section */
-  .contact-info-card {
-    padding: 1.5rem;
-    flex-direction: column;
+  .author-info {
     text-align: center;
-  }
-
-  .contact-info-icon {
-    margin: 0 auto 1rem;
-  }
-
-  .social-links-card {
-    padding: 1.5rem;
-    text-align: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-
-  .contact-form-card {
-    padding: 1.5rem;
-  }
-
-  /* Footer */
-  .footer-main {
-    padding: 60px 0 30px;
-    text-align: center;
-  }
-
-  .footer-widget {
-    margin-bottom: 2rem;
-  }
-
-  .footer-links {
-    justify-content: center;
-  }
-
-  .footer-bottom {
-    text-align: center;
-  }
-
-  .footer-bottom-links {
-    margin-top: 1rem;
-    justify-content: center;
   }
 }
 
-/* Small Mobile Devices */
-@media (max-width: 576px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .section-tag {
-    font-size: 0.8rem;
-    padding: 6px 12px;
-  }
-
-  .section-description {
-    font-size: 1rem;
-  }
-
-  .hero-btn {
-    width: 100%;
-    margin: 0.5rem 0;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .product-features {
-    gap: 0.5rem;
-  }
-
-  .contact-info-wrapper {
-    gap: 1rem;
-  }
-
-  .form-floating > .form-control {
-    font-size: 0.95rem;
-  }
-}
-
-/* Landscape Mode */
-@media (max-height: 576px) and (orientation: landscape) {
-  .hero-section {
-    min-height: auto;
-    padding: 80px 0;
-  }
-
-  .hero-content {
-    margin-top: 2rem;
-  }
-}
-
-/* Navigation Menu Responsive */
-@media (max-width: 991px) {
-  .navbar-collapse {
-    background: white;
-    padding: 1rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
-  }
-
-  .navbar-nav {
-    gap: 0.5rem;
-  }
-
-  .nav-link {
-    padding: 0.75rem 1rem;
-    border-radius: 8px;
-  }
-
-  .nav-link:hover {
-    background: #f3f4f6;
-  }
-}
-
-/* Cookie Consent Responsive */
+/* Navigation Mobile Adjustments */
 @media (max-width: 768px) {
-  .cookie-consent {
-    margin: 0;
-    border-radius: 12px;
+  .navbar {
+    padding: 0.5rem 1rem;
   }
 
-  .cookie-content {
-    gap: 1rem;
+  .navbar-brand {
+    font-size: 1.25rem;
   }
 
-  .cookie-text p {
-    font-size: 0.9rem;
+  .hamburger-btn {
+    padding: 8px;
   }
 
-  .cookie-actions {
-    flex-direction: column;
-    gap: 0.5rem;
+  .hamburger-btn span {
+    width: 20px;
   }
 
-  .cookie-btn {
+  .side-menu {
     width: 100%;
+    left: -100%;
   }
-}
 
-/* Loading States */
-@media (max-width: 768px) {
-  .skeleton-loader {
-    height: 200px;
+  .side-menu-content {
+    padding: 80px 20px 20px;
   }
-}
 
-/* Animations */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+  .side-nav-link {
+    font-size: 1.25rem;
+    padding: 12px 0;
   }
 }

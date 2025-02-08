@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <section
-      className="hero-section position-relative vh-100 d-flex align-items-center"
+      className="hero-section position-relative d-flex align-items-center"
       id="home"
     >
       <video
@@ -21,6 +21,7 @@ const Hero = () => {
         autoPlay
         muted
         loop
+        playsInline
         className="position-absolute w-100 h-100 object-fit-cover"
         style={{ zIndex: -1 }}
       >
@@ -28,17 +29,19 @@ const Hero = () => {
       </video>
       <div
         className="overlay position-absolute w-100 h-100"
-        style={{ backgroundColor: "rgba(0,0,0,0.5)", zIndex: -1 }}
+        style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: -1 }}
       ></div>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-10 text-center">
             <div className="hero-content animate-fade-in">
-              <h1 className="hero-title mb-4">
-                Building Tomorrow's
-                <span className="d-block mt-2">Digital Solutions</span>
+              <h1 className="hero-title">
+                Building Tomorrow&apos;s
+                <span className="d-block hero-title-span">
+                  Digital Solutions
+                </span>
               </h1>
-              <p className="hero-subtitle mb-5">
+              <p className="hero-subtitle">
                 We create innovative software solutions that transform
                 businesses
                 <span className="d-block mt-2">
@@ -46,7 +49,7 @@ const Hero = () => {
                 </span>
               </p>
               <div className="hero-buttons">
-                <a href="#work" className="hero-btn hero-btn-primary me-4">
+                <a href="#work" className="hero-btn hero-btn-primary">
                   <span>Explore Our Work</span>
                   <i className="bi bi-arrow-right"></i>
                 </a>
