@@ -299,6 +299,12 @@ a {
   }
 }
 
+@media (max-width: 1270px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
 /* Small Mobile Devices */
 @media (max-width: 576px) {
   .hero-section {
@@ -306,7 +312,8 @@ a {
   }
 
   .hero-title {
-    font-size: clamp(2rem, 6vw, 2.5rem);
+    /* font-size: clamp(2rem, 6vw, 2.5rem); */
+    font-size: 1.65rem;
   }
 
   .hero-subtitle {

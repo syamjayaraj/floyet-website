@@ -20,6 +20,9 @@ export const metadata = {
   title: "Floyet - Building Future-Ready Digital Solutions",
   description:
     "We craft innovative applications that solve real-world challenges using cutting-edge technology.",
+  icons: {
+    icon: "/assets/logo/floyet.png",
+  },
 };
 
 export default function RootLayout({
