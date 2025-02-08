@@ -72,15 +72,6 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#services"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="side-nav-link"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="#products"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
@@ -88,6 +79,16 @@ const Header = () => {
                   Products
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="#services"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="side-nav-link"
+                >
+                  Services
+                </Link>
+              </li>
+
               <li>
                 <Link
                   href="#contact"

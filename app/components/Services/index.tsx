@@ -3,37 +3,30 @@
 const Services = () => {
   const services = [
     {
-      icon: "bi-code-square",
-      title: "Custom Development",
+      icon: "bi-browser-safari",
+      title: "Web Development",
       description:
         "Tailored software solutions built with cutting-edge technologies to meet your specific business needs.",
-      tags: ["Web Apps", "Mobile Apps", "APIs"],
-    },
-    {
-      icon: "bi-robot",
-      title: "AI Integration",
-      description:
-        "Implementing intelligent systems and machine learning solutions to automate and enhance business processes.",
-      tags: ["Machine Learning", "Data Analytics", "Automation"],
+      tags: ["Web Apps", "Static Websites", "Blogs", "E-Commerce"],
     },
     {
       icon: "bi-cloud-check",
       title: "Cloud Solutions",
       description:
         "Scalable cloud infrastructure and deployment strategies for optimal performance and reliability.",
-      tags: ["AWS", "Azure", "DevOps"],
+      tags: ["Vultr", "Digital Ocean", "AWS"],
     },
     {
       icon: "bi-phone",
       title: "Mobile Development",
       description:
         "Cross-platform mobile applications that provide seamless user experiences across all devices.",
-      tags: ["iOS", "Android", "Flutter"],
+      tags: ["Expo", "React Native"],
     },
   ];
 
   return (
-    <section className="services-section py-6">
+    <section className="services-section py-6" id="services">
       <div className="container">
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">

@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -44,11 +46,12 @@ const Footer = () => {
                     <a href="#about">About Us</a>
                   </li>
                   <li>
-                    <a href="#services">Services</a>
-                  </li>
-                  <li>
                     <a href="#products">Products</a>
                   </li>
+                  <li>
+                    <a href="#services">Services</a>
+                  </li>
+
                   <li>
                     <a href="#careers">Careers</a>
                   </li>
@@ -116,9 +119,9 @@ const Footer = () => {
             </div>
             <div className="col-md-6">
               <div className="footer-bottom-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#cookies">Cookie Policy</a>
+                <Link href="/privacy">Privacy Policy</Link>
+                <Link href="/terms">Terms of Service</Link>
+                <Link href="/cookies">Cookie Policy</Link>
               </div>
             </div>
           </div>

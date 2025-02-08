@@ -3,14 +3,26 @@
 const Products = () => {
   const products = [
     {
-      name: "Parambath",
+      name: "GymTie",
+      icon: "bi-phone",
+      image: "/assets/products/gymtie.png",
+      description:
+        "Gym management app where gym owners can manage memberships and schedules",
+      features: ["Member Management", "Payment Logging", "Membership Expiry"],
+      users: "10+",
+      status: "Live",
+      link: "https://gymtie.com",
+    },
+    {
+      name: "Parambath App",
       icon: "bi-phone",
       image: "/assets/products/parambathapp.png",
       description:
         "Digital gateway connecting village services with modern convenience.",
       features: ["Digital Services", "Community Connect", "Local Business"],
-      users: "5000+",
+      users: "1000+",
       status: "Live",
+      link: "https://parambath.onnich.com",
     },
     {
       name: "YoungMenu",
@@ -18,9 +30,10 @@ const Products = () => {
       image: "/assets/products/youngmenu.jpg",
       description:
         "Virtual menu platform revolutionizing restaurant operations.",
-      features: ["QR Menus", "Order Management", "Analytics"],
-      users: "3000+",
+      features: ["Virtual Menu", "Order Management", "Analytics"],
+      users: "500+",
       status: "Live",
+      link: "https://youngmenu.com",
     },
     {
       name: "Kuty.me",
@@ -30,11 +43,23 @@ const Products = () => {
       features: ["Link Analytics", "Custom URLs", "Click Tracking"],
       users: "2000+",
       status: "Live",
+      link: "https://kuty.me",
+    },
+    {
+      name: "CodeARIV",
+      icon: "bi-phone",
+      image: "/assets/products/codeariv.jpg",
+      description:
+        "A technology blog mainly dealing with the latest trends in Full-stack web and mobile app development.",
+      features: ["Technology Blog", "Latest Trends", "Web Development"],
+      users: "100000+",
+      status: "Live",
+      link: "https://codeariv.com",
     },
   ];
 
   return (
-    <section className="products-section py-6">
+    <section className="products-section py-6" id="products">
       <div className="container">
         <div className="row justify-content-center mb-5">
           <div className="col-lg-8 text-center">
@@ -86,7 +111,11 @@ const Products = () => {
                       <i className="bi bi-people me-2"></i>
                       {product.users} Users
                     </div>
-                    <a href="#contact" className="product-link">
+                    <a
+                      href={product.link}
+                      className="product-link"
+                      target="_blank"
+                    >
                       Learn More <i className="bi bi-arrow-right"></i>
                     </a>
                   </div>

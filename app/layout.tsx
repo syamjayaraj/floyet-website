@@ -2,6 +2,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Syne, Inter } from "next/font/google";
 import BootstrapClient from "@/app/components/BootstrapClient";
+import CookieConsent from "./components/CookieConsent";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body>
         {children}
         <BootstrapClient />
+        <CookieConsent />
       </body>
     </html>
   );

@@ -45,7 +45,7 @@ const About = () => {
   ];
 
   return (
-    <section className="about-section py-6">
+    <section className="about-section py-6" id="about">
       <div className="container">
         {/* Main Content */}
         <div className="row align-items-center mb-5">

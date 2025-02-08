@@ -15,6 +15,56 @@ const Contact = () => {
     // Handle form submission
   };
 
+  const contactInfo = [
+    {
+      icon: "bi-geo-alt-fill",
+      title: "Office Location",
+      details: ["Hilite Business Park", "Kozhikode – 673014"],
+      color: "#FF6B6B",
+    },
+    {
+      icon: "bi-envelope-fill",
+      title: "Email Us",
+      details: ["info@floyet.com"],
+      link: "mailto:info@floyet.com",
+      color: "#4D96FF",
+    },
+    {
+      icon: "bi-telephone-fill",
+      title: "Call Us",
+      details: ["+91 974 674 2650"],
+      link: "tel:+919746742650",
+      color: "#6BCB77",
+    },
+  ];
+
+  const socialLinks = [
+    {
+      icon: "bi-linkedin",
+      url: "https://www.linkedin.com/company/floyet",
+      label: "LinkedIn",
+      color: "#0A66C2",
+    },
+    {
+      icon: "bi-twitter-x",
+      url: "https://twitter.com/floyetlabs",
+      label: "Twitter",
+      color: "#000000",
+    },
+    {
+      icon: "bi-instagram",
+      url: "https://www.instagram.com/floyetlabs",
+      label: "Instagram",
+      color: "#E4405F",
+    },
+    {
+      icon: "bi-github",
+      url: "https://github.com/floyet",
+      label: "GitHub",
+      color: "#181717",
+    },
+  ];
+
   return (
     <section className="contact-section py-6" id="contact">
       <div className="container">
@@ -34,43 +84,60 @@ const Contact = () => {
 
         <div className="row g-4">
           <div className="col-lg-5">
-            <div className="contact-info-card">
-              <div className="contact-info-item">
-                <div className="contact-icon">
-                  <i className="bi bi-geo-alt"></i>
+            <div className="contact-info-wrapper">
+              {contactInfo.map((info, index) => (
+                <div key={index} className="contact-info-card reveal">
+                  <div
+                    className="contact-info-icon"
+                    style={{
+                      backgroundColor: `${info.color}20`,
+                      color: info.color,
+                    }}
+                  >
+                    <i className={`bi ${info.icon}`}></i>
+                  </div>
+                  <div className="contact-info-content">
+                    <h4>{info.title}</h4>
+                    {info.details.map((detail, idx) =>
+                      info.link ? (
+                        <a key={idx} href={info.link} className="contact-link">
+                          {detail}
+                        </a>
+                      ) : (
+                        <p key={idx} className="mb-0">
+                          {detail}
+                        </p>
+                      )
+                    )}
+                  </div>
                 </div>
-                <div className="contact-text">
-                  <h5>Visit Us</h5>
-                  <p>
-                    Hilite Business Park
-                    <br />
-                    Kozhikode – 673014
-                  </p>
-                </div>
-              </div>
-              <div className="contact-info-item">
-                <div className="contact-icon">
-                  <i className="bi bi-envelope"></i>
-                </div>
-                <div className="contact-text">
-                  <h5>Email Us</h5>
-                  <a href="mailto:info@floyet.com">info@floyet.com</a>
-                </div>
-              </div>
-              <div className="contact-info-item">
-                <div className="contact-icon">
-                  <i className="bi bi-telephone"></i>
-                </div>
-                <div className="contact-text">
-                  <h5>Call Us</h5>
-                  <a href="tel:+919746742650">+91 974 674 2650</a>
+              ))}
+
+              <div className="social-links-card reveal">
+                <h4>Connect With Us</h4>
+                <div className="social-links">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      className="social-link"
+                      aria-label={social.label}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={
+                        { "--hover-color": social.color } as React.CSSProperties
+                      }
+                    >
+                      <i className={`bi ${social.icon}`}></i>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
 
           <div className="col-lg-7">
-            <div className="contact-form-card">
+            <div className="contact-form-card reveal">
               <form onSubmit={handleSubmit}>
                 <div className="row g-3">
                   <div className="col-md-6">
@@ -137,6 +204,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       className="hero-btn hero-btn-primary w-100"
+                      disabled={true}
                     >
                       <span>Send Message</span>
                       <i className="bi bi-send"></i>

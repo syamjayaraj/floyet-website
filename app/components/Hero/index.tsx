@@ -12,7 +12,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero-section position-relative vh-100 d-flex align-items-center">
+    <section
+      className="hero-section position-relative vh-100 d-flex align-items-center"
+      id="home"
+    >
       <video
         ref={videoRef}
         autoPlay
