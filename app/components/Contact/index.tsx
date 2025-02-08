@@ -19,7 +19,12 @@ const Contact = () => {
     {
       icon: "bi-geo-alt-fill",
       title: "Office Location",
-      details: ["Hilite Business Park", "Kozhikode – 673014"],
+      details: [
+        "Floyet Labs & Technologies",
+        "Door No: 2211, 2/1149/100",
+        "Hilite Business Park",
+        "Kozhikode – 673014",
+      ],
       color: "#FF6B6B",
     },
     {
@@ -47,19 +52,19 @@ const Contact = () => {
     },
     {
       icon: "bi-twitter-x",
-      url: "https://twitter.com/floyetlabs",
+      url: "https://twitter.com/floyet.labs.tech",
       label: "Twitter",
       color: "#000000",
     },
     {
       icon: "bi-instagram",
-      url: "https://www.instagram.com/floyetlabs",
+      url: "https://www.instagram.com/floyet.labs.tech",
       label: "Instagram",
       color: "#E4405F",
     },
     {
       icon: "bi-github",
-      url: "https://github.com/floyet",
+      url: "https://github.com/codeariv",
       label: "GitHub",
       color: "#181717",
     },

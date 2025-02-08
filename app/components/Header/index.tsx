@@ -88,7 +88,15 @@ const Header = () => {
                   Services
                 </Link>
               </li>
-
+              <li>
+                <Link
+                  href="#testimonials"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="side-nav-link"
+                >
+                  Testimonials
+                </Link>
+              </li>
               <li>
                 <Link
                   href="#contact"

@@ -53,7 +53,7 @@ const Footer = () => {
                   </li>
 
                   <li>
-                    <a href="#careers">Careers</a>
+                    <a href="#testimonials">Testimonials</a>
                   </li>
                   <li>
                     <a href="#contact">Contact</a>
@@ -68,13 +68,19 @@ const Footer = () => {
                 <h5 className="footer-widget-title">Products</h5>
                 <ul className="footer-links">
                   <li>
-                    <a href="#parambath">Parambath</a>
+                    <a href="https://gymtie.com">GymTie</a>
                   </li>
                   <li>
-                    <a href="#youngmenu">YoungMenu</a>
+                    <a href="https://parambath.onnich.com">Parambath</a>
                   </li>
                   <li>
-                    <a href="#kutyme">Kuty.me</a>
+                    <a href="https://youngmenu.com">YoungMenu</a>
+                  </li>
+                  <li>
+                    <a href="https://kutyme.me">Kuty.me</a>
+                  </li>
+                  <li>
+                    <a href="https://codeariv.com">CodeARIV</a>
                   </li>
                 </ul>
               </div>
@@ -88,6 +94,10 @@ const Footer = () => {
                   <div className="contact-item">
                     <i className="bi bi-geo-alt"></i>
                     <p>
+                      Floyet Labs & Technologies
+                      <br />
+                      Door No: 2211, 2/1149/100
+                      <br />
                       Hilite Business Park
                       <br />
                       Kozhikode – 673014
