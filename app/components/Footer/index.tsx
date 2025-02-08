@@ -124,7 +124,9 @@ const Footer = () => {
           <div className="row align-items-center">
             <div className="col-md-6">
               <p className="copyright-text">
-                © {currentYear} Floyet Labs & Technologies. All rights reserved.
+                © {currentYear}{" "}
+                <a href="https://floyet.com">Floyet Labs & Technologies</a>. All
+                rights reserved.
               </p>
             </div>
             <div className="col-md-6">

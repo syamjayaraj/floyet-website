@@ -1006,7 +1006,6 @@ a {
 
 /* Product Section Styles */
 .products-section {
-  background-color: #f8f9fa;
   padding: 120px 0;
 }
 
@@ -1223,7 +1222,7 @@ a {
 
 /* Services Section Styles */
 .services-section {
-  /* background-color: #f8f9fa; */
+  background-color: #f8f9fa;
   position: relative;
   padding: 120px 0;
 }
@@ -1864,6 +1863,9 @@ img {
     text-align: center;
     padding: 0.75rem;
   }
+  .about-content {
+   text-align: center;
+  }
 
   .product-logo {
     width: 35px;
@@ -1914,5 +1916,171 @@ img {
   .side-nav-link {
     font-size: 1.25rem;
     padding: 12px 0;
+  }
+}
+
+/* Services Mobile Styles */
+@media (max-width: 768px) {
+  .services-section {
+    text-align: center;
+  }
+
+  .service-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .service-icon {
+    margin: 0 auto 1.5rem;
+  }
+
+  .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-tags {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tech-tag {
+    margin: 0.25rem;
+  }
+
+  .cta-wrapper {
+    padding: 1.5rem;
+  }
+}
+
+/* Footer Mobile Styles */
+@media (max-width: 768px) {
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-widget {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 1rem;
+  }
+
+  .footer-description {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin: 1rem 0;
+  }
+
+  .footer-widget-title {
+    margin-bottom: 1rem;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footer-links li {
+    margin: 0.5rem 0;
+  }
+
+  .footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .contact-item i {
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 1.5rem 0;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .copyright-text {
+    margin-bottom: 1rem;
+  }
+
+  .back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+  .service-title {
+    font-size: 1.5rem;
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+  }
+
+  .footer-logo {
+    font-size: 1.75rem;
+  }
+
+  .footer-widget-title {
+    font-size: 1.25rem;
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Improved spacing for mobile */
+@media (max-width: 768px) {
+  .row {
+    --bs-gutter-x: 1rem;
+  }
+
+  .py-6 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    padding: 0 1rem;
   }
 }
