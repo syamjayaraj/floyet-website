@@ -1,55 +1,32 @@
-import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import "./globals.css";
-const gaId = process?.env?.NEXT_PUBLIC_GA_ID as string;
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Inter } from "next/font/google";
+import BootstrapClient from "@/app/components/BootstrapClient";
 
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: `FLOYET Labs & Technologies ← Empowering the Future with Innovative Technology`,
-  description: `At Floyet Labs & Technologies, we're dedicated to building cutting-edge products and services that simplify life and shape the future.`,
-  keywords: [
-    "floyet",
-    "labs & technologies",
-    "software company",
-    "best",
-    "web development",
-    "kozhikode",
-    "kerala",
-    "gymtie",
-    "youngmenu",
-    "onebest",
-    "floying",
-    "codeariv",
-  ],
-  openGraph: {
-    type: "website",
-    title: `FLOYET Labs & Technologies ← Empowering the Future with Innovative Technology`,
-    description: `At Floyet Labs & Technologies, we're dedicated to building cutting-edge products and services that simplify life and shape the future.`,
-    url: "https://floyet.com",
-    images: "/assets/images/floyet-logo.png",
-  },
+export const metadata = {
+  title: "Floyet Labs & Technologies",
+  description: "Building innovative digital solutions for tomorrow",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <GoogleAnalytics gaId={gaId} />
       <head>
-        <link rel="icon" href="/assets/favicon.png" sizes="any" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+        />
       </head>
-      <body className={montserrat.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <BootstrapClient />
+      </body>
     </html>
   );
 }
