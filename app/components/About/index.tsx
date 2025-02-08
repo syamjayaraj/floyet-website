@@ -1,51 +1,130 @@
 "use client";
 
 const About = () => {
+  const achievements = [
+    {
+      number: "30+",
+      label: "Enterprise Clients",
+      sublabel: "Trusted Partners",
+    },
+    {
+      number: "10K+",
+      label: "Active Users",
+      sublabel: "Daily Engagement",
+    },
+    {
+      number: "6",
+      label: "Digital Products",
+      sublabel: "Innovative Solutions",
+    },
+    {
+      number: "4+",
+      label: "Years",
+      sublabel: "Industry Experience",
+    },
+  ];
+
+  const products = [
+    {
+      icon: "bi-phone",
+      name: "Parambath",
+      description:
+        "Digital gateway connecting village services with modern convenience",
+    },
+    {
+      icon: "bi-shop",
+      name: "YoungMenu",
+      description:
+        "Virtual menu platform revolutionizing restaurant operations",
+    },
+    {
+      icon: "bi-link-45deg",
+      name: "Kuty.me",
+      description: "Smart URL shortener with advanced analytics and tracking",
+    },
+  ];
+
   return (
-    <section className="py-5 bg-light">
-      <div className="container py-5">
-        <div className="row align-items-center">
-          <div className="col-lg-6 mb-4 mb-lg-0">
-            <img
-              src="/about-image.jpg"
-              alt="About Floyet"
-              className="img-fluid rounded-3 shadow"
-            />
-          </div>
+    <section className="about-section py-6">
+      <div className="container">
+        {/* Main Content */}
+        <div className="row align-items-center mb-5">
           <div className="col-lg-6">
-            <h6 className="text-primary fw-bold">ABOUT US</h6>
-            <h2 className="display-5 fw-bold mb-4">
-              Transforming Ideas into Digital Reality
-            </h2>
-            <p className="lead mb-4">
-              At Floyet Labs & Technologies, we believe in the power of
-              innovation to solve complex business challenges. Our team of
-              experts works tirelessly to deliver cutting-edge solutions that
-              drive growth and efficiency.
-            </p>
-            <div className="row g-4 mt-4">
-              <div className="col-6">
-                <div className="d-flex align-items-center">
-                  <div className="stats-number fw-bold display-6 me-3">50+</div>
-                  <div className="stats-label">
-                    Projects
-                    <br />
-                    Completed
-                  </div>
-                </div>
-              </div>
-              <div className="col-6">
-                <div className="d-flex align-items-center">
-                  <div className="stats-number fw-bold display-6 me-3">30+</div>
-                  <div className="stats-label">
-                    Happy
-                    <br />
-                    Clients
-                  </div>
-                </div>
+            <div className="about-content pe-lg-5">
+              <div className="section-tag mb-3">ABOUT FLOYET</div>
+              <h2 className="section-title mb-4">
+                Crafting Digital Solutions for
+                <span className="gradient-text d-block">
+                  Tomorrow's Challenges
+                </span>
+              </h2>
+              <p className="section-description mb-4">
+                At Floyet, we specialize in developing future-ready applications
+                that address real-world problems. Our solutions combine
+                cutting-edge technology with intuitive design to deliver
+                exceptional user experiences.
+              </p>
+
+              <div className="tech-stack-wrapper">
+                <div className="tech-tag">AI/ML</div>
+                <div className="tech-tag">Cloud Native</div>
+                <div className="tech-tag">React/Next.js</div>
+                <div className="tech-tag">Node.js</div>
+                <div className="tech-tag">Flutter</div>
               </div>
             </div>
           </div>
+
+          <div className="col-lg-6">
+            <div className="about-image-container">
+              <img
+                src="/about-main.webp"
+                alt="Floyet Innovation"
+                className="about-main-image"
+              />
+              <div className="experience-badge">
+                <span className="years">4+</span>
+                <span className="text">
+                  Years of
+                  <br />
+                  Innovation
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Products Grid */}
+        <div className="row mb-5">
+          <div className="col-12">
+            <h3 className="text-center mb-4">Our Digital Products</h3>
+          </div>
+          {products.map((product, index) => (
+            <div key={index} className="col-lg-4">
+              <div className="product-card">
+                <div className="product-icon">
+                  <i className={`bi ${product.icon}`}></i>
+                </div>
+                <h4 className="product-name">{product.name}</h4>
+                <p className="product-description">{product.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Achievements Grid */}
+        <div className="achievements-grid">
+          {achievements.map((item, index) => (
+            <div key={index} className="achievement-card">
+              <div className="achievement-content">
+                <div className="achievement-number">{item.number}</div>
+                <div className="achievement-info">
+                  <div className="achievement-label">{item.label}</div>
+                  <div className="achievement-sublabel">{item.sublabel}</div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

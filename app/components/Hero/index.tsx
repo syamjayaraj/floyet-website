@@ -21,28 +21,38 @@ const Hero = () => {
         className="position-absolute w-100 h-100 object-fit-cover"
         style={{ zIndex: -1 }}
       >
-        <source src="/assets/hero.mp4" type="video/mp4" />
+        <source src="/assets/hero-bg.mp4" type="video/mp4" />
       </video>
       <div
         className="overlay position-absolute w-100 h-100"
         style={{ backgroundColor: "rgba(0,0,0,0.5)", zIndex: -1 }}
       ></div>
       <div className="container">
-        <div className="row">
-          <div className="col-lg-8 text-white animate-fade-in">
-            <h1 className="display-3 fw-bold mb-4">
-              Building Innovative Solutions
-              <br />
-              Through Technology
-            </h1>
-            <p className="lead mb-5">
-              We create digital solutions that transform businesses and enhance
-              user experiences. Our commitment to innovation drives every
-              project we undertake.
-            </p>
-            <button className="btn btn-primary btn-lg px-5 py-3">
-              Explore Our Work
-            </button>
+        <div className="row justify-content-center">
+          <div className="col-lg-10 text-center">
+            <div className="hero-content animate-fade-in">
+              <h1 className="hero-title mb-4">
+                Building Tomorrow's
+                <span className="d-block mt-2">Digital Solutions</span>
+              </h1>
+              <p className="hero-subtitle mb-5">
+                We create innovative software solutions that transform
+                businesses
+                <span className="d-block mt-2">
+                  and enhance user experiences.
+                </span>
+              </p>
+              <div className="hero-buttons">
+                <a href="#work" className="hero-btn hero-btn-primary me-4">
+                  <span>Explore Our Work</span>
+                  <i className="bi bi-arrow-right"></i>
+                </a>
+                <a href="#contact" className="hero-btn hero-btn-outline">
+                  <span>Get in Touch</span>
+                  <i className="bi bi-envelope"></i>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

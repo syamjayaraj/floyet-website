@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero/index";
 import About from "./components/About/index";
 import Services from "./components/Services/index";
-import Products from "./components/Products/Products";
+import Products from "./components/Products/index";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 

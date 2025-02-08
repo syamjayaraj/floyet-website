@@ -1,9 +1,19 @@
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Inter } from "next/font/google";
+import { Syne, Inter } from "next/font/google";
 import BootstrapClient from "@/app/components/BootstrapClient";
 
-const inter = Inter({ subsets: ["latin"] });
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+});
 
 export const metadata = {
   title: "Floyet Labs & Technologies",
@@ -23,7 +33,7 @@ export default function RootLayout({
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         />
       </head>
-      <body className={inter.className}>
+      <body className={`${syne.variable} ${inter.variable}`}>
         {children}
         <BootstrapClient />
       </body>

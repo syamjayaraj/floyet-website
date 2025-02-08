@@ -1,48 +1,88 @@
 "use client";
 
-const services = [
-  {
-    icon: "🚀",
-    title: "Web Development",
-    description: "Custom web applications built with cutting-edge technologies",
-  },
-  {
-    icon: "📱",
-    title: "Mobile Apps",
-    description: "Native and cross-platform mobile applications",
-  },
-  {
-    icon: "🤖",
-    title: "AI Solutions",
-    description: "Intelligent systems and machine learning integration",
-  },
-  {
-    icon: "🛠️",
-    title: "Cloud Services",
-    description: "Scalable cloud infrastructure and deployment",
-  },
-];
-
 const Services = () => {
+  const services = [
+    {
+      icon: "bi-code-square",
+      title: "Custom Development",
+      description:
+        "Tailored software solutions built with cutting-edge technologies to meet your specific business needs.",
+      tags: ["Web Apps", "Mobile Apps", "APIs"],
+    },
+    {
+      icon: "bi-robot",
+      title: "AI Integration",
+      description:
+        "Implementing intelligent systems and machine learning solutions to automate and enhance business processes.",
+      tags: ["Machine Learning", "Data Analytics", "Automation"],
+    },
+    {
+      icon: "bi-cloud-check",
+      title: "Cloud Solutions",
+      description:
+        "Scalable cloud infrastructure and deployment strategies for optimal performance and reliability.",
+      tags: ["AWS", "Azure", "DevOps"],
+    },
+    {
+      icon: "bi-phone",
+      title: "Mobile Development",
+      description:
+        "Cross-platform mobile applications that provide seamless user experiences across all devices.",
+      tags: ["iOS", "Android", "Flutter"],
+    },
+  ];
+
   return (
-    <section className="py-5">
-      <div className="container py-5">
-        <div className="text-center mb-5">
-          <h6 className="text-primary fw-bold">OUR SERVICES</h6>
-          <h2 className="display-5 fw-bold">What We Do Best</h2>
+    <section className="services-section py-6">
+      <div className="container">
+        <div className="row justify-content-center mb-5">
+          <div className="col-lg-8 text-center">
+            <div className="section-tag mb-3">OUR SERVICES</div>
+            <h2 className="section-title mb-4">
+              Transforming Ideas into
+              <span className="gradient-text d-block">Digital Reality</span>
+            </h2>
+            <p className="section-description">
+              We offer comprehensive digital solutions that help businesses
+              innovate and stay ahead in the rapidly evolving technology
+              landscape.
+            </p>
+          </div>
         </div>
+
         <div className="row g-4">
           {services.map((service, index) => (
-            <div key={index} className="col-md-6 col-lg-3">
-              <div className="card h-100 border-0 shadow-sm hover-card">
-                <div className="card-body text-center p-4">
-                  <div className="display-5 mb-3">{service.icon}</div>
-                  <h5 className="card-title mb-3">{service.title}</h5>
-                  <p className="card-text text-muted">{service.description}</p>
+            <div key={index} className="col-lg-6">
+              <div className="service-card">
+                <div className="service-icon">
+                  <i className={`bi ${service.icon}`}></i>
+                </div>
+                <div className="service-content">
+                  <h3 className="service-title">{service.title}</h3>
+                  <p className="service-description">{service.description}</p>
+                  <div className="service-tags">
+                    {service.tags.map((tag, tagIndex) => (
+                      <span key={tagIndex} className="tech-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="row mt-5">
+          <div className="col-12 text-center">
+            <div className="cta-wrapper">
+              <h4 className="mb-4">Ready to Transform Your Business?</h4>
+              <a href="#contact" className="hero-btn hero-btn-primary">
+                <span>Start Your Project</span>
+                <i className="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

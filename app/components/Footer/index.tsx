@@ -6,14 +6,14 @@ const Footer = () => {
   return (
     <footer className="footer-section">
       {/* Main Footer */}
-      <div className="footer-main py-5">
+      <div className="footer-main">
         <div className="container">
-          <div className="row g-4">
+          <div className="row g-4 g-lg-5">
             {/* Company Info */}
-            <div className="col-lg-4 col-md-6">
+            <div className="col-lg-5">
               <div className="footer-widget">
-                <h4 className="text-white mb-4">FLOYET</h4>
-                <p className="text-light-gray mb-4">
+                <h4 className="footer-logo mb-4">FLOYET</h4>
+                <p className="footer-description mb-4">
                   Building innovative digital solutions that transform
                   businesses and enhance user experiences. Our commitment to
                   excellence drives every project we undertake.
@@ -36,9 +36,9 @@ const Footer = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="col-lg-2 col-md-6">
+            <div className="col-lg-2 col-md-4">
               <div className="footer-widget">
-                <h5 className="text-white mb-4">Quick Links</h5>
+                <h5 className="footer-widget-title">Company</h5>
                 <ul className="footer-links">
                   <li>
                     <a href="#about">About Us</a>
@@ -50,66 +50,53 @@ const Footer = () => {
                     <a href="#products">Products</a>
                   </li>
                   <li>
-                    <a href="#contact">Contact</a>
+                    <a href="#careers">Careers</a>
                   </li>
                   <li>
-                    <a href="#careers">Careers</a>
+                    <a href="#contact">Contact</a>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Services */}
-            <div className="col-lg-3 col-md-6">
+            {/* Products */}
+            <div className="col-lg-2 col-md-4">
               <div className="footer-widget">
-                <h5 className="text-white mb-4">Our Services</h5>
+                <h5 className="footer-widget-title">Products</h5>
                 <ul className="footer-links">
                   <li>
-                    <a href="#web-development">Web Development</a>
+                    <a href="#parambath">Parambath</a>
                   </li>
                   <li>
-                    <a href="#mobile-apps">Mobile Applications</a>
+                    <a href="#youngmenu">YoungMenu</a>
                   </li>
                   <li>
-                    <a href="#cloud-services">Cloud Services</a>
-                  </li>
-                  <li>
-                    <a href="#ai-solutions">AI Solutions</a>
-                  </li>
-                  <li>
-                    <a href="#consulting">IT Consulting</a>
+                    <a href="#kutyme">Kuty.me</a>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Contact Info */}
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-3 col-md-4">
               <div className="footer-widget">
-                <h5 className="text-white mb-4">Contact Info</h5>
-                <div className="contact-info">
-                  <div className="d-flex mb-3">
-                    <i className="bi bi-geo-alt me-3"></i>
-                    <p className="text-light-gray mb-0">
-                      Hilite Business Park, Olavanna
+                <h5 className="footer-widget-title">Contact</h5>
+                <div className="footer-contact-info">
+                  <div className="contact-item">
+                    <i className="bi bi-geo-alt"></i>
+                    <p>
+                      Hilite Business Park
                       <br />
                       Kozhikode – 673014
                     </p>
                   </div>
-                  <div className="d-flex mb-3">
-                    <i className="bi bi-envelope me-3"></i>
-                    <a
-                      href="mailto:info@floyet.com"
-                      className="text-light-gray"
-                    >
-                      info@floyet.com
-                    </a>
+                  <div className="contact-item">
+                    <i className="bi bi-envelope"></i>
+                    <a href="mailto:info@floyet.com">info@floyet.com</a>
                   </div>
-                  <div className="d-flex">
-                    <i className="bi bi-telephone me-3"></i>
-                    <a href="tel:+919746742650" className="text-light-gray">
-                      +91 974 674 2650
-                    </a>
+                  <div className="contact-item">
+                    <i className="bi bi-telephone"></i>
+                    <a href="tel:+919746742650">+91 974 674 2650</a>
                   </div>
                 </div>
               </div>
@@ -119,15 +106,15 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="footer-bottom py-3">
+      <div className="footer-bottom">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-6 text-center text-md-start">
-              <p className="mb-0 text-light-gray">
+            <div className="col-md-6">
+              <p className="copyright-text">
                 © {currentYear} Floyet Labs & Technologies. All rights reserved.
               </p>
             </div>
-            <div className="col-md-6 text-center text-md-end mt-3 mt-md-0">
+            <div className="col-md-6">
               <div className="footer-bottom-links">
                 <a href="#privacy">Privacy Policy</a>
                 <a href="#terms">Terms of Service</a>
