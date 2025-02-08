@@ -18,7 +18,7 @@ const Services = () => {
     },
     {
       icon: "bi-phone",
-      title: "Mobile Development",
+      title: "Mobile App Development",
       description:
         "Cross-platform mobile applications that provide seamless user experiences across all devices.",
       tags: ["Expo", "React Native"],
