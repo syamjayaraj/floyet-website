@@ -890,14 +890,21 @@ a {
   color: #4b5563;
 }
 
-/* Product Cards */
+/* Product Section Styles */
+.products-section {
+  background-color: #f8f9fa;
+  padding: 120px 0;
+}
+
 .product-card {
-  padding: 30px;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
   height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .product-card:hover {
@@ -905,31 +912,134 @@ a {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
+.product-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-content {
+  padding: 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--primary-color);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+}
+
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
 .product-icon {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   background: rgba(0, 102, 255, 0.1);
-  border-radius: 15px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--primary-color);
-  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .product-name {
-  font-size: 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 10px;
   color: #111827;
+  margin: 0;
 }
 
 .product-description {
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 1rem 0;
+  flex-grow: 1;
+}
+
+.product-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.tech-tag {
+  padding: 0.5rem 1rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.product-users {
   color: #6b7280;
-  line-height: 1.6;
-  margin: 0;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+}
+
+.product-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.product-link:hover {
+  gap: 0.75rem;
+  color: #0052cc;
 }
 
 /* Achievements Grid */
@@ -982,33 +1092,20 @@ a {
   color: #6b7280;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-  .section-title {
-    font-size: 2.5rem;
-  }
-  
-  .achievements-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .about-section {
+  .products-section {
     padding: 80px 0;
   }
   
-  .about-image-container {
-    margin-top: 40px;
+  .product-content {
+    padding: 1.5rem;
   }
   
-  .experience-badge {
-    bottom: 20px;
-    right: 20px;
+  .product-name {
+    font-size: 1.25rem;
   }
-}
-.products-section {
-  background-color: #f8f9fa;
 }
 
 /* Services Section Styles */
