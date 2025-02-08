@@ -1,5 +1,5 @@
-import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./globals.css";
 import { Syne, Inter } from "next/font/google";
 import BootstrapClient from "@/app/components/BootstrapClient";
 import CookieConsent from "./components/CookieConsent";
