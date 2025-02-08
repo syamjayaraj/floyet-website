@@ -34,6 +34,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         />
+        <link rel="icon" href="/assets/logo/floyet.png" />
       </head>
       <body>
         {children}
