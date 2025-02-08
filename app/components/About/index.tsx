@@ -66,11 +66,11 @@ const About = () => {
               </p>
 
               <div className="tech-stack-wrapper">
-                <div className="tech-tag">AI/ML</div>
-                <div className="tech-tag">Cloud Native</div>
-                <div className="tech-tag">React/Next.js</div>
-                <div className="tech-tag">Node.js</div>
-                <div className="tech-tag">Flutter</div>
+                <div className="tech-tag">Expo</div>
+                <div className="tech-tag">React Native</div>
+                <div className="tech-tag">Next.js</div>
+                <div className="tech-tag">Strapi</div>
+                <div className="tech-tag">Vultr</div>
               </div>
             </div>
           </div>
@@ -78,24 +78,29 @@ const About = () => {
           <div className="col-lg-6">
             <div className="about-image-container">
               <img
-                src="/about-main.webp"
+                src="/assets/about-image.jpg"
                 alt="Floyet Innovation"
                 className="about-main-image"
+                style={{
+                  width: "20rem",
+                  height: "auto",
+                  objectFit: "cover",
+                }}
               />
-              <div className="experience-badge">
+              {/* <div className="experience-badge">
                 <span className="years">4+</span>
                 <span className="text">
                   Years of
                   <br />
                   Innovation
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
 
         {/* Products Grid */}
-        <div className="row mb-5">
+        {/* <div className="row mb-5">
           <div className="col-12">
             <h3 className="text-center mb-4">Our Digital Products</h3>
           </div>
@@ -110,7 +115,7 @@ const About = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {/* Achievements Grid */}
         <div className="achievements-grid">

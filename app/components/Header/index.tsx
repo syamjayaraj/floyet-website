@@ -39,7 +39,6 @@ const Header = () => {
                 className={`navbar-brand fw-bold ms-0 ${
                   isScrolled ? "text-dark" : "text-white"
                 }`}
-                style={{ fontSize: "1.4rem", marginTop: ".1rem" }}
               >
                 FLOYET
               </Link>

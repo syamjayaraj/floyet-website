@@ -1,21 +1,32 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero/index";
-import About from "./components/About/index";
-import Services from "./components/Services/index";
-import Products from "./components/Products/index";
-import Footer from "./components/Footer";
+"use client";
+
+import { useEffect } from "react";
+import { initScrollReveal } from "./utils/scrollReveal";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Services from "./components/Services";
+import Products from "./components/Products";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Home() {
+  useEffect(() => {
+    const cleanup = initScrollReveal();
+    return cleanup;
+  }, []);
+
   return (
-    <main>
+    <>
       <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Products />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Products />
+        <Services />
+        <Contact />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

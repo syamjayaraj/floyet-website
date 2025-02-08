@@ -16,8 +16,9 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Floyet Labs & Technologies",
-  description: "Building innovative digital solutions for tomorrow",
+  title: "Floyet - Building Future-Ready Digital Solutions",
+  description:
+    "We craft innovative applications that solve real-world challenges using cutting-edge technology.",
 };
 
 export default function RootLayout({
@@ -26,14 +27,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${syne.variable} ${inter.variable}`}>
       <head>
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         />
       </head>
-      <body className={`${syne.variable} ${inter.variable}`}>
+      <body>
         {children}
         <BootstrapClient />
       </body>
