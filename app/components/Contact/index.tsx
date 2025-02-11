@@ -21,7 +21,7 @@ const Contact = () => {
       title: "Office Location",
       details: [
         "Floyet Labs & Technologies",
-        "Door No: 2211, 2/1149/100",
+        "Door No: 2211, 2/1149/I 100",
         "Hilite Business Park",
         "Kozhikode – 673014",
       ],
@@ -37,7 +37,7 @@ const Contact = () => {
     {
       icon: "bi-telephone-fill",
       title: "Call Us",
-      details: ["+91 974 674 2650"],
+      details: ["+91 9746742650"],
       link: "tel:+919746742650",
       color: "#6BCB77",
     },

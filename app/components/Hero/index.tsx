@@ -49,8 +49,8 @@ const Hero = () => {
                 </span>
               </p>
               <div className="hero-buttons">
-                <a href="#work" className="hero-btn hero-btn-primary">
-                  <span>Explore Our Work</span>
+                <a href="#products" className="hero-btn hero-btn-primary">
+                  <span>Explore Our Products</span>
                   <i className="bi bi-arrow-right"></i>
                 </a>
                 <a href="#contact" className="hero-btn hero-btn-outline">

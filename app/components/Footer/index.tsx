@@ -96,7 +96,7 @@ const Footer = () => {
                     <p>
                       Floyet Labs & Technologies
                       <br />
-                      Door No: 2211, 2/1149/100
+                      Door No: 2211, 2/1149/I 100
                       <br />
                       Hilite Business Park
                       <br />
@@ -109,7 +109,7 @@ const Footer = () => {
                   </div>
                   <div className="contact-item">
                     <i className="bi bi-telephone"></i>
-                    <a href="tel:+919746742650">+91 974 674 2650</a>
+                    <a href="tel:+919746742650">+91 9746742650</a>
                   </div>
                 </div>
               </div>

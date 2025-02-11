@@ -1014,6 +1014,7 @@ a {
 /* Product Section Styles */
 .products-section {
   padding: 120px 0;
+  background-color: #f8f9fa;
 }
 
 .product-card {
@@ -1229,7 +1230,6 @@ a {
 
 /* Services Section Styles */
 .services-section {
-  background-color: #f8f9fa;
   position: relative;
   padding: 120px 0;
 }

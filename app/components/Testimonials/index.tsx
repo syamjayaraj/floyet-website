@@ -38,7 +38,7 @@ const Testimonials = () => {
     {
       name: "Sarojini",
       role: "Reader",
-      company: "Sarojini",
+      company: "CodeARIV",
       image: "/assets/user/sarojini.webp",
       product: "CodeARIV",
       quote:
