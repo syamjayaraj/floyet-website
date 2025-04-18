@@ -1,0 +1,114 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.article {
+  flex: 1;
+  padding: 4rem 0;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.heroImage {
+  margin: -4rem -1.5rem 2rem;
+  height: 400px;
+  overflow: hidden;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.meta {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.date {
+  font-size: 1rem;
+  color: #666;
+}
+
+.body {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.body h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #1a1a1a;
+}
+
+.body h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+  color: #1a1a1a;
+}
+
+.body p {
+  margin-bottom: 1.5rem;
+}
+
+.body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.body a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.body a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .article {
+    padding: 2rem 0;
+  }
+  
+  .heroImage {
+    margin: -2rem -1.5rem 2rem;
+    height: 300px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .content {
+    font-size: 1rem;
+  }
+}

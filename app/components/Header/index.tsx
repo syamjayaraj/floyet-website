@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Header = () => {
+const Header = ({ isCareersPage }: { isCareersPage?: boolean }) => {
+  console.log(isCareersPage);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -18,13 +19,17 @@ const Header = () => {
 
   return (
     <>
-      <header className={`fixed-top ${isScrolled ? "header-scrolled" : ""}`}>
+      <header
+        className={`fixed-top ${
+          isScrolled || isCareersPage ? "header-scrolled" : ""
+        }`}
+      >
         <div className="container-fluid px-4">
           <div className="d-flex align-items-center py-1">
             <div className="d-flex align-items-center">
               <button
                 className={`hamburger-btn ${isMenuOpen ? "active" : ""} ${
-                  isScrolled ? "scrolled" : ""
+                  isScrolled || isCareersPage ? "scrolled" : ""
                 }`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 aria-label="Menu"
@@ -37,7 +42,7 @@ const Header = () => {
               <Link
                 href="/"
                 className={`navbar-brand fw-bold ms-0 ${
-                  isScrolled ? "text-dark" : "text-white"
+                  isScrolled || isCareersPage ? "text-dark" : "text-white"
                 }`}
               >
                 FLOYET
@@ -63,7 +68,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#about"
+                  href="/#about"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
                 >
@@ -72,7 +77,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#products"
+                  href="/#products"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
                 >
@@ -81,7 +86,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#services"
+                  href="/#services"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
                 >
@@ -90,7 +95,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#testimonials"
+                  href="/#testimonials"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
                 >
@@ -99,11 +104,29 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
                 >
                   Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="side-nav-link"
+                >
+                  Careers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="side-nav-link"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>

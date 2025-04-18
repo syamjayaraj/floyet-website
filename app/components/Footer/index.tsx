@@ -43,20 +43,26 @@ const Footer = () => {
                 <h5 className="footer-widget-title">Company</h5>
                 <ul className="footer-links">
                   <li>
-                    <a href="#about">About Us</a>
+                    <a href="/#about">About Us</a>
                   </li>
                   <li>
-                    <a href="#products">Products</a>
+                    <a href="/#products">Products</a>
                   </li>
                   <li>
-                    <a href="#services">Services</a>
+                    <a href="/#services">Services</a>
                   </li>
 
                   <li>
-                    <a href="#testimonials">Testimonials</a>
+                    <a href="/#testimonials">Testimonials</a>
                   </li>
                   <li>
-                    <a href="#contact">Contact</a>
+                    <a href="/#contact">Contact</a>
+                  </li>
+                  <li>
+                    <a href="/careers">Careers</a>
+                  </li>
+                  <li>
+                    <a href="/blog">Blog</a>
                   </li>
                 </ul>
               </div>
