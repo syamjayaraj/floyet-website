@@ -291,7 +291,9 @@
   }
   
   .freeTag {
-    font-size: 0.9rem;
-    padding: 6px 30px;
+    font-size: 0.6rem;
+    padding: 3px 40px;
+    top: 60px;
+    right: -60px;
   }
 }
