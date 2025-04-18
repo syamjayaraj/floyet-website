@@ -9,11 +9,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-  };
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const contactInfo = [
     {
@@ -69,6 +65,64 @@ const Contact = () => {
       color: "#181717",
     },
   ];
+
+  const isFormValid = () => {
+    return (
+      formData.name.trim() !== "" &&
+      formData.email.trim() !== "" &&
+      formData.subject.trim() !== "" &&
+      formData.message.trim() !== ""
+    );
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/contacts`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            data: {
+              name: formData.name,
+              email: formData.email,
+              message: formData.message,
+              contactStatus: "new",
+            },
+          }),
+        }
+      );
+
+      console.log(response);
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      // Show success animation
+      setShowSuccess(true);
+
+      // Hide success animation after 3 seconds
+      setTimeout(() => {
+        setShowSuccess(false);
+      }, 3000);
+
+      // Clear form after successful submission
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("Failed to send message. Please try again.");
+    }
+  };
 
   return (
     <section className="contact-section py-6" id="contact">
@@ -208,8 +262,10 @@ const Contact = () => {
                   <div className="col-12">
                     <button
                       type="submit"
-                      className="hero-btn hero-btn-primary w-100"
-                      disabled={true}
+                      className={`hero-btn w-100 ${
+                        isFormValid() ? "hero-btn-primary" : "hero-btn-disabled"
+                      }`}
+                      disabled={!isFormValid()}
                     >
                       <span>Send Message</span>
                       <i className="bi bi-send"></i>
@@ -220,6 +276,17 @@ const Contact = () => {
             </div>
           </div>
         </div>
+
+        {/* Success Animation */}
+        {showSuccess && (
+          <div className="success-animation">
+            <div className="success-icon">
+              <i className="bi bi-check-circle-fill"></i>
+            </div>
+            <p>Thank you for your message.</p>
+            <p>We will be in touch shortly.</p>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,0 +1,218 @@
+.careers-section {
+  background-color: #ffffff;
+  min-height: 80vh;
+}
+
+.career-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.career-header {
+  margin-bottom: 1.5rem;
+}
+
+.career-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.career-meta {
+  display: flex;
+  gap: 1.5rem;
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.career-meta i {
+  margin-right: 0.5rem;
+}
+
+.career-description {
+  color: #4a5568;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.career-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.career-btn:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Career Details Page Styles */
+.career-details-section {
+  background-color: #f7fafc;
+  min-height: 80vh;
+  padding: 4rem 0;
+}
+
+.back-link {
+  color: #4a5568;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.back-link:hover {
+  color: var(--primary-color);
+}
+
+.career-details-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 3rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+  color: #2d3748;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.description,
+.requirements {
+  color: #4a5568;
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+/* Markdown Styles */
+.description p,
+.requirements p {
+  margin-bottom: 1rem;
+}
+
+.description ul,
+.requirements ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.description ol,
+.requirements ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.description li,
+.requirements li {
+  margin-bottom: 0.5rem;
+}
+
+.description h1,
+.requirements h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1.5rem 0 1rem;
+}
+
+.description h2,
+.requirements h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.75rem;
+}
+
+.description h3,
+.requirements h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.description a,
+.requirements a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.description a:hover,
+.requirements a:hover {
+  text-decoration: underline;
+}
+
+.description code,
+.requirements code {
+  background: #f1f5f9;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.description pre,
+.requirements pre {
+  background: #f1f5f9;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.description blockquote,
+.requirements blockquote {
+  border-left: 4px solid var(--primary-color);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #64748b;
+  font-style: italic;
+}
+
+.apply-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.no-positions {
+  color: #718096;
+  font-size: 1.1rem;
+  padding: 3rem;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 12px;
+} 

@@ -1,3 +1,5 @@
+@import './styles/careers.css';
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -508,7 +510,7 @@ a {
 
 /* Contact Section Styles */
 .contact-section {
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   position: relative;
 }
 
@@ -1232,6 +1234,7 @@ a {
 .services-section {
   position: relative;
   padding: 120px 0;
+  background-color: #ffffff;
 }
 
 .service-card {
@@ -2090,4 +2093,66 @@ img {
     font-size: 0.95rem;
     padding: 0 1rem;
   }
+}
+
+/* Success Animation */
+.success-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeInScale 0.3s ease forwards;
+  z-index: 1000;
+}
+
+.success-icon {
+  font-size: 4rem;
+  color: #6BCB77;
+  margin-bottom: 1rem;
+  animation: iconBounce 0.5s ease 0.2s forwards;
+}
+
+.success-animation p {
+  color: #111827;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* Disabled Button State */
+.hero-btn-disabled {
+  background: #E5E7EB !important;
+  color: #9CA3AF !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+.hero-btn-disabled:hover {
+  background: #E5E7EB !important;
+  transform: none !important;
 }

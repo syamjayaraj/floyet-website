@@ -1,5 +1,7 @@
 "use client";
 
+import Clients from "../Clients";
+
 const Services = () => {
   const services = [
     {
@@ -65,6 +67,8 @@ const Services = () => {
             </div>
           ))}
         </div>
+
+        {/* <Clients /> */}
 
         <div className="row mt-5">
           <div className="col-12 text-center">
