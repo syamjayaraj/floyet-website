@@ -1,6 +1,6 @@
 "use client";
 
-import Clients from "../Clients";
+import Link from "next/link";
 
 const Services = () => {
   const services = [
@@ -78,6 +78,63 @@ const Services = () => {
                 <span>Start Your Project</span>
                 <i className="bi bi-arrow-right"></i>
               </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="training-program-section">
+          <div className="free-badge">FREE</div>
+          <div className="row align-items-center">
+            <div className="col-lg-7">
+              <h2 className="training-title">
+                Master Modern Development
+                <span className="gradient-text d-block">
+                  Through Our Internship Program
+                </span>
+              </h2>
+              <p className="training-description">
+                Join our comprehensive internship program to learn web and
+                mobile development using Next.js, Strapi CMS, React Native, and
+                cutting-edge AI tools.
+              </p>
+              <div className="training-features">
+                <div className="feature">
+                  <i className="bi bi-mortarboard"></i>
+                  <span>Industry-Recognized Certificate</span>
+                </div>
+                <div className="feature">
+                  <i className="bi bi-laptop"></i>
+                  <span>Hands-on Project Experience</span>
+                </div>
+                <div className="feature">
+                  <i className="bi bi-people"></i>
+                  <span>Expert Mentorship</span>
+                </div>
+              </div>
+              <Link href="/training" className="training-cta">
+                <span>Join Free Training Program</span>
+                <i className="bi bi-arrow-right"></i>
+              </Link>
+            </div>
+            <div className="col-lg-5">
+              <div className="training-tech-stack">
+                <div className="tech-item">
+                  <i className="bi bi-globe2"></i>
+                  <span>Next.js</span>
+                </div>
+                <div className="tech-item">
+                  <i className="bi bi-database"></i>
+                  <span>Strapi CMS</span>
+                </div>
+                <div className="tech-item">
+                  <i className="bi bi-phone"></i>
+                  <span>React Native</span>
+                </div>
+                <div className="tech-item">
+                  <i className="bi bi-robot"></i>
+                  <span>AI Tools</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
