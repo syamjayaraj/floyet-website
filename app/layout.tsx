@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { Syne, Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import BootstrapClient from "@/app/components/BootstrapClient";
 import CookieConsent from "./components/CookieConsent";
 import "@/app/lib/fontawesome";
@@ -75,6 +76,7 @@ export default function RootLayout({
         {children}
         <BootstrapClient />
         <CookieConsent />
+        <GoogleAnalytics gaId="G-SNX508HYRB" />
       </body>
     </html>
   );
