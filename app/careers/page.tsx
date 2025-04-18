@@ -12,6 +12,7 @@ import styles from "./page.module.css";
 import ReactMarkdown from "react-markdown";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 interface Career {
   id: number;
@@ -223,8 +224,8 @@ const CareersPage = () => {
                             </div>
 
                             <div className={styles.applySection}>
-                              <a
-                                href={`mailto:info@floyet.com?subject=Application for ${job.title} Position&body=Dear Hiring Team,%0D%0A%0D%0AI am writing to express my interest in the ${job.title} position at FLOYET.%0D%0A%0D%0APlease find my application attached.%0D%0A%0D%0ABest regards`}
+                              <Link
+                                href={`/#contact`}
                                 className={styles.applyButton}
                               >
                                 Apply Now
@@ -232,7 +233,7 @@ const CareersPage = () => {
                                   icon={faArrowRight}
                                   className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
                                 />
-                              </a>
+                              </Link>
                             </div>
                           </div>
                         </div>
