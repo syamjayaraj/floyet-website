@@ -1,0 +1,159 @@
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #0070f3 0%, #00a6ed 100%);
+  border-radius: 1rem;
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.techStack {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.techIcon {
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.techIcon:hover {
+  transform: scale(1.1);
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.courseCard {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.courseCard:hover {
+  transform: translateY(-5px);
+}
+
+.courseHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #0070f3;
+}
+
+.courseCard h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.courseCard p {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.featureList li {
+  padding: 0.5rem 0;
+  color: #444;
+  display: flex;
+  align-items: center;
+}
+
+.featureList li::before {
+  content: "→";
+  margin-right: 0.5rem;
+  color: #0070f3;
+}
+
+.cta {
+  text-align: center;
+  padding: 4rem 0;
+  background: #f5f5f5;
+  border-radius: 1rem;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.cta p {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  background: #0070f3;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #0051a2;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .techStack {
+    gap: 1rem;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
