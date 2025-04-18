@@ -7,10 +7,24 @@
 .hero {
   text-align: center;
   padding: 4rem 0;
-  background: linear-gradient(135deg, #0070f3 0%, #00a6ed 100%);
+  background: linear-gradient(45deg, var(--primary-color), #025e9b);
   border-radius: 1rem;
   color: white;
   margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.freeTag {
+  position: absolute;
+  top: 105px;
+  right: -35px;
+  background: #ffeb3b;
+  color: #000;
+  padding: 8px 40px;
+  transform: rotate(45deg);
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .title {
@@ -30,21 +44,81 @@
   margin: 0 auto 2rem;
 }
 
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
 .techStack {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.techIcon {
+  font-size: 2rem;
 }
 
-.techIcon {
-  font-size: 2.5rem;
-  color: white;
+.benefits {
+  margin-bottom: 4rem;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.benefitCard {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
 
-.techIcon:hover {
-  transform: scale(1.1);
+.benefitCard:hover {
+  transform: translateY(-5px);
+}
+
+.benefitIcon {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.benefitCard h3 {
+  margin: 1rem 0;
+  color: #333;
+}
+
+.benefitCard p {
+  color: #666;
+}
+
+.videoSection {
+  margin-bottom: 4rem;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .features {
@@ -58,12 +132,30 @@
   background: white;
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.courseImage {
+  margin: -2rem -2rem 2rem -2rem;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+  max-height: 15rem;
+}
+
+.courseImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .courseCard:hover {
   transform: translateY(-5px);
+}
+
+.courseCard:hover .courseImg {
+  transform: scale(1.05);
 }
 
 .courseHeader {
@@ -75,7 +167,7 @@
 
 .icon {
   font-size: 2rem;
-  color: #0070f3;
+  color: var(--primary-color);
 }
 
 .courseCard h2 {
@@ -105,7 +197,34 @@
 .featureList li::before {
   content: "→";
   margin-right: 0.5rem;
-  color: #0070f3;
+  color: var(--primary-color);
+}
+
+.internshipDetails {
+  margin-bottom: 4rem;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.detailCard {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.detailCard h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.detailCard p {
+  color: #666;
 }
 
 .cta {
@@ -126,7 +245,7 @@
 }
 
 .ctaButton {
-  background: #0070f3;
+  background: var(--primary-color);
   color: white;
   border: none;
   padding: 1rem 2rem;
@@ -137,7 +256,13 @@
 }
 
 .ctaButton:hover {
-  background: #0051a2;
+  background: #025e9b;
+}
+
+.ctaNote {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 @media (max-width: 768px) {
@@ -149,11 +274,24 @@
     font-size: 1.2rem;
   }
   
-  .techStack {
-    gap: 1rem;
+  .sectionTitle {
+    font-size: 2rem;
+  }
+  
+  .benefitsGrid {
+    grid-template-columns: 1fr;
   }
   
   .features {
     grid-template-columns: 1fr;
+  }
+  
+  .detailsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .freeTag {
+    font-size: 0.9rem;
+    padding: 6px 30px;
   }
 }

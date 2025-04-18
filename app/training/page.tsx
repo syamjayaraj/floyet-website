@@ -1,20 +1,48 @@
 import { Metadata } from "next";
 import styles from "./page.module.css";
-import { FaReact, FaMobile, FaRobot } from "react-icons/fa";
+import {
+  FaReact,
+  FaMobile,
+  FaRobot,
+  FaCertificate,
+  FaUserGraduate,
+  FaBriefcase,
+} from "react-icons/fa";
 import { SiStrapi, SiNextdotjs } from "react-icons/si";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title:
-    "Web & Mobile Development Training Program | Next.js, Strapi, React Native",
+    "Free Web & Mobile Development Internship Program | Next.js, Strapi, React Native",
   description:
-    "Master modern web and mobile development with our comprehensive training program. Learn Next.js, Strapi CMS, Expo React Native, and cutting-edge AI tools.",
+    "Join our free internship program to master web and mobile development. Get hands-on experience with Next.js, Strapi CMS, React Native, and AI tools. Earn a certificate upon completion.",
   keywords:
-    "web development, mobile development, Next.js, Strapi CMS, React Native, Expo, AI tools, training program",
+    "free internship, web development, mobile development, Next.js, Strapi CMS, React Native, Expo, AI tools, training program, certification",
 };
 
 export default function TrainingPage() {
+  const benefits = [
+    {
+      icon: <FaCertificate className={styles.benefitIcon} />,
+      title: "Industry-Recognized Certificate",
+      description:
+        "Receive a certificate upon successful completion of the internship program",
+    },
+    {
+      icon: <FaUserGraduate className={styles.benefitIcon} />,
+      title: "Hands-on Experience",
+      description: "Work on real-world projects under expert guidance",
+    },
+    {
+      icon: <FaBriefcase className={styles.benefitIcon} />,
+      title: "Job Ready Skills",
+      description:
+        "Build a portfolio of projects to showcase to potential employers",
+    },
+  ];
+
   const courses = [
     {
       title: "Modern Web Development",
@@ -28,6 +56,7 @@ export default function TrainingPage() {
         "Server Actions",
         "Data Fetching",
       ],
+      image: "/assets/training/webapp.jpg",
     },
     {
       title: "Headless CMS Integration",
@@ -41,12 +70,13 @@ export default function TrainingPage() {
         "Media Management",
         "Custom Plugins",
       ],
+      image: "/assets/training/cms.jpg",
     },
     {
       title: "Mobile App Development",
       icon: <FaMobile className={styles.icon} />,
       description:
-        "Build cross-platform mobile apps using Expo and React Native.",
+        "Build cross-platform mobile apps for iOS and Android using Expo and React Native.",
       features: [
         "Expo Workflow",
         "Native Components",
@@ -54,6 +84,7 @@ export default function TrainingPage() {
         "App Publishing",
         "Performance Optimization",
       ],
+      image: "/assets/training/mobileapp.jpg",
     },
     {
       title: "AI Integration",
@@ -66,6 +97,7 @@ export default function TrainingPage() {
         "Computer Vision",
         "AI APIs",
       ],
+      image: "/assets/training/ai.jpg",
     },
   ];
 
@@ -79,10 +111,11 @@ export default function TrainingPage() {
         }}
       >
         <section className={styles.hero}>
-          <h1 className={styles.title}>Master Modern Development</h1>
+          <div className={styles.freeTag}>100% Free Internship Program</div>
+          <h1 className={styles.title}>Launch Your Tech Career</h1>
           <p className={styles.subtitle}>
-            Comprehensive training in web and mobile development using
-            cutting-edge technologies
+            Join our comprehensive internship program and gain hands-on
+            experience in modern web and mobile development
           </p>
           <div className={styles.techStack}>
             <SiNextdotjs className={styles.techIcon} />
@@ -92,9 +125,45 @@ export default function TrainingPage() {
           </div>
         </section>
 
+        <section className={styles.benefits}>
+          <h2 className={styles.sectionTitle}>Program Benefits</h2>
+          <div className={styles.benefitsGrid}>
+            {benefits.map((benefit, index) => (
+              <div key={index} className={styles.benefitCard}>
+                {benefit.icon}
+                <h3>{benefit.title}</h3>
+                <p>{benefit.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* <section className={styles.videoSection}>
+          <h2 className={styles.sectionTitle}>Program Overview</h2>
+          <div className={styles.videoWrapper}>
+            <video
+              className={styles.video}
+              controls
+              poster="/images/program-overview-poster.webp"
+            >
+              <source src="/videos/program-overview.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section> */}
+
         <section className={styles.features}>
           {courses.map((course, index) => (
             <div key={index} className={styles.courseCard}>
+              <div className={styles.courseImage}>
+                <Image
+                  src={course.image}
+                  alt={course.title}
+                  width={400}
+                  height={225}
+                  className={styles.courseImg}
+                />
+              </div>
               <div className={styles.courseHeader}>
                 {course.icon}
                 <h2>{course.title}</h2>
@@ -109,13 +178,39 @@ export default function TrainingPage() {
           ))}
         </section>
 
+        <section className={styles.internshipDetails}>
+          <h2 className={styles.sectionTitle}>Internship Structure</h2>
+          <div className={styles.detailsGrid}>
+            <div className={styles.detailCard}>
+              <h3>Duration</h3>
+              <p>3 months intensive program</p>
+            </div>
+            <div className={styles.detailCard}>
+              <h3>Format</h3>
+              <p>Hybrid (Online & Office)</p>
+            </div>
+            <div className={styles.detailCard}>
+              <h3>Projects</h3>
+              <p>4 major projects</p>
+            </div>
+            <div className={styles.detailCard}>
+              <h3>Mentorship</h3>
+              <p>1-on-1 guidance</p>
+            </div>
+          </div>
+        </section>
+
         <section className={styles.cta}>
-          <h2>Ready to Start Your Journey?</h2>
+          <h2>Start Your Journey Today</h2>
           <p>
-            Join our comprehensive training program and become a full-stack
-            developer
+            Join our free internship program and kickstart your career in tech
           </p>
-          <button className={styles.ctaButton}>Enroll Now</button>
+          <a className={styles.ctaButton} href="/#contact">
+            Apply Now - It's Free!
+          </a>
+          <p className={styles.ctaNote}>
+            Limited seats available for each batch
+          </p>
         </section>
       </main>
       <Footer />

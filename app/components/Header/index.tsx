@@ -112,6 +112,15 @@ const Header = ({ isCareersPage }: { isCareersPage?: boolean }) => {
               </li>
               <li>
                 <Link
+                  href="/training"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="side-nav-link"
+                >
+                  Training
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/careers"
                   onClick={() => setIsMenuOpen(false)}
                   className="side-nav-link"
