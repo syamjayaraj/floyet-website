@@ -56,6 +56,17 @@ const Products = () => {
       status: "Live",
       link: "https://codeariv.com",
     },
+    {
+      name: "Onebest",
+      icon: "bi-phone",
+      image: "/assets/products/onebest.jpg",
+      description:
+        "A gift shop and online store offering curated gifts, chocolates, and seasonal surprises for every special occasion",
+      features: ["Gift Shop", "Online Store", "Curated Gifts"],
+      users: "100+",
+      status: "Live",
+      link: "https://onebest.in",
+    },
   ];
 
   return (
