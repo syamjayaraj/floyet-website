@@ -97,8 +97,6 @@ const Contact = () => {
         }
       );
 
-      console.log(response);
-
       if (!response.ok) {
         throw new Error("Failed to send message");
       }
@@ -119,7 +117,6 @@ const Contact = () => {
         message: "",
       });
     } catch (error) {
-      console.error("Error sending message:", error);
       alert("Failed to send message. Please try again.");
     }
   };

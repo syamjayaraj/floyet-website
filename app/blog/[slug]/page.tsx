@@ -71,8 +71,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const post = data[0];
 
-  console.log(`${process.env.NEXT_PUBLIC_IMAGE_URL}${post?.image?.url}`, "tgg");
-
   return (
     <>
       <Header isCareersPage={true} />
