@@ -33,25 +33,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/careers`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/about`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}#about`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}/contact`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}#products`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}#services`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}#testimonials`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}#contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
@@ -61,6 +67,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.6,
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/careers`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.8,
     },
   ];
 
