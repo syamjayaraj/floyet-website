@@ -16,7 +16,7 @@ const Contact = () => {
       icon: "bi-geo-alt-fill",
       title: "Office Location",
       details: [
-        "Floyet Labs & Technologies",
+        "Floyet Labs & Technologies LLP",
         "Door No: 2211, 2/1149/I 100",
         "Hilite Business Park",
         "Kozhikode – 673014",

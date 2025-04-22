@@ -86,7 +86,7 @@ const Footer = () => {
                     <a href="https://youngmenu.com">YoungMenu</a>
                   </li>
                   <li>
-                    <a href="https://kutyme.me">Kuty.me</a>
+                    <a href="https://kuty.me">Kuty.me</a>
                   </li>
                   <li>
                     <a href="https://codeariv.com">CodeARIV</a>
@@ -103,7 +103,7 @@ const Footer = () => {
                   <div className="contact-item">
                     <i className="bi bi-geo-alt"></i>
                     <p>
-                      Floyet Labs & Technologies
+                      Floyet Labs & Technologies LLP
                       <br />
                       Door No: 2211, 2/1149/I 100
                       <br />
@@ -134,8 +134,8 @@ const Footer = () => {
             <div className="col-md-6">
               <p className="copyright-text">
                 © {currentYear}{" "}
-                <a href="https://floyet.com">Floyet Labs & Technologies</a>. All
-                rights reserved.
+                <a href="https://floyet.com">Floyet Labs & Technologies LLP</a>.
+                All rights reserved.
               </p>
             </div>
             <div className="col-md-6">
