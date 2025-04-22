@@ -4,7 +4,7 @@ const Products = () => {
   const products = [
     {
       name: "GymTie",
-      icon: "bi-phone",
+      icon: "bi-activity",
       image: "/assets/products/gymtie.png",
       description:
         "Gym management app where gym owners can manage memberships and schedules",
@@ -47,7 +47,7 @@ const Products = () => {
     },
     {
       name: "CodeARIV",
-      icon: "bi-phone",
+      icon: "bi-code-slash",
       image: "/assets/products/codeariv.jpg",
       description:
         "A technology blog mainly dealing with the latest trends in Full-stack web and mobile app development.",
@@ -58,7 +58,7 @@ const Products = () => {
     },
     {
       name: "Onebest",
-      icon: "bi-phone",
+      icon: "bi-gift",
       image: "/assets/products/onebest.jpg",
       description:
         "A gift shop and online store offering curated gifts, chocolates, and seasonal surprises for every special occasion",
