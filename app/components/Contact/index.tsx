@@ -90,6 +90,7 @@ const Contact = () => {
             data: {
               name: formData.name,
               email: formData.email,
+              subject: formData.subject,
               message: formData.message,
               contactStatus: "new",
             },
