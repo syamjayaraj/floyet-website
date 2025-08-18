@@ -25,6 +25,13 @@ const Services = () => {
         "Cross-platform mobile applications that provide seamless user experiences across all devices.",
       tags: ["Expo", "React Native"],
     },
+    {
+      icon: "bi-shop",
+      title: "Shopify E-Commerce Solutions",
+      description:
+        "Comprehensive Shopify e-commerce services, from initial store setup to full-scale online business development. We handle everything—store design, SEO, payment gateway integration, shipping, product management, and more—to launch and grow your successful online store.",
+      tags: ["Shopify", "E-Commerce", "SEO", "Payment Gateway", "Shipping"],
+    },
   ];
 
   return (

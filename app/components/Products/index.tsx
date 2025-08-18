@@ -14,6 +14,28 @@ const Products = () => {
       link: "https://gymtie.com",
     },
     {
+      name: "Onebest",
+      icon: "bi-gift",
+      image: "/assets/products/onebest.png",
+      description:
+        "A gift shop and online store offering curated gifts, chocolates, and seasonal surprises for every special occasion",
+      features: ["Gift Shop", "Online Store", "Curated Gifts"],
+      users: "100+",
+      status: "Live",
+      link: "https://onebest.in",
+    },
+    {
+      name: "CodeARIV",
+      icon: "bi-code-slash",
+      image: "/assets/products/codeariv.jpg",
+      description:
+        "A technology blog mainly dealing with the latest trends in Full-stack web and mobile app development.",
+      features: ["Technology Blog", "Latest Trends", "Web Development"],
+      users: "100000+",
+      status: "Live",
+      link: "https://codeariv.com",
+    },
+    {
       name: "Parambath App",
       icon: "bi-phone",
       image: "/assets/products/parambathapp.png",
@@ -35,38 +57,6 @@ const Products = () => {
       status: "Live",
       link: "https://youngmenu.com",
     },
-    {
-      name: "Kuty.me",
-      icon: "bi-link-45deg",
-      image: "/assets/products/kuty.png",
-      description: "Smart URL shortener with advanced analytics and tracking.",
-      features: ["Link Analytics", "Custom URLs", "Click Tracking"],
-      users: "2000+",
-      status: "Live",
-      link: "https://kuty.me",
-    },
-    {
-      name: "CodeARIV",
-      icon: "bi-code-slash",
-      image: "/assets/products/codeariv.jpg",
-      description:
-        "A technology blog mainly dealing with the latest trends in Full-stack web and mobile app development.",
-      features: ["Technology Blog", "Latest Trends", "Web Development"],
-      users: "100000+",
-      status: "Live",
-      link: "https://codeariv.com",
-    },
-    {
-      name: "Onebest",
-      icon: "bi-gift",
-      image: "/assets/products/onebest.jpg",
-      description:
-        "A gift shop and online store offering curated gifts, chocolates, and seasonal surprises for every special occasion",
-      features: ["Gift Shop", "Online Store", "Curated Gifts"],
-      users: "100+",
-      status: "Live",
-      link: "https://onebest.in",
-    },
   ];
 
   return (
@@ -86,7 +76,7 @@ const Products = () => {
           </div>
         </div>
 
-        <div className="row g-4 justify-content-center">
+        <div className="row g-4 justify-content-left">
           {products.map((product, index) => (
             <div key={index} className="col-lg-4 col-md-6 d-flex">
               <div className="product-card reveal">

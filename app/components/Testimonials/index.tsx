@@ -6,6 +6,7 @@ const Testimonials = () => {
       name: "Sarath",
       role: "Owner",
       company: "New Wings Gym",
+      companyUrl: "https://share.google/8LyKZzh83Fjp4cyln",
       image: "/assets/user/sarath.png",
       product: "GymTie",
       quote:
@@ -17,6 +18,7 @@ const Testimonials = () => {
       name: "Thejasa",
       role: "Founder",
       company: "Mbakes",
+      companyUrl: "https://youngmenu.com/store/m-bakes",
       image: "/assets/user/thejasa.jpg",
       product: "YoungMenu",
       quote:
@@ -28,6 +30,7 @@ const Testimonials = () => {
       name: "Akshay",
       role: "Community Leader",
       company: "Parambath",
+      companyUrl: "https://www.parambath.onnich.com",
       image: "/assets/user/akshay.jpg",
       product: "Parambath App",
       quote:
@@ -39,6 +42,7 @@ const Testimonials = () => {
       name: "Sarojini",
       role: "Reader",
       company: "CodeARIV",
+      companyUrl: "https://www.codeariv.com",
       image: "/assets/user/sarojini.webp",
       product: "CodeARIV",
       quote:
@@ -95,7 +99,19 @@ const Testimonials = () => {
                     <div className="author-info">
                       <h4 className="author-name">{testimonial.name}</h4>
                       <p className="author-role">
-                        {testimonial.role} at {testimonial.company}
+                        {testimonial.role} at{" "}
+                        {testimonial.companyUrl ? (
+                          <a
+                            href={testimonial.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="company-link"
+                          >
+                            {testimonial.company}
+                          </a>
+                        ) : (
+                          testimonial.company
+                        )}
                       </p>
                     </div>
                   </div>

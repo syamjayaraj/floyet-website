@@ -21,16 +21,39 @@ const Footer = () => {
                   excellence drives every project we undertake.
                 </p>
                 <div className="social-links">
-                  <a href="#" className="social-link" aria-label="LinkedIn">
+                  <a
+                    href="https://www.linkedin.com/company/floyet"
+                    className="social-link"
+                    aria-label="LinkedIn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="bi bi-linkedin"></i>
                   </a>
-                  <a href="#" className="social-link" aria-label="Twitter">
+                  <a
+                    href="https://x.com/floyet.tech"
+                    className="social-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="bi bi-twitter-x"></i>
                   </a>
-                  <a href="#" className="social-link" aria-label="Instagram">
+                  <a
+                    href="https://www.instagram.com/floyet.tech"
+                    className="social-link"
+                    aria-label="Instagram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="bi bi-instagram"></i>
                   </a>
-                  <a href="#" className="social-link" aria-label="GitHub">
+                  <a
+                    href="https://github.com/codeariv"
+                    className="social-link"
+                    aria-label="GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <i className="bi bi-github"></i>
                   </a>
                 </div>
