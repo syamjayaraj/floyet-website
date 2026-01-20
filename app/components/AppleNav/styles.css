@@ -1,0 +1,240 @@
+/* Apple Navigation - Integrated with Design System */
+
+/* Dropdown Styles */
+.apple-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: rgba(251, 251, 253, 0.95);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  min-width: 240px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  margin-top: 8px;
+  border: 1px solid var(--color-separator);
+}
+
+.apple-nav-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.apple-nav-dropdown-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.apple-nav-dropdown-content i {
+  font-size: 24px;
+  color: var(--color-blue);
+}
+
+.dropdown-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.dropdown-description {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* Mobile Menu Button */
+.apple-nav-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.apple-nav-mobile-btn span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  margin: 4px 0;
+  transition: all var(--transition-base);
+}
+
+.apple-nav-mobile-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.apple-nav-mobile-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.apple-nav-mobile-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.apple-mobile-menu {
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(251, 251, 253, 0.95);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-base);
+  overflow-y: auto;
+}
+
+.apple-mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.apple-mobile-menu-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) 22px;
+}
+
+.mobile-menu-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.mobile-menu-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  background: var(--color-background);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.mobile-menu-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.mobile-menu-item i {
+  font-size: 28px;
+  color: var(--color-blue);
+  min-width: 28px;
+}
+
+.mobile-item-name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.mobile-item-description {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 12px var(--spacing-sm);
+  font-size: 16px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-sm);
+}
+
+.mobile-menu-link:hover {
+  background: var(--color-fill);
+  color: var(--color-text-primary);
+}
+
+.apple-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 998;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .apple-nav-items {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .apple-nav-items {
+    display: none;
+  }
+
+  .apple-nav-mobile-btn {
+    display: block;
+  }
+}
+/* New dropdown styles for list of items */
+.apple-nav-dropdown-content {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px;
+}
+
+.dropdown-item {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-text-primary);
+  transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background: var(--color-background-elevated);
+}
+
+.dropdown-item i {
+  font-size: 20px;
+  color: var(--color-blue);
+}
+
+.dropdown-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.dropdown-description {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}

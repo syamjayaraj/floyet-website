@@ -1,22 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
-import { Syne, Inter } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import BootstrapClient from "@/app/components/BootstrapClient";
 import CookieConsent from "./components/CookieConsent";
 import "@/app/lib/fontawesome";
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-inter",
-});
 
 export const metadata = {
   title:
@@ -57,13 +44,16 @@ export const metadata = {
   themeColor: "#ffffff",
 };
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${syne.variable} ${inter.variable}`}>
+    <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link
@@ -73,10 +63,12 @@ export default function RootLayout({
         <link rel="icon" href="/assets/logo/floyet.png" />
       </head>
       <body>
+        <Header />
         {children}
         <BootstrapClient />
         <CookieConsent />
         <GoogleAnalytics gaId="G-SNX508HYRB" />
+        <Footer />
       </body>
     </html>
   );

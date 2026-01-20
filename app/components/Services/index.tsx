@@ -11,13 +11,7 @@ const Services = () => {
         "Tailored software solutions built with cutting-edge technologies to meet your specific business needs.",
       tags: ["Web Apps", "Static Websites", "Blogs", "E-Commerce"],
     },
-    {
-      icon: "bi-cloud-check",
-      title: "Cloud Solutions",
-      description:
-        "Scalable cloud infrastructure and deployment strategies for optimal performance and reliability.",
-      tags: ["Vultr", "Digital Ocean", "AWS"],
-    },
+
     {
       icon: "bi-phone",
       title: "Mobile App Development",
@@ -27,124 +21,54 @@ const Services = () => {
     },
     {
       icon: "bi-shop",
-      title: "Shopify E-Commerce Solutions",
+      title: "Shopify E-Commerce",
       description:
-        "Comprehensive Shopify e-commerce services, from initial store setup to full-scale online business development. We handle everything—store design, SEO, payment gateway integration, shipping, product management, and more—to launch and grow your successful online store.",
-      tags: ["Shopify", "E-Commerce", "SEO", "Payment Gateway", "Shipping"],
+        "Comprehensive Shopify services from store setup to full-scale online business development.",
+      tags: ["Shopify", "E-Commerce", "SEO"],
     },
   ];
 
   return (
-    <section className="services-section py-6" id="services">
+    <section className="apple-section" id="services">
       <div className="container">
-        <div className="row justify-content-center mb-5">
-          <div className="col-lg-8 text-center">
-            <div className="section-tag mb-3">OUR SERVICES</div>
-            <h2 className="section-title mb-4">
-              Transforming Ideas into
-              <span className="gradient-text d-block">Digital Reality</span>
-            </h2>
-            <p className="section-description">
-              We offer comprehensive digital solutions that help businesses
-              innovate and stay ahead in the rapidly evolving technology
-              landscape.
-            </p>
-          </div>
+        <div className="section-header">
+          <div className="section-eyebrow">Our Services</div>
+          <h2 className="section-headline">
+            Transforming ideas into digital reality
+          </h2>
+          <p className="section-subhead">
+            Comprehensive digital solutions that help businesses innovate and stay ahead in the rapidly evolving technology landscape.
+          </p>
         </div>
 
-        <div className="row g-4">
+        <div className="services-grid">
           {services.map((service, index) => (
-            <div key={index} className="col-lg-6">
-              <div className="service-card">
-                <div className="service-icon">
-                  <i className={`bi ${service.icon}`}></i>
-                </div>
-                <div className="service-content">
-                  <h3 className="service-title">{service.title}</h3>
-                  <p className="service-description">{service.description}</p>
-                  <div className="service-tags">
-                    {service.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="tech-tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            <div key={index} className="service-card-apple">
+              <div className="service-icon-apple">
+                <i className={`bi ${service.icon}`}></i>
+              </div>
+              <h3 className="service-title-apple">{service.title}</h3>
+              <p className="service-description-apple">{service.description}</p>
+              <div className="service-tags-apple">
+                {service.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="tech-badge">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
-        {/* <Clients /> */}
-
-        <div className="row mt-5">
-          <div className="col-12 text-center">
-            <div className="cta-wrapper">
-              <h4 className="mb-4">Ready to Transform Your Business?</h4>
-              <a href="#contact" className="hero-btn hero-btn-primary">
-                <span>Start Your Project</span>
-                <i className="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
+        {/* CTA Section */}
+        <div className="cta-section-apple">
+          <h3 className="cta-title-apple">Ready to transform your business?</h3>
+          <a href="#contact" className="btn-apple btn-apple-primary">
+            Start your project
+          </a>
         </div>
 
-        <div className="training-program-section">
-          <div className="free-badge">FREE</div>
-          <div className="row align-items-center">
-            <div className="col-lg-7">
-              <h2 className="training-title">
-                Master Modern Development
-                <span className="gradient-text d-block">
-                  Through Our Internship Program
-                </span>
-              </h2>
-              <p className="training-description">
-                Join our comprehensive internship program to learn web and
-                mobile development using Next.js, Strapi CMS, React Native, and
-                cutting-edge AI tools.
-              </p>
-              <div className="training-features">
-                <div className="feature">
-                  <i className="bi bi-mortarboard"></i>
-                  <span>Industry-Recognized Certificate</span>
-                </div>
-                <div className="feature">
-                  <i className="bi bi-laptop"></i>
-                  <span>Hands-on Project Experience</span>
-                </div>
-                <div className="feature">
-                  <i className="bi bi-people"></i>
-                  <span>Expert Mentorship</span>
-                </div>
-              </div>
-              <Link href="/training" className="training-cta">
-                <span>Join Free Training Program</span>
-                <i className="bi bi-arrow-right"></i>
-              </Link>
-            </div>
-            <div className="col-lg-5">
-              <div className="training-tech-stack">
-                <div className="tech-item">
-                  <i className="bi bi-globe2"></i>
-                  <span>Next.js</span>
-                </div>
-                <div className="tech-item">
-                  <i className="bi bi-database"></i>
-                  <span>Strapi CMS</span>
-                </div>
-                <div className="tech-item">
-                  <i className="bi bi-phone"></i>
-                  <span>React Native</span>
-                </div>
-                <div className="tech-item">
-                  <i className="bi bi-robot"></i>
-                  <span>AI Tools</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

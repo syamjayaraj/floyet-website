@@ -1,68 +1,30 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-
 const Hero = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 0.7;
-    }
-  }, []);
-
   return (
-    <section
-      className="hero-section position-relative d-flex align-items-center"
-      id="home"
-    >
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="position-absolute w-100 h-100 object-fit-cover"
-        style={{ zIndex: -1 }}
-      >
-        <source src="/assets/hero-bg.mp4" type="video/mp4" />
-      </video>
-      <div
-        className="overlay position-absolute w-100 h-100"
-        style={{ backgroundColor: "rgba(0,0,0,0.6)", zIndex: -1 }}
-      ></div>
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-lg-10 text-center">
-            <div className="hero-content animate-fade-in">
-              <h1 className="hero-title">
-                Building Tomorrow&apos;s
-                <span className="d-block hero-title-span">
-                  Digital Solutions
-                </span>
-              </h1>
-              <p className="hero-subtitle">
-                We create innovative software solutions that transform
-                businesses
-                <span className="d-block mt-2">
-                  and enhance user experiences.
-                </span>
-              </p>
-              <div className="hero-buttons">
-                <a href="#products" className="hero-btn hero-btn-primary">
-                  <span>Explore Our Products</span>
-                  <i className="bi bi-arrow-right"></i>
-                </a>
-                <a href="#contact" className="hero-btn hero-btn-outline">
-                  <span>Get in Touch</span>
-                  <i className="bi bi-envelope"></i>
-                </a>
-              </div>
+    <>
+      <section className="apple-hero-section" id="home">
+        <div className="container">
+          <div className="apple-hero-content">
+            <div className="apple-hero-eyebrow">Innovation First</div>
+            <h1 className="apple-hero-headline-large">
+              Building the future. One pixel at a time.
+            </h1>
+            <p className="apple-hero-subhead-large">
+              We are a forward-thinking software company dedicated to crafting perfect products that solve real-world problems.
+            </p>
+            <div className="apple-hero-cta">
+              <a href="#products" className="btn-apple btn-apple-primary">
+                Our Products
+              </a>
+              <a href="#contact" className="btn-apple btn-apple-link">
+                Get in touch <i className="bi bi-arrow-right"></i>
+              </a>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
