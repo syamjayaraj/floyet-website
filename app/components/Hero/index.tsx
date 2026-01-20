@@ -4,6 +4,15 @@ const Hero = () => {
   return (
     <>
       <section className="apple-hero-section" id="home">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="hero-bg-video"
+        >
+          <source src="/assets/hero-bg2.mp4" type="video/mp4" />
+        </video>
         <div className="container">
           <div className="apple-hero-content">
             <div className="apple-hero-eyebrow">Innovation First</div>
