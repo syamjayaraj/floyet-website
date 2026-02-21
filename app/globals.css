@@ -1580,3 +1580,48 @@ a:hover {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
   transform: translate(-50%, -50%);
 }
+
+/* ============================================
+   POLICY PAGES
+   ============================================ */
+
+.policy-page {
+  padding-top: 120px;
+  /* To clear the fixed navigation bar */
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+.policy-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
+}
+
+.policy-content {
+  color: var(--color-text-secondary);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.policy-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.policy-section h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.policy-section ul {
+  padding-left: 24px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.policy-section li {
+  margin-bottom: var(--spacing-xs);
+}
