@@ -7,16 +7,16 @@ import "@/app/lib/fontawesome";
 
 export const metadata = {
   title:
-    "Floyet - Building Future-Ready Digital Solutions | Web & Mobile App Development",
+    "Floyet - Modern SaaS Solutions | Transforming Business Operations",
   description:
-    "Floyet specializes in custom web development, mobile apps, and digital solutions. We craft innovative applications using React, Next.js, and cutting-edge technology to solve real-world business challenges.",
+    "Floyet builds powerful, modern SaaS products like GymTie and YoungMenu designed to solve real-world business challenges and streamline operations.",
   keywords:
-    "web development, mobile apps, digital solutions, React, Next.js, custom software, business solutions, technology consulting",
+    "SaaS, software as a service, B2B software, GymTie, YoungMenu, business solutions, gym management software, digital menu system",
   openGraph: {
     title:
-      "Floyet - Building Future-Ready Digital Solutions | Web & Mobile App Development",
+      "Floyet - Modern SaaS Solutions",
     description:
-      "Floyet specializes in custom web development, mobile apps, and digital solutions. We craft innovative applications using React, Next.js, and cutting-edge technology to solve real-world business challenges.",
+      "Floyet builds powerful, modern SaaS products designed to solve real-world business challenges and streamline operations.",
     type: "website",
     url: "https://floyet.com",
     images: [
@@ -30,9 +30,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Floyet - Building Future-Ready Digital Solutions",
+    title: "Floyet - Modern SaaS Solutions",
     description:
-      "Custom web & mobile app development using cutting-edge technology",
+      "Powerful SaaS products designed to solve real-world business challenges.",
     images: ["/assets/logo/floyet.png"],
   },
   icons: {

@@ -45,18 +45,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     {
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}#services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
-      url: `${process.env.NEXT_PUBLIC_SITE_URL}#testimonials`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    },
-    {
       url: `${process.env.NEXT_PUBLIC_SITE_URL}#contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,

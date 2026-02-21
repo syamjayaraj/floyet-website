@@ -9,22 +9,28 @@
   --font-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  /* Apple Color System */
-  --color-text-primary: #1d1d1f;
-  --color-text-secondary: #6e6e73;
-  --color-text-tertiary: #86868b;
-  --color-background: #ffffff;
-  --color-background-elevated: #f5f5f7;
-  --color-background-secondary: #fbfbfd;
-  --color-fill: #f5f5f7;
-  --color-fill-secondary: #e8e8ed;
-  --color-fill-tertiary: #d2d2d7;
-  --color-separator: rgba(0, 0, 0, 0.1);
+  /* Space Dark Theme Colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1a6;
+  --color-text-tertiary: #6e6e73;
+  --color-background: #0B0B0F;
+  /* Deep space black */
+  --color-background-elevated: #16161A;
+  /* Slightly lighter for bento boxes */
+  --color-background-secondary: #121217;
+  --color-fill: #1E1E24;
+  --color-fill-secondary: #25252B;
+  --color-fill-tertiary: #2D2D34;
+  --color-separator: rgba(255, 255, 255, 0.08);
+  /* Subtle white border */
 
-  /* Apple Blue */
-  --color-blue: #0071e3;
-  --color-blue-hover: #0077ed;
-  --color-blue-active: #006edb;
+  /* Accent Color (subtle glow / hover) */
+  --color-blue: #ffffff;
+  /* We'll use white buttons primarily */
+  --color-blue-hover: #e0e0e0;
+  --color-blue-active: #cccccc;
+  --color-accent-purple: #814AF6;
+  /* For the magical glow effects */
 
   /* Spacing System */
   --spacing-xs: 8px;
@@ -186,7 +192,7 @@ a:hover {
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS (Space Theme)
    ============================================ */
 
 .btn-apple {
@@ -194,55 +200,53 @@ a:hover {
   align-items: center;
   justify-content: center;
   font-family: var(--font-text);
-  font-size: 17px;
-  line-height: 1.17648;
-  font-weight: 400;
-  letter-spacing: -0.022em;
-  min-width: 28px;
-  padding: 12px 22px;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 24px;
   border-radius: var(--radius-pill);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all var(--transition-base);
   text-decoration: none;
   white-space: nowrap;
+  backdrop-filter: blur(10px);
 }
 
 .btn-apple-primary {
-  background-color: var(--color-blue);
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #0B0B0F;
+  border: none;
 }
 
 .btn-apple-primary:hover {
-  background-color: var(--color-blue-hover);
-  color: #ffffff;
-  transform: scale(1.02);
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .btn-apple-secondary {
-  background-color: transparent;
-  color: var(--color-blue);
-  border: 1px solid var(--color-blue);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
 }
 
 .btn-apple-secondary:hover {
-  background-color: var(--color-blue);
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
 .btn-apple-link {
   background: none;
   border: none;
-  color: var(--color-blue);
+  color: #a1a1a6;
   padding: 0;
-  font-size: 17px;
+  font-size: 15px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .btn-apple-link:hover {
-  color: var(--color-blue-hover);
+  color: #ffffff;
 }
 
 .btn-apple-link i {
@@ -814,64 +818,6 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Services Grid */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--spacing-lg);
-  margin-top: var(--spacing-3xl);
-}
-
-.service-card-apple {
-  background: var(--color-background);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  transition: all var(--transition-slow);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-separator);
-}
-
-.service-card-apple:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-md);
-}
-
-.service-icon-apple {
-  width: 56px;
-  height: 56px;
-  background: var(--color-fill);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--spacing-md);
-}
-
-.service-icon-apple i {
-  font-size: 28px;
-  color: var(--color-blue);
-}
-
-.service-title-apple {
-  font-size: 21px;
-  font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-sm);
-}
-
-.service-description-apple {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-md);
-}
-
-.service-tags-apple {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
 /* CTA Section */
 .cta-section-apple {
   text-align: center;
@@ -997,10 +943,6 @@ a:hover {
   .achievements-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
-  }
-
-  .services-grid {
-    grid-template-columns: 1fr;
   }
 
   .training-content-wrapper {
@@ -1539,4 +1481,101 @@ a:hover {
   .contact-form-section {
     padding: var(--spacing-lg);
   }
+}
+
+/* ============================================
+   BENTO BOX UTILITIES (Space Theme)
+   ============================================ */
+.bento-grid {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+}
+
+.bento-item {
+  background: var(--color-background-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-separator);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-base);
+  overflow: hidden;
+  position: relative;
+}
+
+.bento-item:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.bento-span-4 {
+  grid-column: span 4;
+}
+
+.bento-span-6 {
+  grid-column: span 6;
+}
+
+.bento-span-8 {
+  grid-column: span 8;
+}
+
+.bento-span-12 {
+  grid-column: span 12;
+}
+
+@media (max-width: 992px) {
+
+  .bento-span-4,
+  .bento-span-6,
+  .bento-span-8 {
+    grid-column: span 12;
+  }
+}
+
+/* ============================================
+   ORBIT GRAPHIC UTILITIES (Hero)
+   ============================================ */
+.orbit-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.orbit-circle {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-circle-1 {
+  width: 40%;
+  height: 40%;
+}
+
+.orbit-circle-2 {
+  width: 70%;
+  height: 70%;
+}
+
+.orbit-circle-3 {
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-planet {
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
 }
