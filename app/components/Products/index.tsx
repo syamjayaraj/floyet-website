@@ -27,12 +27,28 @@ const Products = () => {
               <div style={{ width: "80px", height: "80px", borderRadius: "20px", background: "var(--color-fill)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
                 <i className="bi bi-activity" style={{ fontSize: "40px", color: "var(--color-text-primary)" }}></i>
               </div>
-              <h4 style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-text-primary)", marginBottom: "16px" }}>GymTie</h4>
+              <h4 style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-text-primary)", marginBottom: "16px" }}>GymTie Manager</h4>
               <p style={{ fontSize: "18px", color: "var(--color-text-secondary)", maxWidth: "600px", margin: "0 auto" }}>A complete platform that streamlines billing, simplifies operations, and automates member tracking into one elegant tool.</p>
            </div>
 
            <a href="https://gymtie.com" className="btn-apple btn-apple-primary" target="_blank" rel="noopener noreferrer" style={{ padding: "12px 32px", fontSize: "16px" }}>
               See how we fixed it <i className="bi bi-arrow-up-right ms-2"></i>
+           </a>
+        </div>
+
+        {/* Onebest Section (Minimal) */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "32px 48px", borderRadius: "16px", background: "var(--color-background-elevated)", border: "1px solid var(--color-separator)", flexWrap: "wrap", gap: "24px" }}>
+           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
+             <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(255, 0, 77, 0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+               <i className="bi bi-gift" style={{ fontSize: "24px", color: "#ff004d" }}></i>
+             </div>
+             <div>
+               <h3 style={{ fontSize: "24px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "4px" }}>Onebest Gifts</h3>
+               <p style={{ fontSize: "16px", color: "var(--color-text-secondary)", margin: 0, maxWidth: "500px" }}>A curated gift shop offering special surprises for every occasion.</p>
+             </div>
+           </div>
+           <a href="https://onebest.in" className="btn-apple btn-apple-secondary" target="_blank" rel="noopener noreferrer" style={{ padding: "10px 24px", fontSize: "14px", whiteSpace: "nowrap" }}>
+              Visit Onebest <i className="bi bi-arrow-up-right ms-2"></i>
            </a>
         </div>
 
