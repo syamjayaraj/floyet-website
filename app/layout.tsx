@@ -21,7 +21,7 @@ export const metadata = {
     url: "https://floyet.com",
     images: [
       {
-        url: "/assets/logo/floyet.png",
+        url: "/assets/logo.png",
         width: 1200,
         height: 630,
         alt: "Floyet Logo",
@@ -33,11 +33,11 @@ export const metadata = {
     title: "Floyet - Modern SaaS Solutions",
     description:
       "Powerful SaaS products designed to solve real-world business challenges.",
-    images: ["/assets/logo/floyet.png"],
+    images: ["/assets/logo.png"],
   },
   icons: {
-    icon: "/assets/logo/floyet.png",
-    apple: "/assets/logo/floyet.png",
+    icon: "/assets/logo.png",
+    apple: "/assets/logo.png",
   },
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1",
@@ -60,7 +60,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
         />
-        <link rel="icon" href="/assets/logo/floyet.png" />
+          <link rel="icon" href="/assets/logo.png" />
       </head>
       <body>
         <Header />
