@@ -32,10 +32,10 @@ const Contact = () => {
         <div className="section-header" style={{ marginBottom: "64px", textAlign: "center" }}>
           <div className="section-eyebrow" style={{ color: "var(--color-text-secondary)", letterSpacing: "2px", textTransform: "uppercase", fontSize: "14px", fontWeight: 700 }}>Get in Touch</div>
           <h2 className="section-headline" style={{ fontWeight: 800, fontSize: "clamp(32px, 5vw, 48px)", letterSpacing: "-0.02em", color: "var(--color-text-primary)" }}>
-            Let's build something amazing.
+            Ready to transform your business?
           </h2>
           <p className="section-subhead" style={{ fontSize: "20px", color: "var(--color-text-secondary)", maxWidth: "600px", margin: "24px auto 0" }}>
-            Reach out to discuss how we can help bring your ideas to life.
+            Reach out to discover how our solutions can help you scale and streamline your operations.
           </p>
         </div>
 
