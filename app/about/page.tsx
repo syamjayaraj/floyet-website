@@ -1,17 +1,15 @@
-"use client";
-
+import { Metadata } from "next";
 import About from "../components/About";
-import AppleNav from "../components/AppleNav";
-import Footer from "../components/Footer";
+
+export const metadata: Metadata = {
+  title: "About Floyet - Crafting Future-Ready Digital Solutions",
+  description: "Learn about Floyet's mission to develop high-quality applications like GymTie and YoungMenu that address real-world challenges with innovative technology.",
+};
 
 export default function AboutPage() {
   return (
-    <>
-      <AppleNav />
-      <main className="pt-24 min-h-screen bg-white">
-        <About />
-      </main>
-      <Footer />
-    </>
+    <main className="min-h-screen reveal fade-in" style={{ paddingTop: "72px" }}>
+      <About />
+    </main>
   );
 }

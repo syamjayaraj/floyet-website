@@ -398,29 +398,9 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-color: var(--color-background);
   overflow: hidden;
   padding: 100px 0 80px;
-}
-
-.apple-hero-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.apple-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.5) 100%);
-  z-index: 1;
 }
 
 .apple-hero-content {
@@ -596,6 +576,55 @@ a:hover {
   to {
     opacity: 1;
   }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  25% {
+    transform: translate(10px, -15px);
+  }
+
+  50% {
+    transform: translate(-5px, 10px);
+  }
+
+  75% {
+    transform: translate(-15px, -5px);
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+/* Glassmorphism & Background Utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.bg-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
 /* ============================================
@@ -1624,4 +1653,155 @@ a:hover {
 
 .policy-section li {
   margin-bottom: var(--spacing-xs);
+}
+
+/* ============================================
+   PROFESSIONAL ANIMATION SYSTEM
+   ============================================ */
+
+/* Entrance Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+.scale-up {
+  animation: scaleUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+/* Staggered Entrance */
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+/* Micro-interactions */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(129, 74, 246, 0.3);
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Page Loader Fade */
+.page-transition {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Glassmorphism Pulse (Subtle) */
+@keyframes glassPulse {
+  0% {
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+
+  50% {
+    backdrop-filter: blur(25px) saturate(200%);
+  }
+
+  100% {
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+.glass-pulse {
+  animation: glassPulse 4s infinite ease-in-out;
+}
+
+.founder-card:hover .founder-image {
+  transform: scale(1.05);
+}
+
+.social-link-linkedin:hover {
+  color: #0077b5 !important;
+}
+
+.social-link-website:hover {
+  color: var(--color-text-primary) !important;
 }

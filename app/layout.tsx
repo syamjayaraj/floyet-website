@@ -2,21 +2,22 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import BootstrapClient from "@/app/components/BootstrapClient";
+import AnimationUtility from "./components/AnimationUtility";
 import CookieConsent from "./components/CookieConsent";
 import "@/app/lib/fontawesome";
 
 export const metadata = {
   title:
-    "Floyet - Modern SaaS Solutions | Transforming Business Operations",
+    "Floyet - We build focused, high-quality products that make everyday life and work easier.",
   description:
-    "Floyet builds powerful, modern SaaS products like GymTie and YoungMenu designed to solve real-world business challenges and streamline operations.",
+    "Floyet builds powerful, modern digital products like GymTie, YoungMenu, and Onebest designed to solve real-world business challenges and streamline everyday life.",
   keywords:
-    "SaaS, software as a service, B2B software, GymTie, YoungMenu, business solutions, gym management software, digital menu system",
+    "Floyet, digital products, software solutions, GymTie, YoungMenu, Onebest, business automation, innovative technology",
   openGraph: {
     title:
-      "Floyet - Modern SaaS Solutions",
+      "Floyet - High-Quality Digital Products",
     description:
-      "Floyet builds powerful, modern SaaS products designed to solve real-world business challenges and streamline operations.",
+      "Floyet builds focused, high-quality digital products designed to solve real-world challenges and streamline operations.",
     type: "website",
     url: "https://floyet.com",
     images: [
@@ -30,9 +31,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Floyet - Modern SaaS Solutions",
+    title: "Floyet - High-Quality Digital Products",
     description:
-      "Powerful SaaS products designed to solve real-world business challenges.",
+      "High-quality products designed to solve real-world business challenges.",
     images: ["/assets/logo.png"],
   },
   icons: {
@@ -62,8 +63,9 @@ export default function RootLayout({
         />
           <link rel="icon" href="/assets/logo.png" />
       </head>
-      <body>
+      <body className="page-transition">
         <Header />
+        <AnimationUtility />
         {children}
         <BootstrapClient />
         <CookieConsent />
