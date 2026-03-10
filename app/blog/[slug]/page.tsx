@@ -1,7 +1,5 @@
-import Header from "@/app/components/Header";
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
-import Footer from "@/app/components/Footer";
 import ReactMarkdown from "react-markdown";
 import { Metadata } from "next";
 
@@ -73,7 +71,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <Header isCareersPage={true} />
       <main
         className={styles.main}
         style={{
@@ -112,7 +109,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </div>
         </article>
       </main>
-      <Footer />
     </>
   );
 }
