@@ -45,7 +45,7 @@ export const metadata = {
   themeColor: "#ffffff",
 };
 
-import Header from "./components/Header";
+import AppleNav from "./components/AppleNav";
 import Footer from "./components/Footer";
 
 export default function RootLayout({
@@ -64,7 +64,7 @@ export default function RootLayout({
           <link rel="icon" href="/assets/logo.png" />
       </head>
       <body className="page-transition">
-        <Header />
+        <AppleNav />
         <AnimationUtility />
         {children}
         <BootstrapClient />

@@ -1,70 +1,71 @@
-"use client";
+import "./styles.css";
 
 const Products = () => {
   return (
-    <section className="apple-products section" id="products" style={{ background: "var(--color-background)", padding: "120px 0" }}>
+    <section className="apple-products section" id="products">
       <div className="container">
-        <div className="section-header" style={{ marginBottom: "80px" }}>
-          <div className="section-eyebrow" style={{ color: "var(--color-text-secondary)", letterSpacing: "2px", textTransform: "uppercase", fontSize: "14px", fontWeight: 700 }}>Our Impact</div>
-          <h2 className="section-headline" style={{ fontWeight: 800, fontSize: "clamp(40px, 6vw, 64px)", letterSpacing: "-0.02em", color: "var(--color-text-primary)" }}>
+        <div className="products-header">
+          <div className="products-eyebrow">Our Impact</div>
+          <h2 className="products-headline">
             Problems we've fixed.
           </h2>
         </div>
 
         {/* GymTie Problem/Solution Block */}
-        <div className="reveal fade-in-up" style={{ marginBottom: "64px", padding: "64px 48px", borderRadius: "24px", background: "linear-gradient(145deg, var(--color-background-elevated), transparent)", border: "1px solid var(--color-separator)", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-           
-           <div style={{ marginBottom: "40px" }}>
-              <span style={{ display: "inline-block", padding: "6px 16px", borderRadius: "100px", background: "rgba(255, 69, 58, 0.1)", color: "#ff453a", fontSize: "14px", fontWeight: 600, marginBottom: "24px", border: "1px solid rgba(255, 69, 58, 0.2)" }}>The Problem</span>
-              <h3 style={{ fontSize: "32px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "16px" }}>Gym management is chaotic and disconnected.</h3>
-              <p style={{ fontSize: "20px", color: "var(--color-text-secondary)", maxWidth: "600px", margin: "0 auto" }}>Owners struggle with trailing payments, scattered member data, and manual operations that drain their time.</p>
+        <div className="reveal fade-in-up impact-card">
+           <div className="impact-info">
+              <span className="impact-badge badge-problem">The Problem</span>
+              <h3 className="impact-title">Gym management is chaotic and disconnected.</h3>
+              <p className="impact-text">Owners struggle with trailing payments, scattered member data, and manual operations that drain their time.</p>
            </div>
            
-           <div style={{ width: "1px", height: "64px", background: "var(--color-separator)", margin: "0 auto 40px" }}></div>
+           <div className="impact-divider"></div>
 
-           <div style={{ marginBottom: "40px" }}>
-              <span style={{ display: "inline-block", padding: "6px 16px", borderRadius: "100px", background: "rgba(52, 199, 89, 0.1)", color: "#34c759", fontSize: "14px", fontWeight: 600, marginBottom: "24px", border: "1px solid rgba(52, 199, 89, 0.2)" }}>Our Solution</span>
-              <div style={{ width: "80px", height: "80px", borderRadius: "20px", background: "var(--color-fill)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px" }}>
-                <i className="bi bi-activity" style={{ fontSize: "40px", color: "var(--color-text-primary)" }}></i>
+           <div className="impact-info">
+              <span className="impact-badge badge-solution">Our Solution</span>
+              <div className="solution-icon-wrapper">
+                <i className="bi bi-activity solution-icon"></i>
               </div>
-              <h4 style={{ fontSize: "28px", fontWeight: 800, color: "var(--color-text-primary)", marginBottom: "16px" }}>GymTie Manager</h4>
-              <p style={{ fontSize: "18px", color: "var(--color-text-secondary)", maxWidth: "600px", margin: "0 auto" }}>A complete platform that streamlines billing, simplifies operations, and automates member tracking into one elegant tool.</p>
+              <h4 className="solution-title">GymTie Manager</h4>
+              <p className="impact-text">A complete platform that streamlines billing, simplifies operations, and automates member tracking into one elegant tool.</p>
            </div>
 
-           <a href="https://gymtie.com" className="btn-apple btn-apple-primary hover-lift" target="_blank" rel="noopener noreferrer" style={{ padding: "12px 32px", fontSize: "16px" }}>
+           <a href="https://gymtie.com" className="btn-apple btn-apple-primary hover-lift" target="_blank" rel="noopener noreferrer">
               See how we fixed it <i className="bi bi-arrow-up-right ms-2"></i>
            </a>
         </div>
 
         {/* Onebest Section (Minimal) */}
-        <div className="reveal fade-in-up stagger-1" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "32px 48px", borderRadius: "16px", background: "var(--color-background-elevated)", border: "1px solid var(--color-separator)", flexWrap: "wrap", gap: "24px", marginBottom: "24px" }}>
-           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-             <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(255, 0, 77, 0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-               <i className="bi bi-gift" style={{ fontSize: "24px", color: "#ff004d" }}></i>
+        <div className="reveal fade-in-up stagger-1 minimal-card">
+           <div className="minimal-card-content">
+             <div className="minimal-icon-wrapper icon-onebest">
+               <i className="bi bi-gift" style={{ fontSize: "24px" }}></i>
              </div>
-             <div>
-               <h3 style={{ fontSize: "24px", fontWeight: 700, color: "var(--color-text-primary)", marginBottom: "4px" }}>Onebest Gifts</h3>
-               <p style={{ fontSize: "16px", color: "var(--color-text-secondary)", margin: 0, maxWidth: "500px" }}>A curated gift shop offering special surprises for every occasion.</p>
+             <div className="minimal-info">
+               <h3>Onebest Gifts</h3>
+               <p>A curated gift shop offering special surprises for every occasion.</p>
              </div>
            </div>
-           <a href="https://onebest.in" className="btn-apple btn-apple-secondary hover-lift" target="_blank" rel="noopener noreferrer" style={{ padding: "10px 24px", fontSize: "14px", whiteSpace: "nowrap" }}>
+           <a href="https://onebest.in" className="btn-apple btn-apple-secondary hover-lift" target="_blank" rel="noopener noreferrer">
               Visit Onebest <i className="bi bi-arrow-up-right ms-2"></i>
            </a>
         </div>
 
         {/* YoungMenu Section (Minimal) */}
-        <div className="reveal fade-in-up stagger-2" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "32px 48px", borderRadius: "16px", background: "var(--color-background-elevated)", border: "1px solid var(--color-separator)", flexWrap: "wrap", gap: "24px" }}>
-           <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-             <div style={{ width: "48px", height: "48px", borderRadius: "12px", background: "rgba(255, 149, 0, 0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-               <i className="bi bi-restaurant" style={{ fontSize: "24px", color: "#ff9500" }}></i>
+        <div className="reveal fade-in-up stagger-2 minimal-card" style={{ marginBottom: 0 }}>
+           <div className="minimal-card-content">
+             <div className="minimal-icon-wrapper icon-youngmenu">
+               <i className="bi bi-restaurant" style={{ fontSize: "24px" }}></i>
              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "4px" }}>
-                <h3 style={{ fontSize: "24px", fontWeight: 700, color: "var(--color-text-primary)", margin: 0 }}>YoungMenu</h3>
-                <span style={{ padding: "4px 10px", borderRadius: "6px", background: "rgba(255, 149, 0, 0.1)", color: "#ff9500", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em", border: "1px solid rgba(255, 149, 0, 0.2)" }}>Coming Soon</span>
-              </div>
-              <p style={{ fontSize: "16px", color: "var(--color-text-secondary)", margin: 0, maxWidth: "500px" }}>Digital menu solution for modern restaurants and cafes.</p>
+             <div className="minimal-info">
+               <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "8px" }}>
+                 <h3 style={{ margin: 0 }}>YoungMenu</h3>
+                 <span className="coming-soon-badge">Coming Soon</span>
+               </div>
+               <p>Digital menu solution for modern restaurants and cafes.</p>
+             </div>
            </div>
-           <a href="https://youngmenu.com" className="btn-apple btn-apple-secondary hover-lift" target="_blank" rel="noopener noreferrer" style={{ padding: "10px 24px", fontSize: "14px", whiteSpace: "nowrap" }}>
+           <a href="https://youngmenu.com" className="btn-apple btn-apple-secondary hover-lift" target="_blank" rel="noopener noreferrer">
               Explore YoungMenu <i className="bi bi-arrow-up-right ms-2"></i>
            </a>
         </div>

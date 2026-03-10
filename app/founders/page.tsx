@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Image from "next/image";
+import "./styles.css";
 
 export const metadata: Metadata = {
   title: "Our Founders - Floyet",
@@ -26,9 +26,9 @@ const FoundersPage = () => {
   ];
 
   return (
-    <main className="min-h-screen" style={{ paddingTop: "120px", paddingBottom: "100px" }}>
+    <main className="founders-main">
       <div className="container">
-        <div className="section-header text-center mb-5">
+        <div className="founders-header">
           <div className="section-eyebrow">Leadership</div>
           <h1 className="section-headline">Our Founders</h1>
           <p className="section-subhead mx-auto">
@@ -39,54 +39,31 @@ const FoundersPage = () => {
         <div className="row g-5 mt-4 justify-content-center">
           {founders.map((founder, index) => (
             <div key={index} className="col-lg-5 col-md-6 reveal fade-in-up" style={{ transitionDelay: `${index * 0.2}s` }}>
-              <div className="founder-card p-4 rounded-3xl h-100" style={{ 
-                background: "var(--color-background-elevated)", 
-                border: "1px solid var(--color-separator)",
-                overflow: "hidden"
-              }}>
-                <div className="image-container mb-4 rounded-2xl overflow-hidden" style={{ aspectRatio: "1/1", position: "relative" }}>
+              <div className="founder-card">
+                <div className="founder-image-container">
                   <img 
                     src={founder.image} 
                     alt={founder.name}
                     className="founder-image"
-                    style={{ 
-                      width: "100%", 
-                      height: "100%", 
-                      objectFit: "cover",
-                      transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)"
-                    }}
                   />
                 </div>
-                <h3 style={{ fontSize: "28px", fontWeight: 700, marginBottom: "8px", color: "var(--color-text-primary)" }}>
+                <h3 className="founder-name">
                   {founder.name}
                 </h3>
-                <div style={{ 
-                  color: "var(--color-text-tertiary)", 
-                  fontSize: "14px", 
-                  fontWeight: 600, 
-                  textTransform: "uppercase", 
-                  letterSpacing: "0.1em",
-                  marginBottom: "20px"
-                }}>
+                <div className="founder-role">
                   {founder.role}
                 </div>
-                <p style={{ 
-                  color: "var(--color-text-secondary)", 
-                  fontSize: "17px", 
-                  lineHeight: "1.7",
-                  marginBottom: "24px"
-                }}>
+                <p className="founder-bio">
                   {founder.bio}
                 </p>
 
-                <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
+                <div className="founder-socials">
                   {founder.linkedin && (
                     <a 
                       href={founder.linkedin} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover-lift social-link-linkedin"
-                      style={{ color: "var(--color-text-tertiary)", fontSize: "20px", transition: "color 0.2s ease" }}
+                      className="hover-lift founder-social-link"
                     >
                       <i className="bi bi-linkedin"></i>
                     </a>
@@ -96,8 +73,7 @@ const FoundersPage = () => {
                       href={founder.website} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="hover-lift social-link-website"
-                      style={{ color: "var(--color-text-tertiary)", fontSize: "20px", transition: "color 0.2s ease" }}
+                      className="hover-lift founder-social-link"
                     >
                       <i className="bi bi-globe"></i>
                     </a>
@@ -108,10 +84,10 @@ const FoundersPage = () => {
           ))}
         </div>
 
-        <div className="mt-5 pt-5 text-center reveal fade-in">
-          <div style={{ maxWidth: "700px", margin: "0 auto" }}>
-            <h2 style={{ fontSize: "32px", fontWeight: 800, marginBottom: "24px", color: "var(--color-text-primary)" }}>Our Vision</h2>
-            <p style={{ fontSize: "20px", color: "var(--color-text-secondary)", lineHeight: "1.6" }}>
+        <div className="vision-section reveal fade-in">
+          <div className="vision-container">
+            <h2 className="vision-title">Our Vision</h2>
+            <p className="vision-text">
               "We focus on creating products that don't just solve problems, but elevate the way people work and live. Every line of code and every pixel we craft is a step towards a more efficient future."
             </p>
           </div>

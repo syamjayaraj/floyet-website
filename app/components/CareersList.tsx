@@ -85,7 +85,7 @@ const CareersList = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "var(--color-background)" }}>
+      <div className="min-h-screen flex items-center justify-center">
         <div className="animate-spin rounded-full h-14 w-14 border-4 border-indigo-500 border-t-transparent shadow-lg"></div>
       </div>
     );
@@ -93,11 +93,11 @@ const CareersList = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: "var(--color-background)" }}>
-        <div className="text-center p-10 rounded-3xl shadow-lg max-w-md mx-4" style={{ backgroundColor: "var(--color-background-elevated)", border: "1px solid var(--color-separator)" }}>
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center p-10 rounded-3xl shadow-lg max-w-md mx-4 bg-muted border border-separator">
           <div className="text-red-500 text-6xl mb-6">⚠️</div>
-          <h2 className="text-3xl font-bold mb-4" style={{ color: "var(--color-text-primary)" }}>Oops!</h2>
-          <p className="text-lg" style={{ color: "var(--color-text-secondary)" }}>{error}</p>
+          <h2 className="text-3xl font-bold mb-4 text-primary">Oops!</h2>
+          <p className="text-lg text-secondary">{error}</p>
           <button
             onClick={() => window.location.reload()}
             className="mt-6 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-colors duration-300 inline-flex items-center"
@@ -111,13 +111,7 @@ const CareersList = () => {
   }
 
   return (
-    <div
-      className="reveal fade-in"
-      style={{
-        marginTop: "100px",
-        backgroundColor: "var(--color-background)"
-      }}
-      >
+    <div className="reveal fade-in mt-24">
         {/* Hero Section */}
         <section className={styles.heroSection}>
           <div className="container mx-auto px-4 py-20">
@@ -140,12 +134,12 @@ const CareersList = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               {careers.length === 0 ? (
-                <div className="text-center p-16 rounded-3xl" style={{ backgroundColor: "var(--color-background-elevated)", border: "1px solid var(--color-separator)" }}>
+                <div className="text-center p-16 rounded-3xl bg-muted border border-separator">
                   <div className="text-5xl mb-6">🔍</div>
-                  <h3 className="text-2xl font-bold mb-3" style={{ color: "var(--color-text-primary)" }}>
+                  <h3 className="text-2xl font-bold mb-3 text-primary">
                     No Open Positions
                   </h3>
-                  <p className="text-lg max-w-md mx-auto" style={{ color: "var(--color-text-secondary)" }}>
+                  <p className="text-lg max-w-md mx-auto text-secondary">
                     We don't have any open positions right now, but we're always
                     looking for great talent.
                   </p>

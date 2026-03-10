@@ -1,4 +1,4 @@
-"use client";
+import "./styles.css";
 
 const About = () => {
   const achievements = [
@@ -30,14 +30,14 @@ const About = () => {
   ];
 
   return (
-    <section className="apple-section" id="about">
+    <section className="about-section" id="about">
       <div className="container">
-        <div className="section-header">
-          <div className="section-eyebrow">About Floyet</div>
-          <h2 className="section-headline">
+        <div className="about-header">
+          <div className="about-eyebrow">About Floyet</div>
+          <h2 className="about-headline">
             Crafting digital solutions for tomorrow's challenges
           </h2>
-          <p className="section-subhead">
+          <p className="about-subhead">
             We specialize in developing future-ready applications that address real-world problems. Our solutions combine cutting-edge technology with intuitive design.
           </p>
         </div>
@@ -45,9 +45,9 @@ const About = () => {
         {/* Achievements Grid */}
         <div className="achievements-grid">
           {achievements.map((item, index) => (
-            <div key={index} className="achievement-card-apple reveal fade-in-up" style={{ transitionDelay: `${index * 0.1}s` }}>
-              <div className="achievement-number-apple">{item.number}</div>
-              <div className="achievement-label-apple">{item.label}</div>
+            <div key={index} className="achievement-card reveal fade-in-up" style={{ transitionDelay: `${index * 0.1}s` }}>
+              <div className="achievement-number">{item.number}</div>
+              <div className="achievement-label">{item.label}</div>
             </div>
           ))}
         </div>
@@ -63,7 +63,6 @@ const About = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="tech-badge hover-lift"
-                style={{ textDecoration: "none" }}
               >
                 {tech.name}
               </a>

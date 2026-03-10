@@ -1,4 +1,4 @@
-"use client";
+import "./styles.css";
 
 const Contact = () => {
   const contactInfo = [
@@ -27,43 +27,31 @@ const Contact = () => {
   ];
 
   return (
-    <section className="apple-section" id="contact" style={{ padding: "120px 0" }}>
+    <section className="contact-section" id="contact">
       <div className="container">
-        <div className="section-header" style={{ marginBottom: "64px", textAlign: "center" }}>
-          <div className="section-eyebrow" style={{ color: "var(--color-text-secondary)", letterSpacing: "2px", textTransform: "uppercase", fontSize: "14px", fontWeight: 700 }}>Get in Touch</div>
-          <h2 className="section-headline" style={{ fontWeight: 800, fontSize: "clamp(32px, 5vw, 48px)", letterSpacing: "-0.02em", color: "var(--color-text-primary)" }}>
+        <div className="contact-header">
+          <div className="contact-eyebrow">Get in Touch</div>
+          <h2 className="contact-headline">
             Ready to transform your business?
           </h2>
-          <p className="section-subhead" style={{ fontSize: "20px", color: "var(--color-text-secondary)", maxWidth: "600px", margin: "24px auto 0" }}>
+          <p className="contact-subhead">
             Reach out to discover how our solutions can help you scale and streamline your operations.
           </p>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "32px", justifyContent: "center" }}>
+        <div className="contact-grid">
           {contactInfo.map((info, index) => (
-            <div key={index} style={{ 
-              flex: "1 1 300px", 
-              maxWidth: "400px",
-              padding: "40px", 
-              borderRadius: "24px", 
-              background: "var(--color-background-elevated)", 
-              border: "1px solid var(--color-separator)", 
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              boxShadow: "0 4px 24px rgba(0,0,0,0.05)"
-            }}>
-              <i className={`bi ${info.icon}`} style={{ fontSize: "40px", color: "var(--color-text-primary)", marginBottom: "24px" }}></i>
-              <h4 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "16px", color: "var(--color-text-primary)" }}>{info.title}</h4>
-              <div style={{ color: "var(--color-text-secondary)", fontSize: "16px", lineHeight: "1.6" }}>
+            <div key={index} className="contact-card">
+              <i className={`bi ${info.icon} contact-icon`}></i>
+              <h4 className="contact-card-title">{info.title}</h4>
+              <div className="contact-details">
                 {info.details.map((detail, idx) =>
                   info.link ? (
-                    <a key={idx} href={info.link} style={{ color: "var(--color-text-primary)", textDecoration: "none" }} onMouseOver={(e) => e.currentTarget.style.textDecoration = "underline"} onMouseOut={(e) => e.currentTarget.style.textDecoration = "none"}>
+                    <a key={idx} href={info.link} className="contact-link">
                       {detail}
                     </a>
                   ) : (
-                    <p key={idx} style={{ margin: 0 }}>{detail}</p>
+                    <p key={idx} className="contact-detail-text">{detail}</p>
                   )
                 )}
               </div>

@@ -1,6 +1,5 @@
-"use client";
-
 import Link from "next/link";
+import "./styles.css";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -50,39 +49,16 @@ const Footer = () => {
   ];
 
   return (
-    <footer style={{ 
-      backgroundColor: "var(--color-background)", 
-      borderTop: "1px solid var(--color-separator)", 
-      paddingTop: "80px", 
-      paddingBottom: "40px" 
-    }}>
+    <footer className="apple-footer">
       <div className="container">
         {/* Main Footer Content */}
-        <div style={{ 
-          display: "grid", 
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", 
-          gap: "48px",
-          marginBottom: "64px"
-        }}>
+        <div className="footer-grid">
           {/* Brand Column */}
-          <div style={{ gridColumn: "span 1" }}>
-            <Link href="/" style={{ 
-              color: "var(--color-text-primary)", 
-              fontWeight: 700, 
-              fontSize: "24px", 
-              textDecoration: "none", 
-              letterSpacing: "2px",
-              display: "block",
-              marginBottom: "24px"
-            }}>
+          <div className="footer-brand-col">
+            <Link href="/" className="footer-logo">
               FLOYET
             </Link>
-            <p style={{ 
-              color: "var(--color-text-secondary)", 
-              fontSize: "15px", 
-              lineHeight: "1.6",
-              maxWidth: "240px" 
-            }}>
+            <p className="footer-tagline">
               Building high-quality digital products that transform business operations.
             </p>
           </div>
@@ -90,37 +66,23 @@ const Footer = () => {
           {/* Sitemaps */}
           {footerSections.map((section, idx) => (
             <div key={idx}>
-              <h4 style={{ 
-                fontSize: "14px", 
-                fontWeight: 600, 
-                color: "var(--color-text-primary)", 
-                textTransform: "uppercase", 
-                letterSpacing: "0.1em",
-                marginBottom: "24px" 
-              }}>
+              <h4 className="footer-section-title">
                 {section.title}
               </h4>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <ul className="footer-links-list">
                 {section.links.map((link, linkIdx) => (
-                  <li key={linkIdx} style={{ marginBottom: "12px" }}>
+                  <li key={linkIdx} className="footer-link-item">
                     {'external' in link && link.external ? (
                       <a 
                         href={link.href} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        style={{ 
-                          fontSize: "15px", 
-                          color: "var(--color-text-secondary)", 
-                          textDecoration: "none",
-                          transition: "color 0.2s ease" 
-                        }}
-                        onMouseOver={(e) => e.currentTarget.style.color = "var(--color-text-primary)"}
-                        onMouseOut={(e) => e.currentTarget.style.color = "var(--color-text-secondary)"}
+                        className="footer-link"
                       >
                         {link.label === "YoungMenu" ? (
                           <>
                             {link.label}
-                            <span style={{ fontSize: "10px", marginLeft: "8px", opacity: 0.6, fontWeight: 500 }}>(Coming Soon)</span>
+                            <span className="coming-soon-small">(Coming Soon)</span>
                           </>
                         ) : (
                           link.label
@@ -129,14 +91,7 @@ const Footer = () => {
                     ) : (
                       <Link 
                         href={link.href}
-                        style={{ 
-                          fontSize: "15px", 
-                          color: "var(--color-text-secondary)", 
-                          textDecoration: "none",
-                          transition: "color 0.2s ease" 
-                        }}
-                        onMouseOver={(e) => e.currentTarget.style.color = "var(--color-text-primary)"}
-                        onMouseOut={(e) => e.currentTarget.style.color = "var(--color-text-secondary)"}
+                        className="footer-link"
                       >
                         {link.label}
                       </Link>
@@ -149,22 +104,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{ 
-          display: "flex", 
-          flexWrap: "wrap", 
-          justifyContent: "space-between", 
-          alignItems: "center", 
-          gap: "24px",
-          paddingTop: "32px",
-          borderTop: "1px solid var(--color-separator)"
-        }}>
+        <div className="footer-bottom">
           {/* Copyright */}
-          <p style={{ fontSize: "14px", color: "var(--color-text-tertiary)", margin: 0 }}>
+          <p className="footer-copyright">
             © {currentYear} Floyet Labs & Technologies LLP. All rights reserved.
           </p>
 
           {/* Social Links */}
-          <div style={{ display: "flex", gap: "20px" }}>
+          <div className="footer-social-links">
             {socialLinks.map((social, idx) => (
               <a
                 key={idx}
@@ -172,13 +119,7 @@ const Footer = () => {
                 aria-label={social.label}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ 
-                  color: "var(--color-text-tertiary)", 
-                  fontSize: "18px",
-                  transition: "color 0.2s ease"
-                }}
-                onMouseOver={(e) => e.currentTarget.style.color = "var(--color-text-primary)"}
-                onMouseOut={(e) => e.currentTarget.style.color = "var(--color-text-tertiary)"}
+                className="footer-social-link"
               >
                 <i className={`bi ${social.icon}`}></i>
               </a>

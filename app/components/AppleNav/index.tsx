@@ -12,9 +12,10 @@ const AppleNav = () => {
   const products = [
     {
       name: "GymTie",
-      href: "/gymtie",
+      href: "https://gymtie.com",
       description: "Complete gym management solution",
       icon: "bi-activity",
+      external: true,
     },
     {
       name: "YoungMenu",
@@ -60,27 +61,15 @@ const AppleNav = () => {
 
           {/* Desktop Navigation */}
           <div className="apple-nav-items">
-            <Link href="/products" className="apple-nav-link" onMouseEnter={() => setActiveDropdown("Products")} onMouseLeave={() => setActiveDropdown(null)}>
-              Products
-            </Link>
-            
-            <Link href="/about" className="apple-nav-link">
-              About
-            </Link>
-            <Link href="/services" className="apple-nav-link">
-              Services
-            </Link>
-            <Link href="/contact" className="apple-nav-link">
-              Contact
-            </Link>
-
-            {/* Dropdown for Products */}
-             <div
+            <div className="apple-nav-link-wrapper" onMouseEnter={() => setActiveDropdown("Products")} onMouseLeave={() => setActiveDropdown(null)}>
+              <Link href="/#products" className="apple-nav-link">
+                Products
+              </Link>
+              {/* Dropdown for Products */}
+              <div
                 className={`apple-nav-dropdown ${
                   activeDropdown === "Products" ? "active" : ""
                 }`}
-                onMouseEnter={() => setActiveDropdown("Products")}
-                onMouseLeave={() => setActiveDropdown(null)}
               >
                 <div className="apple-nav-dropdown-content">
                   {products.map((product) => (
@@ -102,8 +91,29 @@ const AppleNav = () => {
                   ))}
                 </div>
               </div>
-          </div>
+            </div>
+            
+            <Link href="/about" className="apple-nav-link">
+              About
+            </Link>
+            <Link href="/founders" className="apple-nav-link">
+              Founders
+            </Link>
+            <Link href="/careers" className="apple-nav-link">
+              Careers
+            </Link>
+            <Link href="/blog" className="apple-nav-link">
+              Blog
+            </Link>
+            <Link href="/contact" className="apple-nav-link">
+              Contact
+            </Link>
 
+            <Link href="/#contact" className="btn-apple-nav">
+              Get Started
+            </Link>
+          </div>
+          
           {/* Mobile Menu Button */}
           <button
             className={`apple-nav-mobile-btn ${
@@ -153,25 +163,11 @@ const AppleNav = () => {
               About
             </Link>
             <Link
-              href="/services"
+              href="/founders"
               className="mobile-menu-link"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Services
-            </Link>
-            <Link
-              href="/contact"
-              className="mobile-menu-link"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
-            <Link
-              href="/training"
-              className="mobile-menu-link"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Training
+              Founders
             </Link>
             <Link
               href="/careers"
@@ -187,6 +183,23 @@ const AppleNav = () => {
             >
               Blog
             </Link>
+            <Link
+              href="/contact"
+              className="mobile-menu-link"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            
+            <div style={{ marginTop: "24px" }}>
+              <Link 
+                href="/#contact" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="btn-apple-nav mobile-cta" 
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
       </div>
