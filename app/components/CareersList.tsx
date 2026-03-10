@@ -111,7 +111,7 @@ const CareersList = () => {
   }
 
   return (
-    <div className="reveal fade-in mt-24">
+    <div className="reveal fade-in">
         {/* Hero Section */}
         <section className={styles.heroSection}>
           <div className="container mx-auto px-4 py-20">
@@ -131,7 +131,7 @@ const CareersList = () => {
 
         {/* Jobs List Section */}
         <section className="py-16">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 mt-4">
             <div className="max-w-4xl mx-auto">
               {careers.length === 0 ? (
                 <div className="text-center p-16 rounded-3xl bg-muted border border-separator">

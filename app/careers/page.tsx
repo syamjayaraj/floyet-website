@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function CareersPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen" style={{ paddingTop: "72px" }}>
       <CareersList />
     </main>
   );
