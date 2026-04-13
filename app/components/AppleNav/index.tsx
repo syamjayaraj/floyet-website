@@ -20,7 +20,7 @@ const AppleNav = () => {
     {
       name: "YoungMenu",
       href: "https://youngmenu.com",
-      description: "Virtual menu platform",
+      description: "Restaurant branding & digital solutions",
       icon: "bi-shop",
       external: true,
     },

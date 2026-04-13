@@ -15,6 +15,9 @@ const Hero = () => {
             We build focused, high-quality products that make everyday life and work easier.
           </p>
           <div className="apple-hero-cta">
+            <a href="/#contact" className="btn-apple btn-apple-primary hover-lift">
+              Get in Touch
+            </a>
             <a href="#products" className="btn-apple btn-apple-secondary hover-lift">
               Explore Products <i className="bi bi-arrow-down"></i>
             </a>

@@ -11,7 +11,7 @@ const About = () => {
       label: "Active Users",
     },
     {
-      number: "3",
+      number: "5+",
       label: "Digital Products",
     },
     {
@@ -25,7 +25,7 @@ const About = () => {
     { name: "React Native", url: "https://reactnative.dev" },
     { name: "Next.js", url: "https://nextjs.org" },
     { name: "Strapi", url: "https://strapi.io" },
-    { name: "Vultr", url: "https://www.vultr.com" },
+    { name: "Digital Ocean", url: "https://www.digitalocean.com" },
     { name: "TypeScript", url: "https://www.typescriptlang.org" },
   ];
 
@@ -38,14 +38,20 @@ const About = () => {
             Crafting digital solutions for tomorrow's challenges
           </h2>
           <p className="about-subhead">
-            We specialize in developing future-ready applications that address real-world problems. Our solutions combine cutting-edge technology with intuitive design.
+            We specialize in developing future-ready applications that address
+            real-world problems. Our solutions combine cutting-edge technology
+            with intuitive design.
           </p>
         </div>
 
         {/* Achievements Grid */}
         <div className="achievements-grid">
           {achievements.map((item, index) => (
-            <div key={index} className="achievement-card reveal fade-in-up" style={{ transitionDelay: `${index * 0.1}s` }}>
+            <div
+              key={index}
+              className="achievement-card reveal fade-in-up"
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
               <div className="achievement-number">{item.number}</div>
               <div className="achievement-label">{item.label}</div>
             </div>
@@ -57,11 +63,11 @@ const About = () => {
           <h3 className="tech-stack-title">Technologies we use</h3>
           <div className="tech-stack-grid">
             {technologies.map((tech, idx) => (
-              <a 
-                key={idx} 
-                href={tech.url} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                key={idx}
+                href={tech.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="tech-badge hover-lift"
               >
                 {tech.name}

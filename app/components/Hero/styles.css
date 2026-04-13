@@ -40,7 +40,10 @@
 }
 
 .apple-hero-headline span {
-    color: var(--color-text-secondary);
+    background: linear-gradient(135deg, #814AF6 0%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .apple-hero-subhead {

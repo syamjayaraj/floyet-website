@@ -8,7 +8,8 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { label: "GymTie", href: "https://gymtie.com", external: true },
+        { label: "GymTie Manager", href: "https://gymtie.com", external: true },
+        { label: "GymTie Fit", href: "https://gymtie.com", external: true },
         { label: "YoungMenu", href: "https://youngmenu.com", external: true },
         { label: "Onebest", href: "https://onebest.in", external: true },
       ],
@@ -73,20 +74,13 @@ const Footer = () => {
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx} className="footer-link-item">
                     {'external' in link && link.external ? (
-                      <a 
-                        href={link.href} 
-                        target="_blank" 
+                      <a
+                        href={link.href}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="footer-link"
                       >
-                        {link.label === "YoungMenu" ? (
-                          <>
-                            {link.label}
-                            <span className="coming-soon-small">(Coming Soon)</span>
-                          </>
-                        ) : (
-                          link.label
-                        )}
+                        {link.label}
                       </a>
                     ) : (
                       <Link 
