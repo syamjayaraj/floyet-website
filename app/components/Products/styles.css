@@ -193,6 +193,14 @@
     justify-content: center;
 }
 
+.gymtie-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 auto 16px;
+}
+
 .gymtie-main-logo {
     width: 52px;
     height: 52px;

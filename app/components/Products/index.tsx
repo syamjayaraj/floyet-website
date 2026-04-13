@@ -37,7 +37,7 @@ const Products = () => {
   return (
     <section className="apple-products section" id="products">
       <div className="container">
-        <div className="products-header">
+        <div className="products-header reveal-blur">
           <div className="products-eyebrow">Our Impact</div>
           <h2 className="products-headline">
             Problems we&apos;ve fixed.
@@ -45,7 +45,7 @@ const Products = () => {
         </div>
 
         {/* GymTie Problem/Solution Block */}
-        <div className="reveal fade-in-up impact-card">
+        <div className="reveal-scale impact-card">
            <div className="impact-info">
               <span className="impact-badge badge-problem">The Problem</span>
               <h3 className="impact-title">Gym management is chaotic and disconnected.</h3>
@@ -56,21 +56,22 @@ const Products = () => {
 
            <div className="impact-info">
               <span className="impact-badge badge-solution">Our Solution</span>
-              <div className="gymtie-logo-wrapper">
+              <div className="gymtie-brand">
                 <img src="/assets/logo/gymtie.png" alt="GymTie" className="gymtie-main-logo" />
+                <h4 className="solution-title">GymTie</h4>
               </div>
               <p className="impact-text">A complete ecosystem connecting gym owners and members in one unified platform.</p>
            </div>
 
-           {/* GymTie Manager + Fit tiles */}
-           <div className="gymtie-products-grid">
-             <div className="gymtie-product-tile">
+           {/* GymTie Manager + Fit tiles — stagger on reveal */}
+           <div className="gymtie-products-grid reveal-stagger">
+             <div className="gymtie-product-tile reveal-child">
                <img src="/assets/logo/manager.png" alt="GymTie Manager" className="product-tile-logo" />
                <h4 className="product-tile-title">GymTie Manager</h4>
                <p className="product-tile-tagline">Run your gym, your way.</p>
                <p className="product-tile-desc">For gym owners — billing, attendance, WhatsApp automation, and member tracking in one elegant tool.</p>
              </div>
-             <div className="gymtie-product-tile">
+             <div className="gymtie-product-tile reveal-child">
                <img src="/assets/logo/fit.png" alt="GymTie Fit" className="product-tile-logo" />
                <h4 className="product-tile-title">GymTie Fit</h4>
                <p className="product-tile-tagline">Your fitness, elevated.</p>
@@ -84,7 +85,7 @@ const Products = () => {
         </div>
 
         {/* YoungMenu — Full Impact Card */}
-        <div className="reveal fade-in-up stagger-1 impact-card ym-card">
+        <div className="reveal-scale impact-card ym-card">
           <div className="impact-info">
             <span className="impact-badge badge-problem">The Problem</span>
             <h3 className="impact-title">Restaurants are invisible online and inefficient offline.</h3>
@@ -106,10 +107,10 @@ const Products = () => {
             </div>
           </div>
 
-          {/* Service feature grid */}
-          <div className="ym-features-grid">
+          {/* Service feature grid — stagger on reveal */}
+          <div className="ym-features-grid reveal-stagger">
             {youngMenuServices.map((s, i) => (
-              <div key={i} className="ym-feature-card">
+              <div key={i} className="ym-feature-card reveal-child">
                 <div className="ym-feature-icon">
                   <i className={`bi ${s.icon}`}></i>
                 </div>
@@ -125,7 +126,7 @@ const Products = () => {
         </div>
 
         {/* Onebest Section (Minimal) */}
-        <div className="reveal fade-in-up stagger-2 minimal-card" style={{ marginBottom: 0 }}>
+        <div className="reveal minimal-card" style={{ marginBottom: 0 }}>
            <div className="minimal-card-content">
              <div className="minimal-icon-wrapper icon-onebest">
                <i className="bi bi-gift" style={{ fontSize: "24px" }}></i>

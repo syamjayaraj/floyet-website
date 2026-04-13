@@ -60,6 +60,22 @@
     justify-content: center;
 }
 
+/* Staggered hero entrance */
+.hero-child-1,
+.hero-child-2,
+.hero-child-3,
+.hero-child-4 {
+  animation-name: heroItemReveal;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+}
+
+.hero-child-1 { animation-delay: 0.05s; }
+.hero-child-2 { animation-delay: 0.22s; }
+.hero-child-3 { animation-delay: 0.40s; }
+.hero-child-4 { animation-delay: 0.58s; }
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .apple-hero {

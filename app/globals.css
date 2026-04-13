@@ -1659,120 +1659,188 @@ a:hover {
    PROFESSIONAL ANIMATION SYSTEM
    ============================================ */
 
-/* Entrance Animations */
+/* ---- Scroll-reveal base (IntersectionObserver triggered) ---- */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+  transform: translateY(28px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform, opacity;
 }
-
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* Slide from left */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-36px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+.reveal-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slide from right */
+.reveal-right {
+  opacity: 0;
+  transform: translateX(36px);
+  transition:
+    opacity  0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Scale up */
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.93);
+  transition:
+    opacity  0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+.reveal-scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Blur-up (cinematic) */
+.reveal-blur {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(16px);
+  transition:
+    opacity  0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter   0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity, filter;
+}
+.reveal-blur.active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* Auto-stagger container (trigger, no visual change itself) */
+.reveal-stagger {
+  /* JS observes this, fires .active on children automatically */
+}
+
+/* Staggered children — JS sets transitionDelay per index */
+.reveal-child {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity  0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform, opacity;
+}
+.reveal-child.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- CSS-animation classes (fire immediately, used for hero) ---- */
 .fade-in {
-  animation: fadeIn 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-
 .fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-
 .fade-in-down {
-  animation: fadeInDown 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  animation: fadeInDown 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-
 .scale-up {
-  animation: scaleUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+  animation: scaleUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Staggered Entrance */
-.stagger-1 {
-  animation-delay: 0.1s;
-}
+/* CSS animation stagger delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
 
-.stagger-2 {
-  animation-delay: 0.2s;
-}
-
-.stagger-3 {
-  animation-delay: 0.3s;
-}
-
-.stagger-4 {
-  animation-delay: 0.4s;
-}
-
-.stagger-5 {
-  animation-delay: 0.5s;
-}
-
-/* Micro-interactions */
+/* ---- Micro-interactions ---- */
 .hover-lift {
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
-
 .hover-lift:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 12px 32px rgba(129, 74, 246, 0.18);
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(129, 74, 246, 0.3);
+  box-shadow: 0 0 24px rgba(129, 74, 246, 0.35);
 }
 
-/* Keyframes */
+/* ---- Keyframes ---- */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0);     }
 }
 
 @keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1);    }
+}
+
+/* Hero children — blur+slide with stagger */
+@keyframes heroItemReveal {
   from {
     opacity: 0;
-    transform: scale(0.95);
+    transform: translateY(22px);
+    filter: blur(5px);
   }
-
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
+    filter: blur(0);
   }
+}
+
+/* Shimmer for gradient highlights */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Gradient text shimmer utility */
+.text-shimmer {
+  background: linear-gradient(90deg, #814AF6 0%, #a78bfa 40%, #814AF6 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
 }
 
 /* Page Loader Fade */
 .page-transition {
-  animation: fadeIn 0.5s ease-out forwards;
+  animation: fadeIn 0.45s ease-out both;
 }
 
 /* Glassmorphism Pulse (Subtle) */
