@@ -62,9 +62,9 @@ export const metadata: Metadata = {
     images: ["/assets/logo/gymtie.png"],
   },
   icons: {
-    icon: "/assets/logo/gymtie.png",
-    apple: "/assets/logo/gymtie.png",
-    shortcut: "/assets/logo/gymtie.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+    shortcut: "/favicon.png",
   },
   robots: {
     index: true,

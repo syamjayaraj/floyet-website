@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import "./styles.css";
 
+import Image from "next/image";
+
 const AppleNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,7 +57,8 @@ const AppleNav = () => {
       <nav className={`apple-nav ${isScrolled ? "scrolled" : ""}`}>
         <div className="apple-nav-container">
           {/* Logo */}
-          <Link href="/" className="apple-nav-logo">
+          <Link href="/" className="apple-nav-logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <Image src="/logo.png" alt="Floyet Logo" width={32} height={32} style={{ objectFit: 'contain' }} />
             FLOYET
           </Link>
 

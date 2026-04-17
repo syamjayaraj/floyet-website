@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+import Image from "next/image";
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,6 +50,9 @@ const Header = () => {
       }}>
         {/* Logo */}
         <Link href="/" style={{ 
+          display: "flex",
+          alignItems: "center",
+          gap: "8px",
           color: "var(--color-text-primary)", 
           fontWeight: 700, 
           fontSize: "20px", 
@@ -55,6 +60,7 @@ const Header = () => {
           letterSpacing: "2px",
           zIndex: 10001
         }}>
+          <Image src="/logo.png" alt="Floyet Logo" width={32} height={32} style={{ objectFit: 'contain' }} />
           FLOYET
         </Link>
 

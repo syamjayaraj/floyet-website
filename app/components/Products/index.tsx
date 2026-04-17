@@ -3,19 +3,9 @@ import "./styles.css";
 const Products = () => {
   const youngMenuServices = [
     {
-      icon: "bi-globe2",
-      title: "Restaurant Website",
-      desc: "A clean, fast, mobile-first site that represents your brand 24/7.",
-    },
-    {
-      icon: "bi-geo-alt",
-      title: "Google Maps Profile",
-      desc: "Optimised local presence so customers find you first in search.",
-    },
-    {
-      icon: "bi-instagram",
-      title: "Instagram Management",
-      desc: "Consistent, on-brand content that keeps your audience engaged.",
+      icon: "bi-graph-up-arrow",
+      title: "Manager Dashboard",
+      desc: "Complete control for store owners over sales, inventory, and daily operations.",
     },
     {
       icon: "bi-person-badge",
@@ -24,8 +14,23 @@ const Products = () => {
     },
     {
       icon: "bi-display",
-      title: "POS System",
-      desc: "Fast, modern billing at the counter — works offline too.",
+      title: "Billing & POS",
+      desc: "Fast, modern billing at the counter — seamless point-of-sale operations.",
+    },
+    {
+      icon: "bi-egg-fried",
+      title: "Kitchen Display System",
+      desc: "Real-time order management system for the heart of your kitchen.",
+    },
+    {
+      icon: "bi-card-list",
+      title: "Menu Listing Platform",
+      desc: "A dedicated digital platform to beautifully list and showcase all your store menus online.",
+    },
+    {
+      icon: "bi-globe",
+      title: "Store Website",
+      desc: "Get a clean website on a YoungMenu subdomain (e.g., yourstore.youngmenu.com) or connect your own domain.",
     },
     {
       icon: "bi-qr-code",
@@ -57,7 +62,6 @@ const Products = () => {
            <div className="impact-info">
               <span className="impact-badge badge-solution">Our Solution</span>
               <div className="gymtie-brand">
-                <img src="/assets/logo/gymtie.png" alt="GymTie" className="gymtie-main-logo" />
                 <h4 className="solution-title">GymTie</h4>
               </div>
               <p className="impact-text">A complete ecosystem connecting gym owners and members in one unified platform.</p>
@@ -88,8 +92,8 @@ const Products = () => {
         <div className="reveal-scale impact-card ym-card">
           <div className="impact-info">
             <span className="impact-badge badge-problem">The Problem</span>
-            <h3 className="impact-title">Restaurants are invisible online and inefficient offline.</h3>
-            <p className="impact-text">Most restaurants lose customers before they even walk in — no proper website, weak maps presence, manual orders, and outdated paper menus.</p>
+            <h3 className="impact-title">Food stores are invisible online and inefficient offline.</h3>
+            <p className="impact-text">Restaurants, cafes, and home bakers often struggle with scattered operations — disconnected orders, messy billing, and poor online menu visibility.</p>
           </div>
 
           <div className="impact-divider"></div>
@@ -97,12 +101,14 @@ const Products = () => {
           <div className="impact-info">
             <span className="impact-badge badge-solution">Our Solution</span>
             <div className="ym-brand">
-              <div className="minimal-icon-wrapper icon-youngmenu" style={{ width: 56, height: 56, borderRadius: 14, flexShrink: 0 }}>
-                <i className="bi bi-shop" style={{ fontSize: "26px" }}></i>
-              </div>
+              <img 
+                src="/assets/logo/youngmenu.png" 
+                alt="YoungMenu Logo" 
+                style={{ width: 56, height: 56, borderRadius: 14, flexShrink: 0, objectFit: "cover" }} 
+              />
               <div>
                 <h4 className="solution-title" style={{ textAlign: "left", marginBottom: 4 }}>YoungMenu</h4>
-                <p style={{ color: "var(--color-text-secondary)", fontSize: 14, margin: 0 }}>The all-in-one digital stack for modern restaurants.</p>
+                <p style={{ color: "var(--color-text-secondary)", fontSize: 14, margin: 0 }}>The all-in-one digital stack for restaurants, cafes, & home bakers.</p>
               </div>
             </div>
           </div>
@@ -128,9 +134,11 @@ const Products = () => {
         {/* Onebest Section (Minimal) */}
         <div className="reveal minimal-card" style={{ marginBottom: 0 }}>
            <div className="minimal-card-content">
-             <div className="minimal-icon-wrapper icon-onebest">
-               <i className="bi bi-gift" style={{ fontSize: "24px" }}></i>
-             </div>
+             <img 
+               src="/assets/logo/onebest.png" 
+               alt="Onebest Logo" 
+               style={{ width: 48, height: 48, borderRadius: 12, flexShrink: 0, objectFit: "contain" }} 
+             />
              <div className="minimal-info">
                <h3>Onebest Gifts</h3>
                <p>A curated gift shop offering special surprises for every occasion.</p>
