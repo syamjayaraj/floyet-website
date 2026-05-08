@@ -23,6 +23,15 @@
     font-size: clamp(36px, 6vw, 64px);
     letter-spacing: -0.02em;
     color: var(--color-text-primary);
+    margin-bottom: 18px;
+}
+
+.products-subhead {
+    color: var(--color-text-secondary);
+    font-size: clamp(16px, 2.2vw, 20px);
+    line-height: 1.55;
+    max-width: 760px;
+    margin: 0 auto;
 }
 
 /* Impact Block (GymTie) */
@@ -48,6 +57,52 @@
     transform: translateY(-4px);
     border-color: rgba(255, 255, 255, 0.14);
     box-shadow: 0 30px 96px rgba(0, 0, 0, 0.32);
+}
+
+.gymtie-focus-card {
+    border-color: rgba(167, 139, 250, 0.28);
+    background:
+        radial-gradient(circle at 18% 0%, rgba(129, 74, 246, 0.22), transparent 34%),
+        radial-gradient(circle at 85% 12%, rgba(90, 173, 255, 0.1), transparent 30%),
+        linear-gradient(145deg, rgba(28, 24, 44, 0.95), rgba(22, 22, 26, 0.52));
+    box-shadow: 0 34px 110px rgba(0, 0, 0, 0.38);
+}
+
+.flagship-ribbon {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    background: rgba(129, 74, 246, 0.12);
+    border: 1px solid rgba(167, 139, 250, 0.26);
+    margin: 0 auto 38px;
+}
+
+.flagship-ribbon img {
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.flagship-ribbon span {
+    display: block;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.flagship-ribbon strong {
+    display: block;
+    color: var(--color-text-primary);
+    font-size: 16px;
+    font-weight: 800;
 }
 
 .impact-badge {

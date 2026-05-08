@@ -78,6 +78,51 @@
     margin: 0;
 }
 
+.about-gymtie-highlight {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 16px;
+    align-items: center;
+    max-width: 680px;
+    margin-top: 24px;
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(129, 74, 246, 0.1);
+    border: 1px solid rgba(129, 74, 246, 0.22);
+}
+
+.about-gymtie-highlight img {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    object-fit: contain;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.about-gymtie-highlight span {
+    display: block;
+    color: #a78bfa;
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.about-gymtie-highlight strong {
+    display: block;
+    color: var(--color-text-primary);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.about-gymtie-highlight p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
 .about-detail-list {
     display: grid;
     gap: 12px;
@@ -316,6 +361,10 @@
     .about-profile {
         padding: 22px;
         border-radius: 20px;
+    }
+
+    .about-gymtie-highlight {
+        grid-template-columns: 1fr;
     }
 
     .achievements-grid {

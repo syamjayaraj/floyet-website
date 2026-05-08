@@ -5,14 +5,15 @@ const About = () => {
   const achievements = [
     { number: "100+", label: "Businesses Served" },
     { number: "50K+", label: "Users Reached" },
-    { number: "3+",   label: "Product Lines" },
-    { number: "7+",   label: "Years Experience" },
+    { number: "1", label: "Flagship Ecosystem" },
+    { number: "2025", label: "Registered LLP" },
   ];
 
   const companyDetails = [
     { label: "Registered name", value: "Floyet Labs & Technologies LLP" },
     { label: "Headquarters", value: "Kozhikode, Kerala, India" },
-    { label: "Founded", value: "2024" },
+    { label: "Started", value: "2024" },
+    { label: "Registered", value: "February 2025" },
   ];
 
   const founders = [
@@ -44,7 +45,7 @@ const About = () => {
           </h2>
           <p className="about-subhead">
             Floyet Labs & Technologies LLP is a product company from Kerala, India.
-            Our main focus is GymTie, a complete fitness ecosystem for modern gyms.
+            We are currently focused on GymTie, a complete fitness ecosystem for modern gyms.
           </p>
         </div>
 
@@ -53,10 +54,19 @@ const About = () => {
             <span className="about-profile-label">Company Profile</span>
             <h3>Focused, product-led, and built from real market problems.</h3>
             <p>
-              Floyet creates software products for businesses that still depend on manual records,
-              scattered communication, and disconnected tools. Today, our primary focus is GymTie,
-              while YoungMenu, DevaPatha, and Onebest continue as additional product lines.
+              Floyet started in 2024 with a focus on practical software for real-world business operations.
+              The company was formally registered as Floyet Labs & Technologies LLP in February 2025.
+              Our primary product focus is GymTie.
             </p>
+
+            <div className="about-gymtie-highlight">
+              <img src="/assets/logo/gymtie.png" alt="GymTie logo" />
+              <div>
+                <span>Flagship product</span>
+                <strong>GymTie fitness ecosystem</strong>
+                <p>GymTie Manager helps gym owners run operations. GymTie Fit keeps members connected to their fitness journey.</p>
+              </div>
+            </div>
           </div>
 
           <div className="about-detail-list">

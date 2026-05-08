@@ -22,14 +22,25 @@ const Products = () => {
     <section className="apple-products section" id="products">
       <div className="container">
         <div className="products-header reveal-blur">
-          <div className="products-eyebrow">Our Impact</div>
+          <div className="products-eyebrow">Product Focus</div>
           <h2 className="products-headline">
-            Problems we&apos;ve fixed.
+            GymTie is our flagship product.
           </h2>
+          <p className="products-subhead">
+            Floyet&apos;s main product focus is the GymTie ecosystem. Other products are additional lines built with the same problem-first approach.
+          </p>
         </div>
 
         {/* GymTie Problem/Solution Block */}
-        <div className="reveal-scale impact-card">
+        <div className="reveal-scale impact-card gymtie-focus-card">
+           <div className="flagship-ribbon">
+             <img src="/assets/logo/gymtie.png" alt="GymTie logo" />
+             <div>
+               <span>Flagship product</span>
+               <strong>GymTie ecosystem</strong>
+             </div>
+           </div>
+
            <div className="impact-info">
               <span className="impact-badge badge-problem">The Problem</span>
               <h3 className="impact-title">Gym management is chaotic and disconnected.</h3>
