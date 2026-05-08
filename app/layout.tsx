@@ -11,11 +11,11 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Floyet — Focused Digital Products for Real-World Impact",
+    default: "Floyet - Focused Digital Products for Real-World Impact",
     template: "%s | Floyet",
   },
   description:
-    "Floyet builds modern, high-quality digital products — GymTie (gym management & fitness), YoungMenu (restaurant branding & digital solutions), and Onebest (gifts) — solving real-world business challenges.",
+    "Floyet builds modern, high-quality digital products - GymTie, YoungMenu, DevaPatha, and Onebest - solving real-world business challenges.",
   keywords: [
     "Floyet",
     "digital products",
@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     "gym management software",
     "YoungMenu",
     "restaurant management",
+    "DevaPatha",
+    "temple management platform",
+    "temple management software",
     "Onebest",
     "software solutions India",
     "Kozhikode tech company",
@@ -37,9 +40,9 @@ export const metadata: Metadata = {
     canonical: "https://floyet.com",
   },
   openGraph: {
-    title: "Floyet — Focused Digital Products for Real-World Impact",
+    title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Floyet builds modern, high-quality digital products — GymTie, YoungMenu, and Onebest — solving real-world business challenges.",
+      "Floyet builds modern, high-quality digital products - GymTie, YoungMenu, DevaPatha, and Onebest - solving real-world business challenges.",
     type: "website",
     url: "https://floyet.com",
     siteName: "Floyet",
@@ -49,16 +52,16 @@ export const metadata: Metadata = {
         url: "/assets/logo/gymtie.png",
         width: 512,
         height: 512,
-        alt: "Floyet — Digital Products",
+        alt: "Floyet - Digital Products",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@floyet",
-    title: "Floyet — Focused Digital Products for Real-World Impact",
+    title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "GymTie, YoungMenu, Onebest — digital products that solve real business challenges.",
+      "GymTie, YoungMenu, DevaPatha, Onebest - digital products that solve real business challenges.",
     images: ["/assets/logo/gymtie.png"],
   },
   icons: {
@@ -88,39 +91,113 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Floyet Labs & Technologies LLP",
-  url: "https://floyet.com",
-  logo: "https://floyet.com/assets/logo/gymtie.png",
-  description:
-    "Floyet builds focused, high-quality digital products that solve real-world business challenges.",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Door No: 2211, 2/1149/I 100, Hilite Business Park, Olavanna",
-    addressLocality: "Kozhikode",
-    addressRegion: "Kerala",
-    postalCode: "673014",
-    addressCountry: "IN",
-  },
-  contactPoint: {
-    "@type": "ContactPoint",
-    telephone: "+91-9746742650",
-    contactType: "customer support",
-    email: "info@floyet.com",
-    availableLanguage: ["English", "Malayalam"],
-  },
-  sameAs: [
-    "https://www.linkedin.com/company/floyet",
-    "https://x.com/floyet.tech",
-    "https://www.instagram.com/floyet.tech",
-    "https://github.com/codeariv",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://floyet.com/#organization",
+      name: "Floyet Labs & Technologies LLP",
+      alternateName: "Floyet",
+      url: "https://floyet.com",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://floyet.com/logo.png",
+      },
+      description:
+        "Floyet builds focused vertical software products for real-world businesses and community-led markets in India.",
+      foundingDate: "2018",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Door No: 2211, 2/1149/I 100, Hilite Business Park, Olavanna",
+        addressLocality: "Kozhikode",
+        addressRegion: "Kerala",
+        postalCode: "673014",
+        addressCountry: "IN",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-9746742650",
+        contactType: "customer support",
+        email: "info@floyet.com",
+        availableLanguage: ["English", "Malayalam"],
+      },
+      sameAs: [
+        "https://www.linkedin.com/company/floyet",
+        "https://x.com/floyet.tech",
+        "https://www.instagram.com/floyet.tech",
+        "https://github.com/codeariv",
+      ],
+      numberOfEmployees: {
+        "@type": "QuantitativeValue",
+        minValue: 1,
+        maxValue: 10,
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://floyet.com/#website",
+      url: "https://floyet.com",
+      name: "Floyet",
+      publisher: {
+        "@id": "https://floyet.com/#organization",
+      },
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://floyet.com/#site-navigation",
+      name: "Floyet site navigation",
+      itemListElement: [
+        { "@type": "SiteNavigationElement", position: 1, name: "Products", url: "https://floyet.com/products" },
+        { "@type": "SiteNavigationElement", position: 2, name: "About", url: "https://floyet.com/about" },
+        { "@type": "SiteNavigationElement", position: 3, name: "Founders", url: "https://floyet.com/founders" },
+        { "@type": "SiteNavigationElement", position: 4, name: "Careers", url: "https://floyet.com/careers" },
+        { "@type": "SiteNavigationElement", position: 5, name: "Blog", url: "https://floyet.com/blog" },
+        { "@type": "SiteNavigationElement", position: 6, name: "Contact", url: "https://floyet.com/contact" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://floyet.com/#products",
+      name: "Floyet product portfolio",
+      itemListElement: [
+        {
+          "@type": "SoftwareApplication",
+          position: 1,
+          name: "GymTie",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web, Android, iOS",
+          url: "https://gymtie.com",
+          description: "Gym management software for member management, billing, attendance, and WhatsApp automation.",
+        },
+        {
+          "@type": "SoftwareApplication",
+          position: 2,
+          name: "YoungMenu",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web",
+          url: "https://youngmenu.com",
+          description: "Digital menu, ordering, billing, and online visibility platform for food businesses.",
+        },
+        {
+          "@type": "SoftwareApplication",
+          position: 3,
+          name: "DevaPatha",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web, Android, iOS",
+          url: "https://devapatha.com",
+          image: "https://floyet.com/assets/logo/devapatha.png",
+          description: "Temple management platform for temple operations and devotee engagement.",
+        },
+        {
+          "@type": "Store",
+          position: 4,
+          name: "Onebest Gifts",
+          url: "https://onebest.in",
+          description: "Curated gift shop for special occasions.",
+        },
+      ],
+    },
   ],
-  foundingDate: "2018",
-  numberOfEmployees: {
-    "@type": "QuantitativeValue",
-    minValue: 1,
-    maxValue: 10,
-  },
 };
 
 export default function RootLayout({

@@ -17,6 +17,7 @@ const AppleNav = () => {
       href: "https://gymtie.com",
       description: "Complete gym management solution",
       icon: "bi-activity",
+      logo: "/assets/logo/gymtie.png",
       external: true,
     },
     {
@@ -24,6 +25,15 @@ const AppleNav = () => {
       href: "https://youngmenu.com",
       description: "Restaurant branding & digital solutions",
       icon: "bi-shop",
+      logo: "/assets/logo/youngmenu.png",
+      external: true,
+    },
+    {
+      name: "DevaPatha",
+      href: "https://devapatha.com",
+      description: "Temple management platform",
+      icon: "bi-flower1",
+      logo: "/assets/logo/devapatha.png",
       external: true,
     },
     {
@@ -31,6 +41,7 @@ const AppleNav = () => {
       href: "https://onebest.in",
       description: "Curated gift shop",
       icon: "bi-gift",
+      logo: "/assets/logo/onebest.png",
       external: true,
     },
   ];
@@ -83,7 +94,17 @@ const AppleNav = () => {
                       target={product.external ? "_blank" : undefined}
                       rel={product.external ? "noopener noreferrer" : undefined}
                     >
-                      <i className={`bi ${product.icon}`}></i>
+                      {product.logo ? (
+                        <Image
+                          src={product.logo}
+                          alt={`${product.name} logo`}
+                          width={32}
+                          height={32}
+                          className="dropdown-product-logo"
+                        />
+                      ) : (
+                        <i className={`bi ${product.icon}`}></i>
+                      )}
                       <div>
                         <div className="dropdown-title">{product.name}</div>
                         <div className="dropdown-description">
@@ -146,7 +167,17 @@ const AppleNav = () => {
                 target={product.external ? "_blank" : undefined}
                 rel={product.external ? "noopener noreferrer" : undefined}
               >
-                <i className={`bi ${product.icon}`}></i>
+                {product.logo ? (
+                  <Image
+                    src={product.logo}
+                    alt={`${product.name} logo`}
+                    width={32}
+                    height={32}
+                    className="mobile-product-logo"
+                  />
+                ) : (
+                  <i className={`bi ${product.icon}`}></i>
+                )}
                 <div>
                   <div className="mobile-item-name">{product.name}</div>
                   <div className="mobile-item-description">

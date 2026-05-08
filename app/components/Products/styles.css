@@ -29,13 +29,25 @@
 .impact-card {
     margin-bottom: 64px;
     padding: 64px 48px;
-    border-radius: 24px;
-    background: linear-gradient(145deg, var(--color-background-elevated), transparent);
+    border-radius: 22px;
+    background:
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.07), transparent 34%),
+        linear-gradient(145deg, var(--color-background-elevated), rgba(22, 22, 26, 0.42));
     border: 1px solid var(--color-separator);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 30px 96px rgba(0, 0, 0, 0.32);
 }
 
 .impact-badge {
@@ -78,7 +90,7 @@
 .impact-divider {
     width: 1px;
     height: 64px;
-    background: var(--color-separator);
+    background: linear-gradient(180deg, transparent, var(--color-separator), transparent);
     margin: 40px auto;
 }
 
@@ -258,13 +270,204 @@
 /* YoungMenu brand row */
 .ym-card {
     border-color: rgba(255, 149, 0, 0.15);
+    background:
+        radial-gradient(circle at top right, rgba(255, 149, 0, 0.13), transparent 34%),
+        linear-gradient(145deg, rgba(28, 24, 18, 0.92), rgba(22, 22, 26, 0.48));
 }
 
 .ym-brand {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
     gap: 16px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.product-summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 32px auto 0;
+    width: 100%;
+}
+
+.summary-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    font-size: 14px;
+    font-weight: 650;
+    letter-spacing: 0;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.summary-pill i {
+    color: #ffb340;
+    font-size: 17px;
+}
+
+.summary-pill:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 179, 64, 0.36);
+    background: rgba(255, 149, 0, 0.09);
+}
+
+.ym-products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 680px;
+    margin: 32px auto 0;
+}
+
+.ym-product-tile {
+    background: rgba(255, 149, 0, 0.065);
+    border-radius: 16px;
+    padding: 28px 24px;
+    text-align: center;
+    border: 1px solid rgba(255, 149, 0, 0.16);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.ym-product-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 149, 0, 0.32);
+    background: rgba(255, 149, 0, 0.09);
+}
+
+.ym-product-placeholder {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(255, 149, 0, 0.13);
+    border: 1px dashed rgba(255, 149, 0, 0.34);
+    color: #ffb340;
+    margin: 0 auto 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+/* DevaPatha */
+.devapatha-card {
+    border-color: rgba(255, 214, 98, 0.18);
+    background:
+        radial-gradient(circle at 18% 10%, rgba(255, 214, 98, 0.16), transparent 31%),
+        radial-gradient(circle at 82% 0%, rgba(90, 173, 255, 0.11), transparent 32%),
+        linear-gradient(145deg, rgba(28, 25, 20, 0.94), rgba(17, 18, 24, 0.56));
+}
+
+.devapatha-problem {
+    background: rgba(255, 159, 10, 0.1);
+    color: #ffb340;
+    border-color: rgba(255, 179, 64, 0.24);
+}
+
+.devapatha-solution {
+    background: rgba(90, 173, 255, 0.1);
+    color: #5aadff;
+    border-color: rgba(90, 173, 255, 0.24);
+}
+
+.devapatha-divider {
+    background: linear-gradient(180deg, transparent, rgba(255, 214, 98, 0.24), transparent);
+}
+
+.devapatha-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.devapatha-mark,
+.devapatha-product-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.devapatha-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    color: #ffd662;
+    background: rgba(255, 214, 98, 0.11);
+    border: 1px solid rgba(255, 214, 98, 0.18);
+    font-size: 25px;
+}
+
+.devapatha-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: rgba(255, 214, 98, 0.11);
+    border: 1px solid rgba(255, 214, 98, 0.18);
+}
+
+.devapatha-products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 720px;
+    margin: 32px auto 0;
+}
+
+.devapatha-product-tile {
+    min-height: 100%;
+    padding: 28px 24px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.095);
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.devapatha-product-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 214, 98, 0.25);
+    background: rgba(255, 255, 255, 0.065);
+}
+
+.devapatha-product-icon {
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    border-radius: 15px;
+    background: rgba(255, 214, 98, 0.1);
+    border: 1px solid rgba(255, 214, 98, 0.16);
+    color: #ffd662;
+    font-size: 23px;
+}
+
+.devapatha-cta {
+    margin-top: 32px;
+    background: #ffd662;
+    color: #111218;
+    border: none;
+}
+
+.devapatha-cta:hover {
+    background: #f0c64f;
+    color: #111218;
 }
 
 /* YoungMenu feature grid */
@@ -375,7 +578,12 @@
         display: inline-block;
     }
 
-    .gymtie-products-grid {
+    .gymtie-products-grid,
+    .ym-products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .devapatha-products-grid {
         grid-template-columns: 1fr;
     }
 
@@ -383,10 +591,16 @@
         max-width: calc(50% - 8px);
     }
 
-    .ym-brand {
+    .ym-brand,
+    .devapatha-brand {
         flex-direction: column;
         align-items: center;
         text-align: center;
+    }
+
+    .ym-brand .solution-title,
+    .devapatha-brand .solution-title {
+        text-align: center !important;
     }
 }
 
@@ -401,6 +615,16 @@
 
     .ym-features-grid {
         gap: 10px;
+    }
+
+    .product-summary {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .summary-pill {
+        justify-content: center;
+        width: 100%;
     }
 
     .ym-feature-card {

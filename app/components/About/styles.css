@@ -42,7 +42,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    margin-bottom: 80px;
+    margin-bottom: 32px;
 }
 
 .achievement-card {
@@ -97,53 +97,61 @@
     letter-spacing: 0.01em;
 }
 
-/* Tech Stack Section */
-.tech-stack-section {
-    text-align: center;
+.about-focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
 }
 
-.tech-stack-title {
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-text-tertiary);
-    margin-bottom: 24px;
-}
-
-.tech-stack-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.tech-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 9px 18px;
-    background: var(--color-background);
-    color: var(--color-text-secondary);
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    border: 1px solid var(--color-separator);
-    text-decoration: none;
-}
-
-.tech-badge:hover {
-    color: var(--color-text-primary);
+.about-focus-card {
+    padding: 30px;
+    border-radius: 20px;
     background: var(--color-fill);
-    border-color: rgba(129, 74, 246, 0.3);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(129, 74, 246, 0.1);
+    border: 1px solid var(--color-separator);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.about-focus-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(129, 74, 246, 0.25);
+    background: var(--color-fill-secondary);
+}
+
+.about-focus-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(129, 74, 246, 0.12);
+    color: #a78bfa;
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.about-focus-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 10px;
+}
+
+.about-focus-card p {
+    font-size: 15px;
+    color: var(--color-text-secondary);
+    line-height: 1.58;
+    margin: 0;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 900px) {
     .achievements-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-focus-grid {
+        grid-template-columns: 1fr;
     }
 }
 

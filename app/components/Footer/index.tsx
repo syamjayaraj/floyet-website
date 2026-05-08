@@ -8,9 +8,9 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { label: "GymTie Manager", href: "https://gymtie.com", external: true },
-        { label: "GymTie Fit", href: "https://gymtie.com", external: true },
+        { label: "GymTie", href: "https://gymtie.com", external: true },
         { label: "YoungMenu", href: "https://youngmenu.com", external: true },
+        { label: "DevaPatha", href: "https://devapatha.com", external: true },
         { label: "Onebest", href: "https://onebest.in", external: true },
       ],
     },

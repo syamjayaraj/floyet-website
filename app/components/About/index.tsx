@@ -5,17 +5,26 @@ const About = () => {
   const achievements = [
     { number: "100+", label: "Enterprise Clients" },
     { number: "50K+", label: "Active Users" },
-    { number: "5+",   label: "Digital Products" },
+    { number: "3+",   label: "Product Lines" },
     { number: "7+",   label: "Years Experience" },
   ];
 
-  const technologies = [
-    { name: "Expo",         url: "https://expo.dev" },
-    { name: "React Native", url: "https://reactnative.dev" },
-    { name: "Next.js",      url: "https://nextjs.org" },
-    { name: "Strapi",       url: "https://strapi.io" },
-    { name: "Digital Ocean",url: "https://www.digitalocean.com" },
-    { name: "TypeScript",   url: "https://www.typescriptlang.org" },
+  const focusCards = [
+    {
+      icon: "bi-bullseye",
+      title: "Our focus",
+      text: "Floyet is currently focused on building the GymTie ecosystem for gym owners, trainers, and members.",
+    },
+    {
+      icon: "bi-lightning-charge",
+      title: "Why we build",
+      text: "We choose real operational problems where software can reduce manual work and create a better daily experience.",
+    },
+    {
+      icon: "bi-layers",
+      title: "What comes next",
+      text: "YoungMenu, DevaPatha, and Onebest are future product lines shaped by the same problem-first thinking.",
+    },
   ];
 
   return (
@@ -25,16 +34,15 @@ const About = () => {
         <div className="about-header reveal-blur">
           <div className="about-eyebrow">About Floyet</div>
           <h2 className="about-headline">
-            Crafting digital solutions for tomorrow&apos;s challenges
+            Building focused products for real-world operations.
           </h2>
           <p className="about-subhead">
-            We specialize in developing future-ready applications that address
-            real-world problems. Our solutions combine cutting-edge technology
-            with intuitive design.
+            Floyet Labs & Technologies LLP is a product company from Kerala, India.
+            Our main focus is GymTie, a complete ecosystem for modern fitness businesses.
           </p>
         </div>
 
-        {/* Achievements — auto-stagger each card */}
+        {/* Achievements - auto-stagger each card */}
         <div className="achievements-grid reveal-stagger">
           {achievements.map((item, index) => (
             <div key={index} className="achievement-card reveal-child">
@@ -46,22 +54,16 @@ const About = () => {
           ))}
         </div>
 
-        {/* Tech Stack — auto-stagger each badge */}
-        <div className="tech-stack-section reveal-stagger">
-          <h3 className="tech-stack-title">Technologies we use</h3>
-          <div className="tech-stack-grid">
-            {technologies.map((tech, idx) => (
-              <a
-                key={idx}
-                href={tech.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tech-badge hover-lift reveal-child"
-              >
-                {tech.name}
-              </a>
-            ))}
-          </div>
+        <div className="about-focus-grid reveal-stagger">
+          {focusCards.map((card) => (
+            <div className="about-focus-card reveal-child" key={card.title}>
+              <div className="about-focus-icon">
+                <i className={`bi ${card.icon}`}></i>
+              </div>
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </div>
+          ))}
         </div>
 
       </div>

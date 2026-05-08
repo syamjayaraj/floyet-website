@@ -29,7 +29,7 @@ const TermsOfService = () => {
           <section className="policy-section">
             <h2>3. Intellectual Property</h2>
             <p>
-              All content, features, and functionality on our platforms—including text, graphics, logos, and code—are the exclusive property of Floyet Labs & Technologies LLP and are protected by international intellectual property laws.
+              All content, features, and functionality on our platforms-including text, graphics, logos, and code-are the exclusive property of Floyet Labs & Technologies LLP and are protected by international intellectual property laws.
             </p>
           </section>
 

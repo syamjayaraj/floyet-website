@@ -54,10 +54,22 @@
 .dropdown-item i {
   font-size: 24px;
   color: var(--color-blue);
-  min-width: 24px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.dropdown-product-logo,
+.mobile-product-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--color-separator);
 }
 
 .dropdown-title {
@@ -110,6 +122,7 @@
 }
 
 .btn-apple-nav:hover {
+  color: var(--color-background);
   opacity: 0.9;
   transform: scale(1.02);
 }
@@ -227,7 +240,11 @@
   font-size: 24px;
   /* Smaller icons */
   color: var(--color-blue);
-  min-width: 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobile-item-name {

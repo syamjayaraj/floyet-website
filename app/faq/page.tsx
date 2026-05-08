@@ -9,7 +9,7 @@ const FAQPage = () => {
   const faqs = [
     {
       question: "What does Floyet do?",
-      answer: "Floyet is a digital product studio that builds focused, high-quality software solutions. We develop our own products like GymTie (gym management) and YoungMenu (our upcoming digital restaurant menu platform), and also help businesses build custom digital solutions."
+      answer: "Floyet Labs & Technologies LLP builds focused vertical software products for real-world businesses and community-led markets in India, including GymTie, YoungMenu, DevaPatha, and Onebest."
     },
     {
       question: "What is GymTie?",
@@ -17,11 +17,15 @@ const FAQPage = () => {
     },
     {
       question: "How can I get started with YoungMenu?",
-      answer: "YoungMenu is currently in active development. You can get early access or be notified of our launch by contacting our sales team through the contact page."
+      answer: "You can explore YoungMenu at youngmenu.com or contact Floyet for product details, early access, and business onboarding."
+    },
+    {
+      question: "What is DevaPatha?",
+      answer: "DevaPatha is Floyet's complete temple management platform. DevaPatha Manager helps temples manage operations, while the DevaPatha app helps devotees connect with temples and Hindu spiritual services."
     },
     {
       question: "Does Floyet offer custom software development?",
-      answer: "Yes, we partner with enterprises and startups to build high-performance web and mobile applications tailored to their specific business needs."
+      answer: "Floyet primarily focuses on its own product platforms, while also partnering selectively with businesses for high-quality web and mobile software solutions."
     },
     {
       question: "Where is Floyet located?",
@@ -33,8 +37,25 @@ const FAQPage = () => {
     }
   ];
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <main className="min-h-screen" style={{ paddingTop: "120px", paddingBottom: "100px" }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="container">
         <div className="section-header text-center mb-5">
           <div className="section-eyebrow">Support</div>
