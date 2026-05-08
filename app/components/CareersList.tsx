@@ -7,6 +7,7 @@ import {
   faClock,
   faChevronDown,
   faArrowRight,
+  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../app/careers/page.module.css";
 import ReactMarkdown from "react-markdown";
@@ -85,74 +86,53 @@ const CareersList = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="animate-spin rounded-full h-14 w-14 border-4 border-indigo-500 border-t-transparent shadow-lg"></div>
+      <div className={styles.stateScreen}>
+        <div className={styles.loadingSpinner}></div>
       </div>
     );
   }
 
-  if (error) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center p-10 rounded-3xl shadow-lg max-w-md mx-4 bg-muted border border-separator">
-          <div className="text-red-500 text-6xl mb-6">⚠️</div>
-          <h2 className="text-3xl font-bold mb-4 text-primary">Oops!</h2>
-          <p className="text-lg text-secondary">{error}</p>
-          <button
-            onClick={() => window.location.reload()}
-            className="mt-6 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-colors duration-300 inline-flex items-center"
-          >
-            Try Again
-            <FontAwesomeIcon icon={faArrowRight} className="ml-2 w-4 h-4" />
-          </button>
-        </div>
-      </div>
-    );
-  }
+  const hasOpenRoles = !error && careers.length > 0;
 
   return (
-    <div className="reveal fade-in">
+    <div className={`${styles.careersPage} reveal fade-in`}>
         {/* Hero Section */}
         <section className={styles.heroSection}>
-          <div className="container mx-auto px-4 py-20">
-            <div className="max-w-4xl mx-auto">
+          <div className="container">
+            <div className={styles.heroInner}>
+              <div className={styles.heroEyebrow}>Careers at Floyet</div>
               <h1 className={styles.sectionTitle}>
-                Build Your Career at{" "}
-                <span className={styles.highlight}>FLOYET</span>
+                Build products that solve real business problems.
               </h1>
               <p className={styles.sectionDescription}>
-                Join a team of passionate innovators and problem-solvers. We're
-                looking for exceptional talent to help shape the future of
-                technology and create meaningful impact.
+                We are a small product team from Kerala building GymTie and other focused platforms for real-world operations. We value ownership, clarity, craft, and practical execution.
               </p>
+              <div className={styles.careerHighlights}>
+                <span>Product-first team</span>
+                <span>Kerala, India</span>
+                <span>Remote-friendly roles when available</span>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Jobs List Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4 mt-4">
-            <div className="max-w-4xl mx-auto">
-              {careers.length === 0 ? (
-                <div className="text-center p-16 rounded-3xl bg-muted border border-separator">
-                  <div className="text-5xl mb-6">🔍</div>
-                  <h3 className="text-2xl font-bold mb-3 text-primary">
-                    No Open Positions
-                  </h3>
-                  <p className="text-lg max-w-md mx-auto text-secondary">
-                    We don't have any open positions right now, but we're always
-                    looking for great talent.
-                  </p>
-                  <button className="mt-8 px-8 py-3 bg-indigo-600 text-white font-semibold rounded-full hover:bg-indigo-700 transition-all duration-300 inline-flex items-center group">
-                    Get Notified
-                    <FontAwesomeIcon
-                      icon={faArrowRight}
-                      className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                    />
-                  </button>
+        <section className={styles.jobsSection}>
+          <div className="container">
+            <div className={styles.jobsContainer}>
+              <div className={styles.jobsHeader}>
+                <div>
+                  <span className={styles.jobsEyebrow}>Open roles</span>
+                  <h2>{hasOpenRoles ? "Current opportunities" : "No open roles right now"}</h2>
                 </div>
-              ) : (
-                <div className="space-y-6">
+                <a href="mailto:info@floyet.com" className={styles.emailButton}>
+                  <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
+                  Send profile
+                </a>
+              </div>
+
+              {hasOpenRoles ? (
+                <div className={styles.jobsList}>
                   {careers.map((job) => (
                     <div key={job.id} className={styles.jobCard}>
                       <div
@@ -231,6 +211,22 @@ const CareersList = () => {
                       )}
                     </div>
                   ))}
+                </div>
+              ) : (
+                <div className={styles.noRolesCard}>
+                  <div className={styles.noRolesIcon}>
+                    <i className="bi bi-briefcase"></i>
+                  </div>
+                  <h3>We are not actively hiring for a specific role today.</h3>
+                  <p>
+                    We still like hearing from thoughtful builders, designers, operators, and growth-minded people who care about practical software.
+                    Send your profile and a short note about how you can contribute.
+                  </p>
+                  {error && <p className={styles.statusNote}>Live openings could not be loaded right now.</p>}
+                  <a href="mailto:info@floyet.com" className={styles.applyButton}>
+                    Send Profile
+                    <FontAwesomeIcon icon={faArrowRight} className="ml-2 w-4 h-4" />
+                  </a>
                 </div>
               )}
             </div>

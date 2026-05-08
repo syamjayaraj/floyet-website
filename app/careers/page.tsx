@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import CareersList from "../components/CareersList";
 
 export const metadata: Metadata = {
-  title: "Careers at Floyet - Join Our Team of Innovators",
-  description: "Want to help build the future of digital products? Explore career opportunities at Floyet and join a team of passionate creators and problem-solvers.",
+  title: "Careers at Floyet - Build Practical Product Software",
+  description: "Explore career opportunities at Floyet Labs & Technologies LLP and help build focused products like GymTie for real-world business operations.",
 };
 
 export default function CareersPage() {

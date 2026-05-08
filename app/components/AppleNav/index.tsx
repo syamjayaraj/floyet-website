@@ -120,9 +120,6 @@ const AppleNav = () => {
             <Link href="/about" className="apple-nav-link">
               About
             </Link>
-            <Link href="/founders" className="apple-nav-link">
-              Founders
-            </Link>
             <Link href="/careers" className="apple-nav-link">
               Careers
             </Link>
@@ -133,9 +130,6 @@ const AppleNav = () => {
               Contact
             </Link>
 
-            <Link href="/#contact" className="btn-apple-nav">
-              Get Started
-            </Link>
           </div>
           
           {/* Mobile Menu Button */}
@@ -197,13 +191,6 @@ const AppleNav = () => {
               About
             </Link>
             <Link
-              href="/founders"
-              className="mobile-menu-link"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Founders
-            </Link>
-            <Link
               href="/careers"
               className="mobile-menu-link"
               onClick={() => setIsMobileMenuOpen(false)}
@@ -225,15 +212,6 @@ const AppleNav = () => {
               Contact
             </Link>
             
-            <div style={{ marginTop: "24px" }}>
-              <Link 
-                href="/#contact" 
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="btn-apple-nav mobile-cta" 
-              >
-                Get Started
-              </Link>
-            </div>
           </div>
         </div>
       </div>

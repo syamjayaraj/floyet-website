@@ -149,10 +149,9 @@ const jsonLd = {
       itemListElement: [
         { "@type": "SiteNavigationElement", position: 1, name: "Products", url: "https://floyet.com/products" },
         { "@type": "SiteNavigationElement", position: 2, name: "About", url: "https://floyet.com/about" },
-        { "@type": "SiteNavigationElement", position: 3, name: "Founders", url: "https://floyet.com/founders" },
-        { "@type": "SiteNavigationElement", position: 4, name: "Careers", url: "https://floyet.com/careers" },
-        { "@type": "SiteNavigationElement", position: 5, name: "Blog", url: "https://floyet.com/blog" },
-        { "@type": "SiteNavigationElement", position: 6, name: "Contact", url: "https://floyet.com/contact" },
+        { "@type": "SiteNavigationElement", position: 3, name: "Careers", url: "https://floyet.com/careers" },
+        { "@type": "SiteNavigationElement", position: 4, name: "Blog", url: "https://floyet.com/blog" },
+        { "@type": "SiteNavigationElement", position: 5, name: "Contact", url: "https://floyet.com/contact" },
       ],
     },
     {
@@ -222,7 +221,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="page-transition">
+      <body className="page-transition" suppressHydrationWarning>
         <AppleNav />
         <AnimationUtility />
         {children}

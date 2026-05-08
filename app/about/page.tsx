@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import About from "../components/About";
 
 export const metadata: Metadata = {
-  title: "About Floyet - Crafting Future-Ready Digital Solutions",
-  description: "Learn about Floyet's mission to develop high-quality applications like GymTie and YoungMenu that address real-world challenges with innovative technology.",
+  title: "About Floyet - Company & Founders",
+  description: "Learn about Floyet Labs & Technologies LLP, the Kerala-based product company behind GymTie, and meet founders Syamlal CM and Sruthilal CM.",
 };
 
 export default function AboutPage() {
