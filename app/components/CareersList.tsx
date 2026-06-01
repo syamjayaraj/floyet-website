@@ -12,32 +12,33 @@ import {
 import styles from "../../app/careers/page.module.css";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
+import type { CareerRecord } from "@/app/lib/careers";
+import { initScrollReveal } from "../utils/scrollReveal";
 
-interface Career {
-  id: number;
-  title: string;
-  location: string;
-  type: string;
-  description: string;
-  requirements: string;
+interface Career extends CareerRecord {
   shortCode: string;
   badgeColor: string;
 }
 
-const getBadgeColor = (title: string, styles: any): string => {
+interface CareersListProps {
+  initialCareers?: CareerRecord[];
+  fetchError?: boolean;
+}
+
+const getBadgeColor = (title: string, styleModule: typeof styles): string => {
   const colorMap: { [key: string]: string } = {
-    Designer: styles.bgDanger,
-    Developer: styles.bgSuccess,
-    Manager: styles.bgWarning,
-    Engineer: styles.bgInfo,
-    Analyst: styles.bgTertiary,
-    Architect: styles.bgWarning2,
+    Designer: styleModule.bgDanger,
+    Developer: styleModule.bgSuccess,
+    Manager: styleModule.bgWarning,
+    Engineer: styleModule.bgInfo,
+    Analyst: styleModule.bgTertiary,
+    Architect: styleModule.bgWarning2,
   };
 
   const matchedKey = Object.keys(colorMap).find((key) =>
-    title.toLowerCase().includes(key.toLowerCase())
+    title.toLowerCase().includes(key.toLowerCase()),
   );
-  return matchedKey ? colorMap[matchedKey] : styles.bgPrimary;
+  return matchedKey ? colorMap[matchedKey] : styleModule.bgPrimary;
 };
 
 const getShortCode = (title: string): string => {
@@ -49,45 +50,67 @@ const getShortCode = (title: string): string => {
     .toUpperCase();
 };
 
-const CareersList = () => {
-  const [careers, setCareers] = useState<Career[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+const transformCareers = (records: CareerRecord[]): Career[] =>
+  records.map((career) => ({
+    ...career,
+    shortCode: getShortCode(career.title),
+    badgeColor: getBadgeColor(career.title, styles),
+  }));
+
+const CareersList = ({
+  initialCareers = [],
+  fetchError: initialFetchError = false,
+}: CareersListProps) => {
+  const [careers, setCareers] = useState<Career[]>(() =>
+    transformCareers(initialCareers),
+  );
+  const [loading, setLoading] = useState(initialFetchError);
+  const [error, setError] = useState(
+    initialFetchError ? "Failed to load career opportunities" : "",
+  );
   const [expandedId, setExpandedId] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchCareers = async () => {
+    if (!initialFetchError) {
+      return;
+    }
+
+    const fetchCareersClient = async () => {
       try {
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/careers`
-        );
+        const response = await fetch("/api/careers");
         if (!response.ok) {
           throw new Error("Failed to fetch careers");
         }
         const data = await response.json();
-
-        // Transform the data to include shortCode and badgeColor
-        const transformedCareers = data.data.map((career: any) => ({
-          ...career,
-          shortCode: getShortCode(career.title),
-          badgeColor: getBadgeColor(career.title, styles),
-        }));
-
-        setCareers(transformedCareers);
-      } catch (err) {
+        const records = Array.isArray(data?.data) ? data.data : [];
+        setCareers(transformCareers(records));
+        setError("");
+      } catch {
         setError("Failed to load career opportunities");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchCareers();
-  }, []);
+    fetchCareersClient();
+  }, [initialFetchError]);
+
+  useEffect(() => {
+    if (loading) return;
+    const cleanup = initScrollReveal();
+    return () => cleanup?.();
+  }, [loading, careers.length]);
 
   if (loading) {
     return (
-      <div className={styles.stateScreen}>
-        <div className={styles.loadingSpinner}></div>
+      <div className={`${styles.stateScreen} glass-section`}>
+        <div className="glass-section__ambient" aria-hidden="true">
+          <div
+            className="glass-orb glass-orb--purple"
+            style={{ width: 400, height: 400, top: "20%", left: "30%" }}
+          />
+        </div>
+        <div className={`${styles.loadingSpinner} glass-section__inner`} />
       </div>
     );
   }
@@ -95,143 +118,191 @@ const CareersList = () => {
   const hasOpenRoles = !error && careers.length > 0;
 
   return (
-    <div className={`${styles.careersPage} reveal fade-in`}>
-        {/* Hero Section */}
-        <section className={styles.heroSection}>
-          <div className="container">
-            <div className={styles.heroInner}>
-              <div className={styles.heroEyebrow}>Careers at Floyet</div>
-              <h1 className={styles.sectionTitle}>
-                Help build GymTie — Floyet&apos;s flagship product.
-              </h1>
-              <p className={styles.sectionDescription}>
-                We are a small product team from Kerala. GymTie is our primary focus: gym operations for owners and member engagement through GymTie Fit. We also maintain YoungMenu, DevaPatha, Livonomi, and Onebest. We value ownership, clarity, and craft.
-              </p>
-              <div className={styles.careerHighlights}>
-                <span>GymTie-first product team</span>
-                <span>Kerala, India</span>
-                <span>Remote-friendly when available</span>
-              </div>
+    <div className={`${styles.careersPage} glass-section reveal fade-in`}>
+      <div className="glass-section__ambient" aria-hidden="true">
+        <div
+          className="glass-orb glass-orb--purple"
+          style={{ width: 520, height: 520, top: "-5%", left: "-8%" }}
+        />
+        <div
+          className="glass-orb glass-orb--blue"
+          style={{ width: 420, height: 420, top: "35%", right: "-12%" }}
+        />
+        <div
+          className="glass-orb glass-orb--white"
+          style={{ width: 340, height: 340, bottom: "8%", left: "25%" }}
+        />
+      </div>
+      <div className="glass-section__grid" aria-hidden="true" />
+
+      <section className={styles.heroSection}>
+        <div className="container glass-section__inner">
+          <div
+            className={`${styles.heroInner} liquid-glass liquid-glass--elevated reveal-blur`}
+          >
+            <div className={styles.heroEyebrow}>Careers at Floyet</div>
+            <h1 className={styles.sectionTitle}>
+              Help build GymTie - Floyet&apos;s flagship product.
+            </h1>
+            <p className={styles.sectionDescription}>
+              We are a small product team from Kerala. GymTie is our primary
+              focus: gym operations for owners and member engagement through
+              GymTie Fit. We also maintain YoungMenu, DevaPatha, Livonomi, and
+              Onebest. We value ownership, clarity, and craft.
+            </p>
+            <div className={styles.careerHighlights}>
+              <span className="liquid-glass liquid-glass--strong">
+                GymTie-first product team
+              </span>
+              <span className="liquid-glass liquid-glass--strong">
+                Kerala, India
+              </span>
+              <span className="liquid-glass liquid-glass--strong">
+                Remote-friendly when available
+              </span>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Jobs List Section */}
-        <section className={styles.jobsSection}>
-          <div className="container">
-            <div className={styles.jobsContainer}>
-              <div className={styles.jobsHeader}>
-                <div>
-                  <span className={styles.jobsEyebrow}>Open roles</span>
-                  <h2>{hasOpenRoles ? "Current opportunities" : "No open roles right now"}</h2>
-                </div>
-                <a href="mailto:info@floyet.com" className={styles.emailButton}>
-                  <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
-                  Send profile
-                </a>
+      <section className={styles.jobsSection}>
+        <div className="container glass-section__inner">
+          <div className={styles.jobsContainer}>
+            <div
+              className={`${styles.jobsHeader} liquid-glass liquid-glass--elevated reveal-scale`}
+            >
+              <div>
+                <span className={styles.jobsEyebrow}>Open roles</span>
+                <h2>
+                  {hasOpenRoles
+                    ? "Current opportunities"
+                    : "No open roles right now"}
+                </h2>
               </div>
+              <a
+                href="mailto:info@floyet.com"
+                className={`${styles.emailButton} liquid-glass liquid-glass--interactive`}
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
+                Send profile
+              </a>
+            </div>
 
-              {hasOpenRoles ? (
-                <div className={styles.jobsList}>
-                  {careers.map((job) => (
-                    <div key={job.id} className={styles.jobCard}>
-                      <div
-                        className={styles.jobHeader}
-                        onClick={() =>
-                          setExpandedId(expandedId === job.id ? null : job.id)
-                        }
-                      >
-                        <div className={styles.jobDetails}>
-                          <span className={styles.jobTitle}>
-                            <span
-                              className={`${styles.badgeCircle} ${styles.textWhite} ${job.badgeColor}`}
-                            >
-                              {job.shortCode}
-                            </span>
-                            {job.title}
-                          </span>
-
-                          <span className={styles.jobInfo}>
-                            <FontAwesomeIcon
-                              icon={faClock}
-                              className="w-4 h-4"
-                            />
-                            {job.type}
-                          </span>
-
-                          <span className={styles.jobInfo}>
-                            <FontAwesomeIcon
-                              icon={faLocationDot}
-                              className="w-4 h-4"
-                            />
-                            {job.location}
-                          </span>
-
-                          <button
-                            className={`${styles.expandButton} ${
-                              expandedId === job.id ? styles.expanded : ""
-                            }`}
-                            aria-label={
-                              expandedId === job.id
-                                ? "Collapse details"
-                                : "Expand details"
-                            }
+            {hasOpenRoles ? (
+              <div className={`${styles.jobsList} reveal-stagger`}>
+                {careers.map((job) => (
+                  <div
+                    key={job.id}
+                    className={`${styles.jobCard} liquid-glass liquid-glass--interactive reveal-child`}
+                  >
+                    <div
+                      className={styles.jobHeader}
+                      onClick={() =>
+                        setExpandedId(expandedId === job.id ? null : job.id)
+                      }
+                    >
+                      <div className={styles.jobDetails}>
+                        <span className={styles.jobTitle}>
+                          <span
+                            className={`${styles.badgeCircle} ${styles.textWhite} ${job.badgeColor}`}
                           >
-                            <FontAwesomeIcon
-                              icon={faChevronDown}
-                              className="w-5 h-5"
-                            />
-                          </button>
-                        </div>
+                            {job.shortCode}
+                          </span>
+                          {job.title}
+                        </span>
+
+                        <span className={styles.jobInfo}>
+                          <FontAwesomeIcon icon={faClock} className="w-4 h-4" />
+                          {job.type}
+                        </span>
+
+                        <span className={styles.jobInfo}>
+                          <FontAwesomeIcon
+                            icon={faLocationDot}
+                            className="w-4 h-4"
+                          />
+                          {job.location}
+                        </span>
+
+                        <button
+                          type="button"
+                          className={`${styles.expandButton} liquid-glass ${
+                            expandedId === job.id ? styles.expanded : ""
+                          }`}
+                          aria-label={
+                            expandedId === job.id
+                              ? "Collapse details"
+                              : "Expand details"
+                          }
+                        >
+                          <FontAwesomeIcon
+                            icon={faChevronDown}
+                            className="w-5 h-5"
+                          />
+                        </button>
                       </div>
+                    </div>
 
-                      {expandedId === job.id && (
-                        <div className={styles.jobContent}>
-                          <div className="space-y-6">
-                            <div>
-                              <div className={styles.jobDescription}>
-                                <ReactMarkdown>{job.description}</ReactMarkdown>
-                              </div>
-                            </div>
-
-                            <div className={styles.applySection}>
-                              <Link
-                                href="/contact"
-                                className={styles.applyButton}
-                              >
-                                Apply Now
-                                <FontAwesomeIcon
-                                  icon={faArrowRight}
-                                  className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
-                                />
-                              </Link>
+                    {expandedId === job.id && (
+                      <div className={styles.jobContent}>
+                        <div className="space-y-6">
+                          <div>
+                            <div className={styles.jobDescription}>
+                              <ReactMarkdown>{job.description}</ReactMarkdown>
                             </div>
                           </div>
+
+                          <div className={styles.applySection}>
+                            <Link
+                              href="/contact"
+                              className={styles.applyButton}
+                            >
+                              Apply Now
+                              <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                              />
+                            </Link>
+                          </div>
                         </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className={styles.noRolesCard}>
-                  <div className={styles.noRolesIcon}>
-                    <i className="bi bi-briefcase"></i>
+                      </div>
+                    )}
                   </div>
-                  <h3>We are not actively hiring for a specific role today.</h3>
-                  <p>
-                    We still like hearing from thoughtful builders, designers, operators, and growth-minded people who care about practical software.
-                    Send your profile and a short note about how you can contribute.
-                  </p>
-                  {error && <p className={styles.statusNote}>Live openings could not be loaded right now.</p>}
-                  <a href="mailto:info@floyet.com" className={styles.applyButton}>
-                    Send Profile
-                    <FontAwesomeIcon icon={faArrowRight} className="ml-2 w-4 h-4" />
-                  </a>
+                ))}
+              </div>
+            ) : (
+              <div
+                className={`${styles.noRolesCard} liquid-glass liquid-glass--elevated liquid-glass--purple reveal-scale`}
+              >
+                <div
+                  className={`${styles.noRolesIcon} liquid-glass liquid-glass--strong`}
+                >
+                  <i className="bi bi-briefcase"></i>
                 </div>
-              )}
-            </div>
+                <h3>We are not actively hiring for a specific role today.</h3>
+                <p>
+                  We still like hearing from thoughtful builders, designers,
+                  operators, and growth-minded people who care about practical
+                  software. Send your profile and a short note about how you can
+                  contribute.
+                </p>
+                {error && (
+                  <p className={styles.statusNote}>
+                    Live openings could not be loaded right now.
+                  </p>
+                )}
+                <a href="mailto:info@floyet.com" className={styles.applyButton}>
+                  Send Profile
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="ml-2 w-4 h-4"
+                  />
+                </a>
+              </div>
+            )}
           </div>
-        </section>
+        </div>
+      </section>
     </div>
   );
 };

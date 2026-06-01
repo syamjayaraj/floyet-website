@@ -1,19 +1,15 @@
 .about-trust {
   padding: 100px 0;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(129, 74, 246, 0.08), transparent 40%),
-    var(--color-background-secondary);
+  background: var(--color-background-secondary);
 }
 
 .about-trust-inner {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
-  gap: 48px;
+  gap: 40px;
   align-items: center;
   padding: 56px;
-  border-radius: 24px;
-  border: 1px solid var(--color-separator);
-  background: var(--color-background-elevated);
+  border-radius: 28px;
 }
 
 .about-trust-eyebrow {
@@ -44,35 +40,65 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 14px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 16px;
   border-radius: 999px;
-  background: rgba(129, 74, 246, 0.12);
-  border: 1px solid rgba(167, 139, 250, 0.28);
-  font-size: 13px;
-  font-weight: 600;
-  color: #c4b5fd;
   margin-bottom: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+@media (max-width: 480px) {
+  .about-trust-gymtie-pill {
+    white-space: normal;
+    text-align: left;
+  }
+}
+
+.about-trust-gymtie-pill img {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.about-trust-gymtie-pill span {
+  line-height: 1.2;
+}
+
+.about-trust-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-trust-visual .product-showcase {
+  flex-shrink: 0;
 }
 
 .about-trust-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 14px;
 }
 
 .about-trust-stat {
   padding: 24px;
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--color-separator);
+  border-radius: 20px;
   text-align: center;
 }
 
 .about-trust-stat-value {
   font-size: clamp(28px, 4vw, 36px);
   font-weight: 800;
-  color: var(--color-text-primary);
   margin-bottom: 6px;
+  background: linear-gradient(135deg, #a78bfa 0%, #e9e0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .about-trust-stat-label {

@@ -67,6 +67,47 @@
     box-shadow: 0 30px 96px rgba(0, 0, 0, 0.32);
 }
 
+.product-impact-showcase {
+    width: 100%;
+    max-width: 820px;
+    margin: 36px auto 0;
+}
+
+.product-tile-shot {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.minimal-card.onebest-card {
+    display: grid;
+    grid-template-columns: minmax(200px, 280px) 1fr auto;
+    gap: 28px;
+    align-items: center;
+}
+
+.minimal-card-showcase {
+    max-width: 280px;
+}
+
+.minimal-card-showcase .product-showcase-badge {
+    font-size: 9px;
+}
+
+@media (max-width: 768px) {
+    .minimal-card.onebest-card {
+        grid-template-columns: 1fr;
+    }
+
+    .minimal-card-showcase {
+        max-width: none;
+    }
+}
+
 .gymtie-focus-card {
     border-color: rgba(167, 139, 250, 0.28);
     background:

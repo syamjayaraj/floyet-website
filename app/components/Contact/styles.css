@@ -1,14 +1,22 @@
 .contact-page .contact-section {
     padding-top: 100px;
+    min-height: 100vh;
+}
+
+.contact-page .glass-section__ambient .glass-orb--purple {
+    opacity: 1;
 }
 
 .contact-section {
-    padding: 120px 0;
+  padding: 100px 0 120px;
+  background: var(--color-background);
 }
 
 .contact-header {
-  margin-bottom: 56px;
+  margin-bottom: 48px;
   text-align: center;
+  padding: 44px 40px;
+  border-radius: 28px;
 }
 
 .contact-eyebrow {
@@ -39,7 +47,7 @@
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
-  gap: 32px;
+  gap: 24px;
   align-items: start;
 }
 
@@ -51,23 +59,128 @@
 }
 
 .contact-form-section {
-  background: var(--color-background-elevated);
-  border: 1px solid var(--color-separator);
-  border-radius: 24px;
+  border-radius: 28px;
   padding: 40px;
 }
 
+.contact-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.contact-info-card-apple.liquid-glass,
+.social-section-apple.liquid-glass,
+.contact-form-section.liquid-glass,
+.contact-header.liquid-glass {
+  background: var(--glass-bg);
+}
+
+.contact-info-card-apple.liquid-glass--interactive:hover,
+.social-link-apple.liquid-glass:hover {
+  background: var(--glass-bg-elevated);
+}
+
+.contact-info-card-apple {
+  padding: 24px;
+  border-radius: 20px;
+}
+
 .contact-icon-apple {
-  background: rgba(255, 255, 255, 0.08);
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
 }
 
 .contact-icon-apple i {
+  font-size: 24px;
   color: var(--color-text-primary);
+}
+
+.contact-info-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.contact-info-details p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contact-link-apple {
+  font-size: 15px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  display: block;
+  margin-top: 4px;
+  transition: opacity var(--transition-fast);
+}
+
+.contact-link-apple:hover {
+  opacity: 0.8;
+}
+
+.social-section-apple {
+  padding: 24px;
+  border-radius: 20px;
+}
+
+.social-title-apple {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.social-links-apple {
+  display: flex;
+  gap: 12px;
+}
+
+.social-link-apple {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  --glass-blur: 20px;
+}
+
+.social-link-apple:hover {
+  transform: translateY(-2px);
+  border-color: var(--glass-border-bright);
+}
+
+/* Form inputs on glass panel */
+.contact-form-section .form-input-apple,
+.contact-form-section .form-textarea-apple {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 @media (max-width: 768px) {
   .contact-section {
     padding: 80px 0;
+  }
+
+  .contact-header {
+    padding: 32px 24px;
   }
 
   .contact-layout {

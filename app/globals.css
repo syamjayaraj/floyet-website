@@ -1,5 +1,6 @@
 @import './styles/careers.css';
 @import './styles/secondary-pages.css';
+@import './styles/home-glass.css';
 
 /* ============================================
    APPLE PROFESSIONAL DESIGN SYSTEM
@@ -60,6 +61,26 @@
   --transition-fast: 0.2s cubic-bezier(0.28, 0.11, 0.32, 1);
   --transition-base: 0.3s cubic-bezier(0.28, 0.11, 0.32, 1);
   --transition-slow: 0.4s cubic-bezier(0.28, 0.11, 0.32, 1);
+
+  /* Liquid glass (Apple-style) */
+  --glass-blur: 32px;
+  --glass-saturate: 180%;
+  --glass-bg: rgba(255, 255, 255, 0.045);
+  --glass-bg-elevated: rgba(255, 255, 255, 0.075);
+  --glass-bg-strong: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border-bright: rgba(255, 255, 255, 0.18);
+  --glass-highlight: rgba(255, 255, 255, 0.22);
+  --glass-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.18),
+    0 24px 64px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+  --glass-shadow-hover:
+    0 8px 32px rgba(0, 0, 0, 0.24),
+    0 32px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* ============================================
@@ -614,11 +635,68 @@ a:hover {
 }
 
 /* Glassmorphism & Background Utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.glass,
+.liquid-glass {
+  position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: saturate(var(--glass-saturate)) blur(var(--glass-blur));
+  -webkit-backdrop-filter: saturate(var(--glass-saturate)) blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  isolation: isolate;
+}
+
+.liquid-glass--elevated {
+  background: var(--glass-bg-elevated);
+}
+
+.liquid-glass--strong {
+  background: var(--glass-bg-strong);
+}
+
+.liquid-glass--interactive {
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+.liquid-glass--interactive:hover {
+  background: var(--glass-bg-elevated);
+  border-color: var(--glass-border-bright);
+  box-shadow: var(--glass-shadow-hover);
+  transform: translateY(-2px);
+}
+
+/* Specular top edge - liquid glass shine */
+.liquid-glass::before,
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.14) 0%,
+    rgba(255, 255, 255, 0.04) 22%,
+    transparent 48%
+  );
+  z-index: 0;
+}
+
+.liquid-glass > *,
+.glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .liquid-glass,
+  .glass {
+    background: rgba(28, 28, 34, 0.92);
+  }
 }
 
 .bg-grid {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Floyet",
   },
   description:
-    "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world operations.",
+    "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world operations.",
   keywords: [
     "Floyet",
     "digital products",
@@ -35,7 +35,9 @@ export const metadata: Metadata = {
     "software solutions India",
     "Kozhikode tech company",
   ],
-  authors: [{ name: "Floyet Labs & Technologies LLP", url: "https://floyet.com" }],
+  authors: [
+    { name: "Floyet Labs & Technologies LLP", url: "https://floyet.com" },
+  ],
   creator: "Floyet Labs & Technologies LLP",
   publisher: "Floyet Labs & Technologies LLP",
   metadataBase: new URL("https://floyet.com"),
@@ -45,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world operations.",
+      "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world operations.",
     type: "website",
     url: "https://floyet.com",
     siteName: "Floyet",
@@ -110,7 +112,8 @@ const jsonLd = {
       foundingDate: "2018",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Door No: 2211, 2/1149/I 100, Hilite Business Park, Olavanna",
+        streetAddress:
+          "Door No: 2211, 2/1149/I 100, Hilite Business Park, Olavanna",
         addressLocality: "Kozhikode",
         addressRegion: "Kerala",
         postalCode: "673014",
@@ -150,11 +153,36 @@ const jsonLd = {
       "@id": "https://floyet.com/#site-navigation",
       name: "Floyet site navigation",
       itemListElement: [
-        { "@type": "SiteNavigationElement", position: 1, name: "Products", url: "https://floyet.com/products" },
-        { "@type": "SiteNavigationElement", position: 2, name: "About", url: "https://floyet.com/about" },
-        { "@type": "SiteNavigationElement", position: 3, name: "Careers", url: "https://floyet.com/careers" },
-        { "@type": "SiteNavigationElement", position: 4, name: "Blog", url: "https://floyet.com/blog" },
-        { "@type": "SiteNavigationElement", position: 5, name: "Contact", url: "https://floyet.com/contact" },
+        {
+          "@type": "SiteNavigationElement",
+          position: 1,
+          name: "Products",
+          url: "https://floyet.com/products",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 2,
+          name: "About",
+          url: "https://floyet.com/about",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 3,
+          name: "Careers",
+          url: "https://floyet.com/careers",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 4,
+          name: "Blog",
+          url: "https://floyet.com/blog",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 5,
+          name: "Contact",
+          url: "https://floyet.com/contact",
+        },
       ],
     },
     {
@@ -169,7 +197,8 @@ const jsonLd = {
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web, Android, iOS",
           url: "https://gymtie.com",
-          description: "Gym management software for member management, billing, attendance, and WhatsApp automation.",
+          description:
+            "Gym management software for member management, billing, attendance, and WhatsApp automation.",
         },
         {
           "@type": "SoftwareApplication",
@@ -178,7 +207,8 @@ const jsonLd = {
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
           url: "https://youngmenu.com",
-          description: "Digital menu, ordering, billing, and online visibility platform for food businesses.",
+          description:
+            "Digital menu, ordering, billing, and online visibility platform for food businesses.",
         },
         {
           "@type": "SoftwareApplication",
@@ -188,7 +218,8 @@ const jsonLd = {
           operatingSystem: "Web, Android, iOS",
           url: "https://devapatha.com",
           image: "https://floyet.com/assets/logo/devapatha.png",
-          description: "Temple management platform for temple operations and devotee engagement.",
+          description:
+            "Temple management platform for temple operations and devotee engagement.",
         },
         {
           "@type": "SoftwareApplication",
@@ -198,7 +229,8 @@ const jsonLd = {
           operatingSystem: "Android, iOS",
           url: "https://livonomi.com",
           image: "https://floyet.com/assets/logo/livonomi.png",
-          description: "Finance-first life management OS for income, spending, wealth, subscriptions, goals, and AI-powered insights.",
+          description:
+            "Finance-first life management OS for income, spending, wealth, subscriptions, goals, and AI-powered insights.",
         },
         {
           "@type": "Store",

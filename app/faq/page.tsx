@@ -13,7 +13,7 @@ const FAQPage = () => {
     {
       question: "What does Floyet do?",
       answer:
-        "Floyet Labs & Technologies LLP is a product company from Kerala. Our primary product is GymTie — a complete gym management ecosystem. We also build YoungMenu, DevaPatha, Livonomi, and Onebest for other vertical markets.",
+        "Floyet Labs & Technologies LLP is a product company from Kerala. Our primary product is GymTie - a complete gym management ecosystem. We also build YoungMenu, DevaPatha, Livonomi, and Onebest for other vertical markets.",
     },
     {
       question: "What is GymTie?",
@@ -38,12 +38,12 @@ const FAQPage = () => {
     {
       question: "What is Livonomi?",
       answer:
-        "Livonomi is Floyet's finance-first life management app. It brings income, spending, wealth, subscriptions, and goals into one workspace — with separate personal and business contexts and AI-powered financial insights. Learn more at livonomi.com.",
+        "Livonomi is Floyet's finance-first life management app. It brings income, spending, wealth, subscriptions, and goals into one workspace - with separate personal and business contexts and AI-powered financial insights. Learn more at livonomi.com.",
     },
     {
       question: "Does Floyet offer custom software development?",
       answer:
-        "Floyet primarily focuses on its own product platforms — especially GymTie — while also partnering selectively with businesses for high-quality web and mobile software solutions.",
+        "Floyet primarily focuses on its own product platforms - especially GymTie - while also partnering selectively with businesses for high-quality web and mobile software solutions.",
     },
     {
       question: "Where is Floyet located?",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main id="main-content" className="contact-page min-h-screen reveal fade-in">
+    <main id="main-content" className="contact-page min-h-screen">
       <Contact />
     </main>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import "./styles.css";
 
@@ -8,7 +9,11 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { label: "GymTie (Flagship)", href: "https://gymtie.com", external: true },
+        {
+          label: "GymTie (Flagship)",
+          href: "https://gymtie.com",
+          external: true,
+        },
         { label: "YoungMenu", href: "https://youngmenu.com", external: true },
         { label: "DevaPatha", href: "https://devapatha.com", external: true },
         { label: "Livonomi", href: "https://livonomi.com", external: true },
@@ -43,9 +48,17 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: "bi-linkedin", url: "https://www.linkedin.com/company/floyet", label: "LinkedIn" },
+    {
+      icon: "bi-linkedin",
+      url: "https://www.linkedin.com/company/floyet",
+      label: "LinkedIn",
+    },
     { icon: "bi-twitter-x", url: "https://x.com/floyet.tech", label: "X" },
-    { icon: "bi-instagram", url: "https://www.instagram.com/floyet.tech", label: "Instagram" },
+    {
+      icon: "bi-instagram",
+      url: "https://www.instagram.com/floyet.tech",
+      label: "Instagram",
+    },
     { icon: "bi-github", url: "https://github.com/codeariv", label: "GitHub" },
   ];
 
@@ -57,23 +70,29 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="footer-brand-col">
             <Link href="/" className="footer-logo">
-              FLOYET
+              <Image
+                src="/logo.png"
+                alt="Floyet"
+                width={32}
+                height={32}
+                className="footer-logo-image"
+              />
+              <span>FLOYET</span>
             </Link>
             <p className="footer-tagline">
-              Floyet builds GymTie — our flagship gym ecosystem — and focused products for food, temples, finance, and retail.
+              Floyet builds GymTie - our flagship gym ecosystem - and focused
+              products for food, temples, finance, and retail.
             </p>
           </div>
 
           {/* Sitemaps */}
           {footerSections.map((section, idx) => (
             <div key={idx}>
-              <h4 className="footer-section-title">
-                {section.title}
-              </h4>
+              <h4 className="footer-section-title">{section.title}</h4>
               <ul className="footer-links-list">
                 {section.links.map((link, linkIdx) => (
                   <li key={linkIdx} className="footer-link-item">
-                    {'external' in link && link.external ? (
+                    {"external" in link && link.external ? (
                       <a
                         href={link.href}
                         target="_blank"
@@ -83,10 +102,7 @@ const Footer = () => {
                         {link.label}
                       </a>
                     ) : (
-                      <Link 
-                        href={link.href}
-                        className="footer-link"
-                      >
+                      <Link href={link.href} className="footer-link">
                         {link.label}
                       </Link>
                     )}

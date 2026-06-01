@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { Metadata } from "next";
@@ -70,12 +71,29 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = data[0];
 
   return (
-    <>
-      <main id="main-content" className={`${styles.main} secondary-page`}>
-        <article className={styles.article}>
-          <div className={styles.container}>
+    <main id="main-content" className={`${styles.main} glass-section`}>
+      <div className="glass-section__ambient" aria-hidden="true">
+        <div
+          className="glass-orb glass-orb--purple"
+          style={{ width: 460, height: 460, top: "5%", left: "-10%" }}
+        />
+        <div
+          className="glass-orb glass-orb--blue"
+          style={{ width: 380, height: 380, bottom: "15%", right: "-8%" }}
+        />
+      </div>
+      <div className="glass-section__grid" aria-hidden="true" />
+
+      <article className={`${styles.article} glass-section__inner`}>
+        <div className={styles.container}>
+          <Link href="/blog" className={`${styles.backLink} liquid-glass liquid-glass--interactive`}>
+            <i className="bi bi-arrow-left" aria-hidden="true" />
+            Back to blog
+          </Link>
+
+          <div className={`${styles.articleCard} liquid-glass liquid-glass--elevated reveal-scale`}>
             {post?.image?.url && (
-              <div className={styles.heroImage}>
+              <div className={`${styles.heroImage} liquid-glass liquid-glass--strong`}>
                 <img
                   src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${post?.image?.url}`}
                   alt={post.title}
@@ -88,7 +106,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <h1 className={styles.title}>{post.title}</h1>
 
               <div className={styles.meta}>
-                <time className={styles.date}>
+                <time className={styles.date} dateTime={post.publishedAt}>
                   {new Date(post.publishedAt).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -102,8 +120,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </div>
             </div>
           </div>
-        </article>
-      </main>
-    </>
+        </div>
+      </article>
+    </main>
   );
 }

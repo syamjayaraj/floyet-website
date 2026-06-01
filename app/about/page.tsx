@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main id="main-content" className="min-h-screen reveal fade-in about-page">
+    <main id="main-content" className="min-h-screen about-page">
       <About />
     </main>
   );

@@ -1,5 +1,13 @@
 export type ProductAccent = "purple" | "orange" | "gold" | "green" | "rose";
 
+export interface ProductMedia {
+  /** Main product screenshot (16:9) - replace in /public/placeholders/ */
+  showcase: string;
+  /** Optional secondary shot for sub-apps */
+  manager?: string;
+  fit?: string;
+}
+
 export interface ProductItem {
   id: string;
   name: string;
@@ -10,6 +18,7 @@ export interface ProductItem {
   accent: ProductAccent;
   flagship?: boolean;
   highlights: string[];
+  media: ProductMedia;
 }
 
 export const products: ProductItem[] = [
@@ -23,6 +32,11 @@ export const products: ProductItem[] = [
     accent: "purple",
     flagship: true,
     highlights: ["Billing & attendance", "WhatsApp automation", "Member app"],
+    media: {
+      showcase: "/placeholders/gymtie-showcase.svg",
+      manager: "/placeholders/gymtie-manager.svg",
+      fit: "/placeholders/gymtie-fit.svg",
+    },
   },
   {
     id: "youngmenu",
@@ -33,6 +47,7 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/youngmenu.png",
     accent: "orange",
     highlights: ["POS billing", "QR menus", "Discovery app"],
+    media: { showcase: "/placeholders/youngmenu.svg" },
   },
   {
     id: "devapatha",
@@ -43,6 +58,7 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/devapatha.png",
     accent: "gold",
     highlights: ["Temple manager", "Devotee app", "Donations & events"],
+    media: { showcase: "/placeholders/devapatha.svg" },
   },
   {
     id: "livonomi",
@@ -53,6 +69,7 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/livonomi.png",
     accent: "green",
     highlights: ["Wealth tracking", "AI insights", "Dual workspaces"],
+    media: { showcase: "/placeholders/livonomi.svg" },
   },
   {
     id: "onebest",
@@ -63,8 +80,12 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/onebest.png",
     accent: "rose",
     highlights: ["Curated catalog", "Special occasions", "India delivery"],
+    media: { showcase: "/placeholders/onebest.svg" },
   },
 ];
+
+/** About / trust section visual */
+export const FLOYET_ECOSYSTEM_MEDIA = "/placeholders/floyet-ecosystem.svg";
 
 export const flagshipProduct = products.find((p) => p.flagship)!;
 export const companionProducts = products.filter((p) => !p.flagship);

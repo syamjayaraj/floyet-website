@@ -1,0 +1,84 @@
+/* Shared liquid glass section shell (home + reusable) */
+.glass-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-section__ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.glass-section__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.glass-section__grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 48px 48px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse 85% 55% at 50% 45%, black 15%, transparent 72%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.glass-orb--purple {
+  background: rgba(129, 74, 246, 0.2);
+}
+
+.glass-orb--blue {
+  background: rgba(90, 173, 255, 0.12);
+}
+
+.glass-orb--white {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Tinted glass variants */
+.liquid-glass--purple {
+  border-color: rgba(167, 139, 250, 0.22);
+  box-shadow:
+    var(--glass-shadow),
+    0 0 48px rgba(129, 74, 246, 0.08);
+}
+
+.liquid-glass--purple::before {
+  background: linear-gradient(
+    165deg,
+    rgba(167, 139, 250, 0.18) 0%,
+    rgba(255, 255, 255, 0.05) 28%,
+    transparent 50%
+  );
+}
+
+.liquid-glass-ribbon {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c4b5fd;
+}
+
+/* Home page: seamless flow between glass sections */
+.home-page {
+  background: var(--color-background);
+}

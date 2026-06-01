@@ -5,6 +5,7 @@ interface PageHeaderProps {
   title: string;
   subtitle?: string;
   align?: "center" | "left";
+  glass?: boolean;
 }
 
 const PageHeader = ({
@@ -12,10 +13,13 @@ const PageHeader = ({
   title,
   subtitle,
   align = "center",
+  glass = false,
 }: PageHeaderProps) => {
   return (
     <header
-      className={`page-header page-header--${align} reveal-blur`}
+      className={`page-header page-header--${align} reveal-blur ${
+        glass ? "liquid-glass liquid-glass--elevated" : ""
+      }`}
     >
       <div className="page-header-eyebrow">{eyebrow}</div>
       <h1 className="page-header-title">{title}</h1>

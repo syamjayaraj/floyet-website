@@ -3,7 +3,8 @@ import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
   title: "System Status - GymTie & Floyet Services",
-  description: "Real-time status for GymTie, Floyet website, and other Floyet product services.",
+  description:
+    "Real-time status for GymTie, Floyet website, and other Floyet product services.",
 };
 
 async function getStatusData() {
@@ -23,22 +24,66 @@ const StatusPage = async () => {
   const statusData = statusResponse?.data;
 
   const services = [
-    { name: "Website", key: "Website", statusOn: statusData?.Website, comingSoon: false },
-    { name: "GymTie Platform", key: "GymTie", statusOn: statusData?.GymTie, comingSoon: false, primary: true },
-    { name: "YoungMenu", key: "YoungMenu", statusOn: statusData?.YoungMenu, comingSoon: !statusData?.YoungMenu },
-    { name: "DevaPatha", key: "DevaPatha", statusOn: statusData?.DevaPatha, comingSoon: !statusData?.DevaPatha },
-    { name: "Livonomi", key: "Livonomi", statusOn: statusData?.Livonomi, comingSoon: !statusData?.Livonomi },
-    { name: "Onebest API", key: "Onebest", statusOn: statusData?.Onebest, comingSoon: false },
-    { name: "Cloud Infrastructure", key: "cloud", statusOn: statusData?.cloud, comingSoon: false },
+    {
+      name: "Website",
+      key: "Website",
+      statusOn: statusData?.Website,
+      comingSoon: false,
+    },
+    {
+      name: "GymTie Platform",
+      key: "GymTie",
+      statusOn: statusData?.GymTie,
+      comingSoon: false,
+      primary: true,
+    },
+    {
+      name: "YoungMenu",
+      key: "YoungMenu",
+      statusOn: statusData?.YoungMenu,
+      comingSoon: !statusData?.YoungMenu,
+    },
+    {
+      name: "DevaPatha",
+      key: "DevaPatha",
+      statusOn: statusData?.DevaPatha,
+      comingSoon: !statusData?.DevaPatha,
+    },
+    {
+      name: "Livonomi",
+      key: "Livonomi",
+      statusOn: statusData?.Livonomi,
+      comingSoon: !statusData?.Livonomi,
+    },
+    {
+      name: "Onebest API",
+      key: "Onebest",
+      statusOn: statusData?.Onebest,
+      comingSoon: false,
+    },
+    {
+      name: "Cloud Infrastructure",
+      key: "cloud",
+      statusOn: statusData?.cloud,
+      comingSoon: false,
+    },
   ];
 
-  const serviceKeys = ["Website", "GymTie", "YoungMenu", "DevaPatha", "Livonomi", "Onebest", "cloud"];
+  const serviceKeys = [
+    "Website",
+    "GymTie",
+    "YoungMenu",
+    "DevaPatha",
+    "Livonomi",
+    "Onebest",
+    "cloud",
+  ];
   const allOperational = statusData
     ? serviceKeys.every(
         (key) =>
           statusData[key] === true ||
           statusData[key] === null ||
-          statusData[key] === undefined
+          statusData[key] === undefined,
       )
     : false;
 
@@ -58,7 +103,7 @@ const StatusPage = async () => {
         <PageHeader
           eyebrow="Reliability"
           title="System Status"
-          subtitle="Monitor GymTie — our flagship platform — and all Floyet services."
+          subtitle="Monitor GymTie - our flagship platform - and all Floyet services."
         />
 
         <div className="max-w-2xl mx-auto reveal fade-in">
@@ -67,7 +112,9 @@ const StatusPage = async () => {
           >
             <div
               className="status-hero-title"
-              style={{ color: allOperational ? "rgb(52, 199, 89)" : "rgb(255, 149, 0)" }}
+              style={{
+                color: allOperational ? "rgb(52, 199, 89)" : "rgb(255, 149, 0)",
+              }}
             >
               <i
                 className={`bi ${allOperational ? "bi-check-circle-fill" : "bi-exclamation-triangle-fill"} me-2`}
@@ -98,10 +145,16 @@ const StatusPage = async () => {
                         <span className="status-row-flag">Flagship</span>
                       )}
                     </div>
-                    <div className="status-row-meta">Last verified recently</div>
+                    <div className="status-row-meta">
+                      Last verified recently
+                    </div>
                   </div>
                   <div className="status-row-badge" style={{ color }}>
-                    <span className="status-dot" style={{ background: color }} aria-hidden="true" />
+                    <span
+                      className="status-dot"
+                      style={{ background: color }}
+                      aria-hidden="true"
+                    />
                     {label}
                   </div>
                 </div>
