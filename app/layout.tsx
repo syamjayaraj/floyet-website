@@ -11,11 +11,11 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Floyet - Focused Digital Products for Real-World Impact",
+    default: "Floyet - GymTie Flagship & Digital Products",
     template: "%s | Floyet",
   },
   description:
-    "Floyet builds modern, high-quality digital products - GymTie, YoungMenu, DevaPatha, and Onebest - solving real-world business challenges.",
+    "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world operations.",
   keywords: [
     "Floyet",
     "digital products",
@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "temple management platform",
     "temple management software",
     "Onebest",
+    "Livonomi",
+    "personal finance app",
+    "life management",
     "software solutions India",
     "Kozhikode tech company",
   ],
@@ -42,14 +45,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Floyet builds modern, high-quality digital products - GymTie, YoungMenu, DevaPatha, and Onebest - solving real-world business challenges.",
+      "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world operations.",
     type: "website",
     url: "https://floyet.com",
     siteName: "Floyet",
     locale: "en_IN",
     images: [
       {
-        url: "/assets/logo/gymtie.png",
+        url: "/logo.png",
         width: 512,
         height: 512,
         alt: "Floyet - Digital Products",
@@ -61,8 +64,8 @@ export const metadata: Metadata = {
     site: "@floyet",
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "GymTie, YoungMenu, DevaPatha, Onebest - digital products that solve real business challenges.",
-    images: ["/assets/logo/gymtie.png"],
+      "GymTie flagship gym ecosystem plus YoungMenu, DevaPatha, Livonomi, and Onebest from Floyet Labs.",
+    images: ["/logo.png"],
   },
   icons: {
     icon: "/favicon.png",
@@ -103,7 +106,7 @@ const jsonLd = {
         url: "https://floyet.com/logo.png",
       },
       description:
-        "Floyet builds focused vertical software products for real-world businesses and community-led markets in India.",
+        "Floyet Labs builds GymTie, India's flagship gym management ecosystem, and vertical software for food, temples, finance, and retail.",
       foundingDate: "2018",
       address: {
         "@type": "PostalAddress",
@@ -188,8 +191,18 @@ const jsonLd = {
           description: "Temple management platform for temple operations and devotee engagement.",
         },
         {
-          "@type": "Store",
+          "@type": "SoftwareApplication",
           position: 4,
+          name: "Livonomi",
+          applicationCategory: "FinanceApplication",
+          operatingSystem: "Android, iOS",
+          url: "https://livonomi.com",
+          image: "https://floyet.com/assets/logo/livonomi.png",
+          description: "Finance-first life management OS for income, spending, wealth, subscriptions, goals, and AI-powered insights.",
+        },
+        {
+          "@type": "Store",
+          position: 5,
           name: "Onebest Gifts",
           url: "https://onebest.in",
           description: "Curated gift shop for special occasions.",
@@ -222,6 +235,9 @@ export default function RootLayout({
         />
       </head>
       <body className="page-transition" suppressHydrationWarning>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <AppleNav />
         <AnimationUtility />
         {children}

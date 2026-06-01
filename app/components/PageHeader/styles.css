@@ -1,0 +1,42 @@
+.page-header {
+  margin-bottom: 48px;
+}
+
+.page-header--center {
+  text-align: center;
+}
+
+.page-header--left {
+  text-align: left;
+}
+
+.page-header-eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.page-header-title {
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+}
+
+.page-header-subtitle {
+  font-size: clamp(17px, 2.2vw, 20px);
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.page-header--left .page-header-subtitle {
+  margin: 0;
+  max-width: 640px;
+}

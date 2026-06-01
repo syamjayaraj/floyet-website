@@ -102,15 +102,15 @@ const CareersList = () => {
             <div className={styles.heroInner}>
               <div className={styles.heroEyebrow}>Careers at Floyet</div>
               <h1 className={styles.sectionTitle}>
-                Build products that solve real business problems.
+                Help build GymTie — Floyet&apos;s flagship product.
               </h1>
               <p className={styles.sectionDescription}>
-                We are a small product team from Kerala building GymTie and other focused platforms for real-world operations. We value ownership, clarity, craft, and practical execution.
+                We are a small product team from Kerala. GymTie is our primary focus: gym operations for owners and member engagement through GymTie Fit. We also maintain YoungMenu, DevaPatha, Livonomi, and Onebest. We value ownership, clarity, and craft.
               </p>
               <div className={styles.careerHighlights}>
-                <span>Product-first team</span>
+                <span>GymTie-first product team</span>
                 <span>Kerala, India</span>
-                <span>Remote-friendly roles when available</span>
+                <span>Remote-friendly when available</span>
               </div>
             </div>
           </div>
@@ -196,7 +196,7 @@ const CareersList = () => {
 
                             <div className={styles.applySection}>
                               <Link
-                                href={`/#contact`}
+                                href="/contact"
                                 className={styles.applyButton}
                               >
                                 Apply Now

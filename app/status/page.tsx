@@ -1,8 +1,9 @@
 import { Metadata } from "next";
+import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "System Status - Floyet",
-  description: "Check the real-time status of Floyet's systems and services.",
+  title: "System Status - GymTie & Floyet Services",
+  description: "Real-time status for GymTie, Floyet website, and other Floyet product services.",
 };
 
 async function getStatusData() {
@@ -22,82 +23,90 @@ const StatusPage = async () => {
   const statusData = statusResponse?.data;
 
   const services = [
-    { 
-      name: "Website", 
-      status: statusData?.Website ? "Operational" : "Under Maintenance", 
-      color: statusData?.Website ? "rgb(52, 199, 89)" : "rgb(255, 59, 48)" 
-    },
-    { 
-      name: "GymTie Platform", 
-      status: statusData?.GymTie ? "Operational" : "Under Maintenance", 
-      color: statusData?.GymTie ? "rgb(52, 199, 89)" : "rgb(255, 59, 48)" 
-    },
-    { 
-      name: "YoungMenu", 
-      status: statusData?.YoungMenu ? "Operational" : "Coming Soon", 
-      color: statusData?.YoungMenu ? "rgb(52, 199, 89)" : "rgb(255, 149, 0)" 
-    },
-    { 
-      name: "Onebest API", 
-      status: statusData?.Onebest ? "Operational" : "Under Maintenance", 
-      color: statusData?.Onebest ? "rgb(52, 199, 89)" : "rgb(255, 59, 48)" 
-    },
-    { 
-      name: "Cloud Infrastructure", 
-      status: statusData?.cloud ? "Operational" : "Under Maintenance", 
-      color: statusData?.cloud ? "rgb(52, 199, 89)" : "rgb(255, 59, 48)" 
-    },
+    { name: "Website", key: "Website", statusOn: statusData?.Website, comingSoon: false },
+    { name: "GymTie Platform", key: "GymTie", statusOn: statusData?.GymTie, comingSoon: false, primary: true },
+    { name: "YoungMenu", key: "YoungMenu", statusOn: statusData?.YoungMenu, comingSoon: !statusData?.YoungMenu },
+    { name: "DevaPatha", key: "DevaPatha", statusOn: statusData?.DevaPatha, comingSoon: !statusData?.DevaPatha },
+    { name: "Livonomi", key: "Livonomi", statusOn: statusData?.Livonomi, comingSoon: !statusData?.Livonomi },
+    { name: "Onebest API", key: "Onebest", statusOn: statusData?.Onebest, comingSoon: false },
+    { name: "Cloud Infrastructure", key: "cloud", statusOn: statusData?.cloud, comingSoon: false },
   ];
 
-  const serviceKeys = ["Website", "GymTie", "YoungMenu", "Onebest", "cloud"];
-  const allOperational = statusData 
-    ? serviceKeys.every(key => statusData[key] === true || statusData[key] === null || statusData[key] === undefined) 
+  const serviceKeys = ["Website", "GymTie", "YoungMenu", "DevaPatha", "Livonomi", "Onebest", "cloud"];
+  const allOperational = statusData
+    ? serviceKeys.every(
+        (key) =>
+          statusData[key] === true ||
+          statusData[key] === null ||
+          statusData[key] === undefined
+      )
     : false;
 
+  const getStatusDisplay = (service: (typeof services)[0]) => {
+    if (service.comingSoon && !service.statusOn) {
+      return { label: "Coming Soon", color: "rgb(255, 149, 0)" };
+    }
+    if (service.statusOn) {
+      return { label: "Operational", color: "rgb(52, 199, 89)" };
+    }
+    return { label: "Under Maintenance", color: "rgb(255, 59, 48)" };
+  };
+
   return (
-    <main className="min-h-screen" style={{ paddingTop: "120px", paddingBottom: "100px" }}>
+    <main id="main-content" className="secondary-page">
       <div className="container">
-        <div className="section-header text-center mb-5">
-          <div className="section-eyebrow">Reliability</div>
-          <h1 className="section-headline">System Status</h1>
-          <p className="section-subhead mx-auto">
-            Real-time status updates for all our products and services.
-          </p>
-        </div>
+        <PageHeader
+          eyebrow="Reliability"
+          title="System Status"
+          subtitle="Monitor GymTie — our flagship platform — and all Floyet services."
+        />
 
         <div className="max-w-2xl mx-auto reveal fade-in">
-          <div className="status-hero p-5 mb-5 rounded-3xl text-center" style={{ 
-            background: allOperational ? "rgba(52, 199, 89, 0.1)" : "rgba(255, 149, 0, 0.1)", 
-            border: allOperational ? "1px solid rgba(52, 199, 89, 0.2)" : "1px solid rgba(255, 149, 0, 0.2)" 
-          }}>
-            <div style={{ color: allOperational ? "rgb(52, 199, 89)" : "rgb(255, 149, 0)", fontSize: "24px", fontWeight: 700, marginBottom: "8px" }}>
-              <i className={`bi ${allOperational ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'} me-2`}></i>
+          <div
+            className={`status-hero ${allOperational ? "status-hero--ok" : "status-hero--warn"}`}
+          >
+            <div
+              className="status-hero-title"
+              style={{ color: allOperational ? "rgb(52, 199, 89)" : "rgb(255, 149, 0)" }}
+            >
+              <i
+                className={`bi ${allOperational ? "bi-check-circle-fill" : "bi-exclamation-triangle-fill"} me-2`}
+                aria-hidden="true"
+              />
               {allOperational ? "Core Systems Operational" : "Service Notice"}
             </div>
-            <p className="text-secondary m-0">
-              {allOperational ? "No issues reported in the last 24 hours." : "We are currently experiencing issues with some services."}
+            <p className="status-hero-text">
+              {allOperational
+                ? "No issues reported in the last 24 hours."
+                : "We are currently experiencing issues with some services."}
             </p>
           </div>
 
-          <div style={{ background: "var(--color-background-elevated)", border: "1px solid var(--color-separator)", borderRadius: "24px", overflow: "hidden" }}>
-            {services.map((service, index) => (
-              <div key={index} style={{ 
-                padding: "20px 24px", 
-                display: "flex", 
-                justifyContent: "space-between", 
-                alignItems: "center",
-                borderBottom: index === services.length - 1 ? "none" : "1px solid var(--color-separator)"
-              }}>
-                <div>
-                  <div style={{ fontWeight: 600, color: "var(--color-text-primary)" }}>{service.name}</div>
-                  <div style={{ fontSize: "12px", color: "var(--color-text-tertiary)" }}>Last verified recently</div>
+          <div className="status-list" role="list">
+            {services.map((service) => {
+              const { label, color } = getStatusDisplay(service);
+              return (
+                <div
+                  key={service.name}
+                  className={`status-row ${"primary" in service && service.primary ? "status-row--primary" : ""}`}
+                  role="listitem"
+                >
+                  <div>
+                    <div className="status-row-name">
+                      {service.name}
+                      {"primary" in service && service.primary && (
+                        <span className="status-row-flag">Flagship</span>
+                      )}
+                    </div>
+                    <div className="status-row-meta">Last verified recently</div>
+                  </div>
+                  <div className="status-row-badge" style={{ color }}>
+                    <span className="status-dot" style={{ background: color }} aria-hidden="true" />
+                    {label}
+                  </div>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "8px", color: service.color, fontWeight: 500 }}>
-                  <span style={{ height: "8px", width: "8px", borderRadius: "50%", background: service.color }}></span>
-                  {service.status}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

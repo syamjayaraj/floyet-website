@@ -8,9 +8,10 @@ const Footer = () => {
     {
       title: "Products",
       links: [
-        { label: "GymTie", href: "https://gymtie.com", external: true },
+        { label: "GymTie (Flagship)", href: "https://gymtie.com", external: true },
         { label: "YoungMenu", href: "https://youngmenu.com", external: true },
         { label: "DevaPatha", href: "https://devapatha.com", external: true },
+        { label: "Livonomi", href: "https://livonomi.com", external: true },
         { label: "Onebest", href: "https://onebest.in", external: true },
       ],
     },
@@ -59,7 +60,7 @@ const Footer = () => {
               FLOYET
             </Link>
             <p className="footer-tagline">
-              Building high-quality digital products that transform business operations.
+              Floyet builds GymTie — our flagship gym ecosystem — and focused products for food, temples, finance, and retail.
             </p>
           </div>
 

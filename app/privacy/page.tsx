@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const PrivacyPolicy = () => {
   return (
-    <div className="policy-page">
+    <main id="main-content" className="policy-page">
       <div className="container py-6">
         <h1 className="policy-title">Privacy Policy</h1>
         <div className="policy-content reveal fade-in">
@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
              <p className="text-secondary mb-4">Last Updated: March 9, 2026</p>
             <h2>1. Information We Collect</h2>
             <p>
-              We collect information that you provides directly to us when you interact with our websites, products, and services. This includes:
+              We collect information that you provide directly to us when you interact with our websites, products, and services. This includes:
             </p>
             <ul>
               <li><strong>Personal Identifiers:</strong> Name, email address, phone number, and mailing address.</li>
@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
             <h2>2. How We Use Your Information</h2>
             <p>Floyet uses the collected data for various purposes, including:</p>
             <ul>
-              <li>To provide, maintain, and improve our digital products (GymTie, YoungMenu, Onebest).</li>
+              <li>To provide, maintain, and improve our digital products, with GymTie as our flagship platform, along with YoungMenu, DevaPatha, Livonomi, and Onebest.</li>
               <li>To manage your account and provide customer support.</li>
               <li>To communicate updates, security alerts, and administrative messages.</li>
               <li>To analyze usage patterns to enhance user experience and performance.</li>
@@ -68,7 +68,7 @@ const PrivacyPolicy = () => {
           </section>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

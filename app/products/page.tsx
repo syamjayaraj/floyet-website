@@ -1,17 +1,18 @@
 import { Metadata } from "next";
+import PageHeader from "../components/PageHeader";
 import Products from "../components/Products";
 
 export const metadata: Metadata = {
-  title: "Products - GymTie, YoungMenu, DevaPatha & Onebest",
+  title: "Products - GymTie Flagship, YoungMenu, DevaPatha, Livonomi & Onebest",
   description:
-    "Explore Floyet products including GymTie for gym management, YoungMenu for food businesses, DevaPatha for temple management, and Onebest Gifts.",
+    "GymTie is Floyet's flagship gym ecosystem. Explore GymTie Manager and GymTie Fit, plus YoungMenu, DevaPatha, Livonomi, and Onebest.",
   alternates: {
     canonical: "https://floyet.com/products",
   },
   openGraph: {
-    title: "Floyet Products - Vertical Software Platforms",
+    title: "Floyet Products - GymTie Flagship & Vertical Platforms",
     description:
-      "GymTie, YoungMenu, DevaPatha, and Onebest: focused products built by Floyet for real-world business and community workflows.",
+      "GymTie leads Floyet's portfolio. Also: YoungMenu, DevaPatha, Livonomi, and Onebest for focused real-world workflows.",
     url: "https://floyet.com/products",
     type: "website",
   },
@@ -19,7 +20,14 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="pt-24 min-h-screen">
+    <main id="main-content" className="products-page">
+      <div className="container products-page-intro">
+        <PageHeader
+          eyebrow="Products"
+          title="GymTie is our flagship. Everything else extends the same craft."
+          subtitle="Floyet's primary investment is the GymTie fitness ecosystem for gym owners and members. Our other products serve food, temple, finance, and retail markets with the same problem-first approach."
+        />
+      </div>
       <Products />
     </main>
   );

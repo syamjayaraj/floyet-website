@@ -5,7 +5,7 @@ const About = () => {
   const achievements = [
     { number: "100+", label: "Businesses Served" },
     { number: "50K+", label: "Users Reached" },
-    { number: "1", label: "Flagship Ecosystem" },
+    { number: "1", label: "Flagship: GymTie" },
     { number: "2025", label: "Registered LLP" },
   ];
 
@@ -41,11 +41,10 @@ const About = () => {
         <div className="about-header reveal-blur">
           <div className="about-eyebrow">About Floyet</div>
           <h2 className="about-headline">
-            A product company building practical software for real-world operations.
+            A product company — GymTie first, built for real operations.
           </h2>
           <p className="about-subhead">
-            Floyet Labs & Technologies LLP is a product company from Kerala, India.
-            We are currently focused on GymTie, a complete fitness ecosystem for modern gyms.
+            Floyet Labs & Technologies LLP is headquartered in Kerala, India. Our primary product and company focus is GymTie, the fitness ecosystem for modern gyms. We also build YoungMenu, DevaPatha, Livonomi, and Onebest.
           </p>
         </div>
 
@@ -56,7 +55,7 @@ const About = () => {
             <p>
               Floyet started in 2024 with a focus on practical software for real-world business operations.
               The company was formally registered as Floyet Labs & Technologies LLP in February 2025.
-              Our primary product focus is GymTie.
+              Today we operate GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest — each built for a specific market, with GymTie leading our product investment.
             </p>
 
             <div className="about-gymtie-highlight">

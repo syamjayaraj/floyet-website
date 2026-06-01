@@ -1,13 +1,16 @@
 import styles from "./page.module.css";
 import Link from "next/link";
 import { Metadata } from "next";
+import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Insights & Updates - The Floyet Blog",
-  description: "Explore the latest insights on digital product engineering, business automation, and stories from the Floyet team.",
+  title: "Blog - GymTie, Product Engineering & Floyet Updates",
+  description:
+    "Insights on GymTie, Floyet's flagship gym platform, plus digital product engineering and company updates.",
   openGraph: {
-    title: "The Floyet Blog - Insights & Updates",
-    description: "Explore the latest insights on digital product engineering and business automation from the Floyet team.",
+    title: "The Floyet Blog - GymTie & Product Insights",
+    description:
+      "Stories from the team behind GymTie and Floyet's product portfolio.",
     type: "website",
   },
 };
@@ -31,21 +34,17 @@ export default async function BlogPage() {
   const { data: posts } = await getBlogPosts();
 
   return (
-    <main
-      className={`${styles.main} reveal scale-up`}
-      style={{
-        marginTop: "100px",
-      }}
-    >
+    <main id="main-content" className={`${styles.main} secondary-page`}>
       <section className={styles.blogSection}>
         <div className={styles.container}>
-          <h1 className={styles.title}>Our Blog</h1>
-          <p className={styles.subtitle}>
-            Insights, updates, and stories from our team
-          </p>
+          <PageHeader
+            eyebrow="Insights"
+            title="The Floyet Blog"
+            subtitle="Product stories, engineering notes, and updates — with GymTie and our portfolio at the center."
+          />
 
           <div className={styles.postsGrid}>
-            {posts?.map((post: any) => (
+            {posts?.map((post: { id: number; slug: string; title: string; excerpt: string; publishedAt: string; image?: { url?: string } }) => (
               <Link
                 href={`/blog/${post?.slug}`}
                 key={post.id}
@@ -55,7 +54,7 @@ export default async function BlogPage() {
                   <div className={styles.imageWrapper}>
                     <img
                       src={`${process.env.NEXT_PUBLIC_IMAGE_URL}${post?.image?.url}`}
-                      alt={post?.title}
+                      alt=""
                       className={styles.postImage}
                     />
                   </div>
@@ -64,9 +63,9 @@ export default async function BlogPage() {
                   <h2 className={styles.postTitle}>{post?.title}</h2>
                   <p className={styles.postExcerpt}>{post?.excerpt}</p>
                   <div className={styles.postMeta}>
-                    <span className={styles.postDate}>
+                    <time className={styles.postDate} dateTime={post?.publishedAt}>
                       {new Date(post?.publishedAt).toLocaleDateString()}
-                    </span>
+                    </time>
                   </div>
                 </div>
               </Link>

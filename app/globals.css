@@ -1,4 +1,5 @@
 @import './styles/careers.css';
+@import './styles/secondary-pages.css';
 
 /* ============================================
    APPLE PROFESSIONAL DESIGN SYSTEM
@@ -1435,8 +1436,8 @@ a:hover {
 .form-input-apple:focus,
 .form-textarea-apple:focus {
   outline: none;
-  border-color: var(--color-blue);
-  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 0 3px rgba(129, 74, 246, 0.25);
 }
 
 .form-textarea-apple {
@@ -1928,4 +1929,75 @@ a:hover {
 
 .social-link-website:hover {
   color: var(--color-text-primary) !important;
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -48px;
+  left: 16px;
+  z-index: 100000;
+  padding: 10px 18px;
+  background: #fff;
+  color: #0b0b0f;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+  outline: 2px solid var(--color-accent-purple);
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.btn-apple:focus-visible,
+.apple-nav-link:focus-visible,
+.footer-link:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-blur,
+  .reveal-child {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .hero-child-1,
+  .hero-child-2,
+  .hero-child-3,
+  .hero-child-4 {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+
+  .hover-lift:hover {
+    transform: none !important;
+  }
 }

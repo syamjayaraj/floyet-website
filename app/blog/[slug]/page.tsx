@@ -71,12 +71,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <main
-        className={styles.main}
-        style={{
-          marginTop: "100px",
-        }}
-      >
+      <main id="main-content" className={`${styles.main} secondary-page`}>
         <article className={styles.article}>
           <div className={styles.container}>
             {post?.image?.url && (

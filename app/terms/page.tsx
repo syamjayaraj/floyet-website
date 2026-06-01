@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const TermsOfService = () => {
   return (
-    <div className="policy-page">
+    <main id="main-content" className="policy-page">
       <div className="container py-6">
         <h1 className="policy-title">Terms of Service</h1>
         <div className="policy-content reveal fade-in">
@@ -15,7 +15,7 @@ const TermsOfService = () => {
             <p className="text-secondary mb-4">Last Updated: March 9, 2026</p>
             <h2>1. Acceptance of Terms</h2>
             <p>
-              By accessing or using Floyet’s websites, applications (including GymTie, YoungMenu, and Onebest), and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.
+              By accessing or using Floyet’s websites, applications (including GymTie — our flagship product — YoungMenu, DevaPatha, Livonomi, and Onebest), and services, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.
             </p>
           </section>
 
@@ -55,7 +55,7 @@ const TermsOfService = () => {
           </section>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

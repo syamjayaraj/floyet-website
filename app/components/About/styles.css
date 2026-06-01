@@ -1,4 +1,8 @@
 /* About Component Styles */
+.about-page .about-section {
+    padding-top: 100px;
+}
+
 .about-section {
     padding: 120px 0;
     background: var(--color-background-elevated);

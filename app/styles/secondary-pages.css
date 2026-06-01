@@ -1,0 +1,228 @@
+.secondary-page {
+  padding-top: 120px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.status-hero {
+  padding: 40px;
+  margin-bottom: 32px;
+  border-radius: 24px;
+  text-align: center;
+}
+
+.status-hero--ok {
+  background: rgba(52, 199, 89, 0.1);
+  border: 1px solid rgba(52, 199, 89, 0.2);
+}
+
+.status-hero--warn {
+  background: rgba(255, 149, 0, 0.1);
+  border: 1px solid rgba(255, 149, 0, 0.2);
+}
+
+.status-hero-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.status-hero-text {
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.status-list {
+  background: var(--color-background-elevated);
+  border: 1px solid var(--color-separator);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.status-row {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid var(--color-separator);
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.status-row--primary {
+  background: rgba(129, 74, 246, 0.06);
+}
+
+.status-row-name {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status-row-flag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(129, 74, 246, 0.15);
+  color: #c4b5fd;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+}
+
+.status-row-meta {
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+}
+
+.status-row-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.form-required {
+  color: #ff6b6b;
+}
+
+.form-error {
+  color: #ff6b6b;
+  font-size: 14px;
+  margin: 0;
+}
+
+.success-card-apple {
+  background: var(--color-background-elevated);
+  border: 1px solid var(--color-separator);
+}
+
+.success-card-apple h3,
+.success-card-apple p {
+  color: var(--color-text-primary);
+}
+
+.success-card-apple p {
+  color: var(--color-text-secondary);
+}
+
+/* Help center */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto 48px;
+}
+
+.help-card-anchor {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.help-card {
+  height: 100%;
+  padding: 28px;
+  border-radius: 20px;
+  background: var(--color-background-elevated);
+  border: 1px solid var(--color-separator);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.help-card-anchor:hover .help-card,
+.help-card-anchor:focus-visible .help-card {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.help-card--featured {
+  border-color: rgba(167, 139, 250, 0.35);
+  background:
+    radial-gradient(circle at top right, rgba(129, 74, 246, 0.12), transparent 50%),
+    var(--color-background-elevated);
+}
+
+.help-card-icon {
+  font-size: 28px;
+  color: var(--color-text-primary);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.help-card--featured .help-card-icon {
+  color: #c4b5fd;
+}
+
+.help-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--color-text-primary);
+}
+
+.help-card-desc {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+}
+
+.help-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.help-cta {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  border-radius: 24px;
+  background: var(--color-background-elevated);
+  border: 1px solid var(--color-separator);
+}
+
+.help-cta h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.help-cta p {
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .help-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .help-grid {
+    grid-template-columns: 1fr;
+  }
+}

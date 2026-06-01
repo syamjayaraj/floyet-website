@@ -1,21 +1,24 @@
 import { Metadata } from "next";
 import Hero from "./components/Hero";
-import Products from "./components/Products";
+import GymTieSpotlight from "./components/GymTieSpotlight";
+import ProductTeasers from "./components/ProductTeasers";
+import AboutTrust from "./components/AboutTrust";
 import Contact from "./components/Contact";
 
 export const metadata: Metadata = {
-  title: "Floyet - Focused Digital Products for Real-World Impact",
-  description: "Floyet builds modern, high-quality digital products like GymTie, YoungMenu, and DevaPatha designed to solve real-world business challenges and streamline everyday life.",
+  title: "Floyet - GymTie Flagship & Focused Digital Products",
+  description:
+    "Floyet Labs builds GymTie, India's flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world operations.",
 };
 
 export default function Home() {
   return (
-    <>
-      <main>
-        <Hero />
-        <Products />
-        <Contact />
-      </main>
-    </>
+    <main id="main-content">
+      <Hero />
+      <GymTieSpotlight />
+      <ProductTeasers />
+      <AboutTrust />
+      <Contact />
+    </main>
   );
 }

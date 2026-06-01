@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 const CookiePolicy = () => {
   return (
-    <div className="policy-page">
+    <main id="main-content" className="policy-page">
       <div className="container py-6">
         <h1 className="policy-title">Cookie Policy</h1>
         <div className="policy-content reveal fade-in">
@@ -55,7 +55,7 @@ const CookiePolicy = () => {
           </section>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

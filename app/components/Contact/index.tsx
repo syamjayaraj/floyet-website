@@ -1,3 +1,4 @@
+import ContactForm from "../ContactForm";
 import "./styles.css";
 
 const Contact = () => {
@@ -26,37 +27,72 @@ const Contact = () => {
     },
   ];
 
+  const socialLinks = [
+    { icon: "bi-linkedin", url: "https://www.linkedin.com/company/floyet", label: "LinkedIn" },
+    { icon: "bi-twitter-x", url: "https://x.com/floyet.tech", label: "X" },
+    { icon: "bi-instagram", url: "https://www.instagram.com/floyet.tech", label: "Instagram" },
+  ];
+
   return (
-    <section className="contact-section" id="contact">
+    <section className="contact-section" id="contact" aria-labelledby="contact-heading">
       <div className="container">
-        <div className="contact-header">
+        <div className="contact-header reveal-blur">
           <div className="contact-eyebrow">Get in Touch</div>
-          <h2 className="contact-headline">
-            Ready to transform your business?
+          <h2 id="contact-heading" className="contact-headline">
+            Talk to the team behind GymTie.
           </h2>
           <p className="contact-subhead">
-            Reach out to discover how our solutions can help you scale and streamline your operations.
+            GymTie inquiries, partnerships, and support for all Floyet products — send a message and we&apos;ll respond within 24 hours.
           </p>
         </div>
 
-        <div className="contact-grid">
-          {contactInfo.map((info, index) => (
-            <div key={index} className="contact-card">
-              <i className={`bi ${info.icon} contact-icon`}></i>
-              <h4 className="contact-card-title">{info.title}</h4>
-              <div className="contact-details">
-                {info.details.map((detail, idx) =>
-                  info.link ? (
-                    <a key={idx} href={info.link} className="contact-link">
-                      {detail}
-                    </a>
-                  ) : (
-                    <p key={idx} className="contact-detail-text">{detail}</p>
-                  )
-                )}
+        <div className="contact-layout reveal-scale">
+          <aside className="contact-sidebar">
+            <div className="contact-card-wrapper">
+              {contactInfo.map((info) => (
+                <div key={info.title} className="contact-info-card-apple">
+                  <div className="contact-icon-apple" aria-hidden="true">
+                    <i className={`bi ${info.icon}`} />
+                  </div>
+                  <h4 className="contact-info-title">{info.title}</h4>
+                  <div className="contact-info-details">
+                    {info.details.map((detail, idx) =>
+                      info.link ? (
+                        <a key={idx} href={info.link} className="contact-link-apple">
+                          {detail}
+                        </a>
+                      ) : (
+                        <p key={idx}>{detail}</p>
+                      )
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="social-section-apple">
+              <h4 className="social-title-apple">Follow Floyet</h4>
+              <div className="social-links-apple">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.label}
+                    href={social.url}
+                    className="social-link-apple"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                  >
+                    <i className={`bi ${social.icon}`} aria-hidden="true" />
+                  </a>
+                ))}
               </div>
             </div>
-          ))}
+          </aside>
+
+          <div className="contact-form-section">
+            <h3 className="contact-form-title">Send us a message</h3>
+            <ContactForm />
+          </div>
         </div>
       </div>
     </section>

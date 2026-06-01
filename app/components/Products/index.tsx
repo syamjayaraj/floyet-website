@@ -1,6 +1,33 @@
 import "./styles.css";
 
 const Products = () => {
+  const livonomiModules = [
+    {
+      icon: "bi-speedometer2",
+      title: "Summary",
+      tagline: "Your daily command center.",
+      desc: "Net worth, monthly flow, subscription load, and a financial health index — all in one glance.",
+    },
+    {
+      icon: "bi-arrow-left-right",
+      title: "Transactions",
+      tagline: "Every rupee, accounted.",
+      desc: "Income, spending, and transfers with category filters and clear debit and credit cues.",
+    },
+    {
+      icon: "bi-piggy-bank",
+      title: "Wealth",
+      tagline: "Accounts, debt, and assets.",
+      desc: "Banks, loans, investments, insurance, and vehicles — without losing context.",
+    },
+    {
+      icon: "bi-bullseye",
+      title: "Dreams",
+      tagline: "Goals with measurable progress.",
+      desc: "Set targets, track savings over time, and watch progress build toward what matters.",
+    },
+  ];
+
   const devaPathaProducts = [
     {
       icon: "bi-building-fill-gear",
@@ -32,7 +59,7 @@ const Products = () => {
         </div>
 
         {/* GymTie Problem/Solution Block */}
-        <div className="reveal-scale impact-card gymtie-focus-card">
+        <div id="gymtie" className="reveal-scale impact-card gymtie-focus-card">
            <div className="flagship-ribbon">
              <img src="/assets/logo/gymtie.png" alt="GymTie logo" />
              <div>
@@ -157,6 +184,49 @@ const Products = () => {
 
           <a href="https://devapatha.com" className="btn-apple btn-apple-primary devapatha-cta hover-lift" target="_blank" rel="noopener noreferrer">
             Explore DevaPatha <i className="bi bi-arrow-up-right ms-2"></i>
+          </a>
+        </div>
+
+        {/* Livonomi */}
+        <div className="reveal-scale impact-card livonomi-card">
+          <div className="impact-info">
+            <span className="impact-badge badge-problem livonomi-problem">The Problem</span>
+            <h3 className="impact-title">Personal finance is scattered across apps and spreadsheets.</h3>
+            <p className="impact-text">
+              Income, spending, subscriptions, loans, investments, and goals rarely live in one place — making it hard to see the full picture or act with confidence.
+            </p>
+          </div>
+
+          <div className="impact-divider livonomi-divider"></div>
+
+          <div className="impact-info">
+            <span className="impact-badge badge-solution livonomi-solution">Our Solution</span>
+            <div className="livonomi-brand">
+              <img src="/assets/logo/livonomi.png" alt="Livonomi logo" className="livonomi-logo" />
+              <div>
+                <h4 className="solution-title" style={{ marginBottom: 4 }}>Livonomi</h4>
+                <p style={{ color: "var(--color-text-secondary)", fontSize: 14, margin: 0 }}>
+                  A finance-first life management OS — personal and business workspaces, AI-powered insights, and secure sync across devices.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="livonomi-modules-grid reveal-stagger">
+            {livonomiModules.map((module) => (
+              <div key={module.title} className="livonomi-module-tile reveal-child">
+                <div className="livonomi-module-icon">
+                  <i className={`bi ${module.icon}`}></i>
+                </div>
+                <h4 className="product-tile-title">{module.title}</h4>
+                <p className="product-tile-tagline">{module.tagline}</p>
+                <p className="product-tile-desc">{module.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <a href="https://livonomi.com" className="btn-apple btn-apple-primary livonomi-cta hover-lift" target="_blank" rel="noopener noreferrer">
+            Explore Livonomi <i className="bi bi-arrow-up-right ms-2"></i>
           </a>
         </div>
 

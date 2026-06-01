@@ -1,4 +1,12 @@
 /* Products Component Styles */
+.products-page-intro {
+    padding-top: 100px;
+}
+
+.products-page .apple-products {
+    padding-top: 0;
+}
+
 .apple-products {
     background: var(--color-background);
     padding: 120px 0;
@@ -525,6 +533,102 @@
     color: #111218;
 }
 
+/* Livonomi */
+.livonomi-card {
+    border-color: rgba(52, 199, 140, 0.2);
+    background:
+        radial-gradient(circle at 18% 10%, rgba(52, 199, 140, 0.14), transparent 31%),
+        radial-gradient(circle at 82% 0%, rgba(90, 173, 255, 0.1), transparent 32%),
+        linear-gradient(145deg, rgba(18, 28, 26, 0.94), rgba(17, 18, 24, 0.56));
+}
+
+.livonomi-problem {
+    background: rgba(255, 159, 10, 0.1);
+    color: #ffb340;
+    border-color: rgba(255, 179, 64, 0.24);
+}
+
+.livonomi-solution {
+    background: rgba(52, 199, 140, 0.1);
+    color: #34c78c;
+    border-color: rgba(52, 199, 140, 0.24);
+}
+
+.livonomi-divider {
+    background: linear-gradient(180deg, transparent, rgba(52, 199, 140, 0.22), transparent);
+}
+
+.livonomi-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 0 auto;
+    text-align: left;
+    max-width: 520px;
+}
+
+.livonomi-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+    background: rgba(52, 199, 140, 0.1);
+    border: 1px solid rgba(52, 199, 140, 0.18);
+}
+
+.livonomi-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 720px;
+    margin: 32px auto 0;
+}
+
+.livonomi-module-tile {
+    min-height: 100%;
+    padding: 28px 24px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid rgba(255, 255, 255, 0.095);
+    text-align: center;
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.livonomi-module-tile:hover {
+    transform: translateY(-3px);
+    border-color: rgba(52, 199, 140, 0.25);
+    background: rgba(255, 255, 255, 0.065);
+}
+
+.livonomi-module-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto 16px;
+    border-radius: 15px;
+    background: rgba(52, 199, 140, 0.1);
+    border: 1px solid rgba(52, 199, 140, 0.16);
+    color: #34c78c;
+    font-size: 23px;
+}
+
+.livonomi-cta {
+    margin-top: 32px;
+    background: #34c78c;
+    color: #111218;
+    border: none;
+}
+
+.livonomi-cta:hover {
+    background: #2db67d;
+    color: #111218;
+}
+
 /* YoungMenu feature grid */
 .ym-features-grid {
     display: flex;
@@ -638,7 +742,8 @@
         grid-template-columns: 1fr;
     }
 
-    .devapatha-products-grid {
+    .devapatha-products-grid,
+    .livonomi-modules-grid {
         grid-template-columns: 1fr;
     }
 
@@ -647,14 +752,16 @@
     }
 
     .ym-brand,
-    .devapatha-brand {
+    .devapatha-brand,
+    .livonomi-brand {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
     .ym-brand .solution-title,
-    .devapatha-brand .solution-title {
+    .devapatha-brand .solution-title,
+    .livonomi-brand .solution-title {
         text-align: center !important;
     }
 }

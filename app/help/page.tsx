@@ -1,78 +1,110 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Help Center - Floyet",
-  description: "Get help with Floyet products and services. Find documentation, guides, and support options.",
+  title: "Help Center - Floyet & GymTie",
+  description:
+    "Get help with GymTie, Floyet's flagship gym platform, and our other products. Documentation, billing, and support resources.",
 };
 
 const HelpCenterPage = () => {
   const categories = [
     {
-      title: "Product Help",
-      icon: "bi-laptop",
-      description: "Guides and tutorials for GymTie, Onebest, and YoungMenu (coming soon).",
-      link: "/faq"
+      title: "GymTie Help",
+      icon: "bi-activity",
+      description:
+        "Guides for GymTie Manager (owners) and GymTie Fit (members) — billing, attendance, and member workflows.",
+      link: "https://gymtie.com",
+      external: true,
+      featured: true,
+    },
+    {
+      title: "All Products FAQ",
+      icon: "bi-question-circle",
+      description: "Answers about GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+      link: "/faq",
+      external: false,
     },
     {
       title: "Account & Billing",
       icon: "bi-credit-card",
-      description: "Manage your subscriptions, invoices, and payment methods.",
-      link: "/contact"
+      description: "Subscriptions, invoices, and payment questions across Floyet products.",
+      link: "/contact",
+      external: false,
     },
     {
-      title: "API Documentation",
-      icon: "bi-code-slash",
-      description: "Technical resources for integrating with our platforms.",
-      link: "/contact"
+      title: "System Status",
+      icon: "bi-heart-pulse",
+      description: "Check operational status for GymTie, website, and other Floyet services.",
+      link: "/status",
+      external: false,
     },
     {
-      title: "Enterprise Sales",
+      title: "Partnerships",
       icon: "bi-building",
-      description: "Custom solutions and partnership opportunities for large organizations.",
-      link: "/contact"
-    }
+      description: "Enterprise, integrations, and custom software discussions with Floyet.",
+      link: "/contact",
+      external: false,
+    },
+    {
+      title: "Contact Support",
+      icon: "bi-headset",
+      description: "Reach our team by form or email — we respond within 24 hours.",
+      link: "/contact",
+      external: false,
+    },
   ];
 
   return (
-    <main className="min-h-screen" style={{ paddingTop: "120px", paddingBottom: "100px" }}>
+    <main id="main-content" className="secondary-page">
       <div className="container">
-        <div className="section-header text-center mb-5">
-          <div className="section-eyebrow">Resources</div>
-          <h1 className="section-headline">Help Center</h1>
-          <p className="section-subhead mx-auto">
-            Find the resources you need to succeed with Floyet.
-          </p>
+        <PageHeader
+          eyebrow="Resources"
+          title="Help Center"
+          subtitle="GymTie is our primary product. Find support paths for GymTie and the rest of the Floyet portfolio below."
+        />
+
+        <div className="help-grid reveal-stagger">
+          {categories.map((cat) => {
+            const card = (
+              <div
+                className={`help-card reveal-child ${cat.featured ? "help-card--featured" : ""}`}
+              >
+                <i className={`bi ${cat.icon} help-card-icon`} aria-hidden="true" />
+                <h2 className="help-card-title">{cat.title}</h2>
+                <p className="help-card-desc">{cat.description}</p>
+                <span className="help-card-link">
+                  {cat.external ? "Open GymTie" : "Learn more"}
+                  <i className="bi bi-arrow-right" aria-hidden="true" />
+                </span>
+              </div>
+            );
+
+            return cat.external ? (
+              <a
+                key={cat.title}
+                href={cat.link}
+                className="help-card-anchor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {card}
+              </a>
+            ) : (
+              <Link key={cat.title} href={cat.link} className="help-card-anchor">
+                {card}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="row g-4 reveal fade-in">
-            {categories.map((cat, index) => (
-              <div key={index} className="col-md-6">
-                <Link href={cat.link} style={{ textDecoration: "none" }}>
-                  <div className="h-100 p-5 rounded-3xl hover-lift" style={{ 
-                    background: "var(--color-background-elevated)", 
-                    border: "1px solid var(--color-separator)",
-                    transition: "all 0.3s ease"
-                  }}>
-                    <i className={`bi ${cat.icon}`} style={{ fontSize: "32px", color: "var(--color-text-primary)", marginBottom: "20px", display: "block" }}></i>
-                    <h3 style={{ fontSize: "20px", fontWeight: 700, marginBottom: "12px", color: "var(--color-text-primary)" }}>{cat.title}</h3>
-                    <p style={{ color: "var(--color-text-secondary)", fontSize: "16px", lineHeight: "1.6", margin: 0 }}>
-                      {cat.description}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 p-5 rounded-3xl text-center reveal fade-in" style={{ background: "var(--color-background-elevated)", border: "1px solid var(--color-separator)" }}>
-            <h3 style={{ fontSize: "24px", fontWeight: 700, marginBottom: "16px", color: "var(--color-text-primary)" }}>Still need help?</h3>
-            <p className="text-secondary mb-4">Our support team is always here to assist you with any questions or issues.</p>
-            <Link href="/contact" className="btn-apple btn-apple-primary">
-              Contact Support
-            </Link>
-          </div>
+        <div className="help-cta reveal">
+          <h3>Still need help?</h3>
+          <p>Our support team assists with GymTie and all Floyet products.</p>
+          <Link href="/contact" className="btn-apple btn-apple-primary hover-lift">
+            Contact Support
+          </Link>
         </div>
       </div>
     </main>
