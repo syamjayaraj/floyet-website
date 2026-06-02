@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FLOYET_ECOSYSTEM_MEDIA } from "@/app/data/products";
+import { FLOYET_ECOSYSTEM_MEDIA, products } from "@/app/data/products";
 import AnimatedCounter from "../AnimatedCounter";
 import ProductShowcase from "../ProductShowcase";
 import "./styles.css";
@@ -33,23 +33,32 @@ const AboutTrust = () => {
           <div className="about-trust-copy reveal-left">
             <div className="about-trust-eyebrow">About Floyet</div>
             <h2 id="about-trust-heading" className="about-trust-headline">
-              Product-led. GymTie-first. Built in Kerala.
+              Product-led software studio. Built in Kerala.
             </h2>
             <p className="about-trust-text">
-              Floyet Labs &amp; Technologies LLP invests primarily in the GymTie
-              ecosystem - gym operations for owners and member engagement
-              through GymTie Fit. Our other products apply the same product
-              discipline to food, temples, finance, and retail.
+              Floyet Labs &amp; Technologies LLP builds focused digital products
+              for fitness, food, temples, personal finance, and retail. We
+              prioritize practical workflows, clear UX, and reliable operations.
             </p>
-            <div className="about-trust-gymtie-pill liquid-glass liquid-glass--strong liquid-glass--purple">
-              <Image
-                src="/assets/logo/gymtie.png"
-                alt=""
-                width={28}
-                height={28}
-                aria-hidden="true"
-              />
-              <span>Primary focus: GymTie</span>
+            <div className="about-trust-products" aria-label="Floyet products">
+              {products.map((product) => (
+                <a
+                  key={product.id}
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-trust-product-pill liquid-glass liquid-glass--strong"
+                >
+                  <Image
+                    src={product.logo}
+                    alt=""
+                    width={16}
+                    height={16}
+                    aria-hidden="true"
+                  />
+                  <span>{product.name}</span>
+                </a>
+              ))}
             </div>
             <Link
               href="/about"

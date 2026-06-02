@@ -33,9 +33,9 @@ export const products: ProductItem[] = [
     flagship: true,
     highlights: ["Billing & attendance", "WhatsApp automation", "Member app"],
     media: {
-      showcase: "/placeholders/gymtie-showcase.svg",
-      manager: "/placeholders/gymtie-manager.svg",
-      fit: "/placeholders/gymtie-fit.svg",
+      showcase: "/assets/gymtie/manager.png",
+      manager: "/assets/gymtie/manager.png",
+      fit: "/assets/gymtie/fit.png",
     },
   },
   {
@@ -47,7 +47,7 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/youngmenu.png",
     accent: "orange",
     highlights: ["POS billing", "QR menus", "Discovery app"],
-    media: { showcase: "/placeholders/youngmenu.svg" },
+    media: { showcase: "/assets/youngmenu/youngmenu.png" },
   },
   {
     id: "devapatha",
@@ -58,7 +58,7 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/devapatha.png",
     accent: "gold",
     highlights: ["Temple manager", "Devotee app", "Donations & events"],
-    media: { showcase: "/placeholders/devapatha.svg" },
+    media: { showcase: "/assets/devapatha/devapatha.png" },
   },
   {
     id: "livonomi",
@@ -69,18 +69,22 @@ export const products: ProductItem[] = [
     logo: "/assets/logo/livonomi.png",
     accent: "green",
     highlights: ["Wealth tracking", "AI insights", "Dual workspaces"],
-    media: { showcase: "/placeholders/livonomi.svg" },
+    media: { showcase: "/assets/livonomi/livonomi.png" },
   },
   {
     id: "onebest",
     name: "Onebest",
     href: "https://onebest.in",
-    description: "Curated gifts for every occasion",
-    tagline: "Gift shop",
+    description: "Online gift store with curated picks for every occasion",
+    tagline: "Online gift store",
     logo: "/assets/logo/onebest.png",
     accent: "rose",
-    highlights: ["Curated catalog", "Special occasions", "India delivery"],
-    media: { showcase: "/placeholders/onebest.svg" },
+    highlights: [
+      "Curated online store catalog",
+      "Special occasions",
+      "India-wide delivery",
+    ],
+    media: { showcase: "/assets/onebest/onebest.png" },
   },
 ];
 

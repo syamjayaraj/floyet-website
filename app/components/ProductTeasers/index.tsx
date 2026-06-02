@@ -85,7 +85,7 @@ const ProductTeasers = () => {
             href="/products"
             className="btn-apple btn-apple-secondary hover-lift product-teasers-cta-btn liquid-glass liquid-glass--elevated"
           >
-            View all products including GymTie{" "}
+            View all products{" "}
             <i className="bi bi-arrow-right ms-2" aria-hidden="true" />
           </Link>
         </div>

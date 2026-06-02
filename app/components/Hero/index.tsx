@@ -18,7 +18,7 @@ const Hero = () => {
             <a href="/#contact" className="btn-apple btn-apple-primary hover-lift">
               Get in Touch
             </a>
-            <a href="#products" className="btn-apple btn-apple-secondary hover-lift">
+            <a href="#gymtie" className="btn-apple btn-apple-secondary hover-lift">
               Explore Products <i className="bi bi-arrow-down" aria-hidden="true"></i>
             </a>
           </div>

@@ -1,18 +1,18 @@
 import "./styles.css";
 import AnimatedCounter from "../AnimatedCounter";
+import { products } from "@/app/data/products";
 
 const About = () => {
   const achievements = [
     { number: "100+", label: "Businesses Served" },
     { number: "50K+", label: "Users Reached" },
-    { number: "1", label: "Flagship: GymTie" },
+    { number: "5", label: "Products" },
     { number: "2025", label: "Registered LLP" },
   ];
 
   const companyDetails = [
     { label: "Registered name", value: "Floyet Labs & Technologies LLP" },
     { label: "Headquarters", value: "Kozhikode, Kerala, India" },
-    { label: "Started", value: "2024" },
     { label: "Registered", value: "February 2025" },
   ];
 
@@ -46,13 +46,12 @@ const About = () => {
         <div className="about-header liquid-glass liquid-glass--elevated reveal-blur">
           <div className="about-eyebrow">About Floyet</div>
           <h2 className="about-headline">
-            A product company - GymTie first, built for real operations.
+            A product company built for real operations.
           </h2>
           <p className="about-subhead">
             Floyet Labs & Technologies LLP is headquartered in Kerala, India.
-            Our primary product and company focus is GymTie, the fitness
-            ecosystem for modern gyms. We also build YoungMenu, DevaPatha,
-            Livonomi, and Onebest.
+            We build focused software across fitness, food, temples, finance,
+            and retail with strong product discipline and practical execution.
           </p>
         </div>
 
@@ -65,20 +64,22 @@ const About = () => {
               real-world business operations. The company was formally
               registered as Floyet Labs & Technologies LLP in February 2025.
               Today we operate GymTie, YoungMenu, DevaPatha, Livonomi, and
-              Onebest - each built for a specific market, with GymTie leading
-              our product investment.
+              Onebest - each built for a specific market and workflow.
             </p>
 
-            <div className="about-gymtie-highlight liquid-glass liquid-glass--strong">
-              <img src="/assets/logo/gymtie.png" alt="GymTie logo" />
-              <div>
-                <span>Flagship product</span>
-                <strong>GymTie fitness ecosystem</strong>
-                <p>
-                  GymTie Manager helps gym owners run operations. GymTie Fit
-                  keeps members connected to their fitness journey.
-                </p>
-              </div>
+            <div className="about-products-pills" aria-label="Floyet products">
+              {products.map((product) => (
+                <a
+                  key={product.id}
+                  href={product.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="about-product-pill liquid-glass liquid-glass--strong"
+                >
+                  <img src={product.logo} alt="" aria-hidden="true" />
+                  <span>{product.name}</span>
+                </a>
+              ))}
             </div>
           </div>
 

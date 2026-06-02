@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import About from "../components/About";
 
 export const metadata: Metadata = {
-  title: "About Floyet - GymTie Flagship & Founders",
+  title: "About Floyet - Products & Founders",
   description:
-    "Floyet Labs builds GymTie, India's flagship gym ecosystem, from Kerala. Meet founders Syamlal CM and Sruthilal CM and learn about our product portfolio.",
+    "Floyet Labs builds product software across fitness, food, temples, finance, and retail from Kerala. Meet founders Syamlal CM and Sruthilal CM and explore our portfolio.",
 };
 
 export default function AboutPage() {

@@ -55,6 +55,7 @@ const GymTieSpotlight = () => {
   return (
     <section
       className="gts-section glass-section"
+      id="gymtie"
       aria-labelledby="gts-heading"
       data-active-app={slide.id}
       style={accentStyle}

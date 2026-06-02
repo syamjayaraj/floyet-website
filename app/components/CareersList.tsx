@@ -7,7 +7,6 @@ import {
   faClock,
   faChevronDown,
   faArrowRight,
-  faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../app/careers/page.module.css";
 import ReactMarkdown from "react-markdown";
@@ -140,17 +139,16 @@ const CareersList = ({
           >
             <div className={styles.heroEyebrow}>Careers at Floyet</div>
             <h1 className={styles.sectionTitle}>
-              Help build GymTie - Floyet&apos;s flagship product.
+              Help build practical products at Floyet.
             </h1>
             <p className={styles.sectionDescription}>
-              We are a small product team from Kerala. GymTie is our primary
-              focus: gym operations for owners and member engagement through
-              GymTie Fit. We also maintain YoungMenu, DevaPatha, Livonomi, and
-              Onebest. We value ownership, clarity, and craft.
+              We are a product team from Kerala building software across
+              fitness, food, temples, personal finance, and retail. We value
+              ownership, clarity, and craft in every product we ship.
             </p>
             <div className={styles.careerHighlights}>
               <span className="liquid-glass liquid-glass--strong">
-                GymTie-first product team
+                Product-led team
               </span>
               <span className="liquid-glass liquid-glass--strong">
                 Kerala, India
@@ -177,13 +175,6 @@ const CareersList = ({
                     : "No open roles right now"}
                 </h2>
               </div>
-              <a
-                href="mailto:info@floyet.com"
-                className={`${styles.emailButton} liquid-glass liquid-glass--interactive`}
-              >
-                <FontAwesomeIcon icon={faEnvelope} className="w-4 h-4" />
-                Send profile
-              </a>
             </div>
 
             {hasOpenRoles ? (
@@ -289,13 +280,6 @@ const CareersList = ({
                     Live openings could not be loaded right now.
                   </p>
                 )}
-                <a href="mailto:info@floyet.com" className={styles.applyButton}>
-                  Send Profile
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    className="ml-2 w-4 h-4"
-                  />
-                </a>
               </div>
             )}
           </div>

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { headers } from "next/headers";
 import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
@@ -8,9 +9,15 @@ export const metadata: Metadata = {
 };
 
 async function getStatusData() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/status`, {
-    cache: "no-store",
-  });
+  const requestHeaders = await headers();
+  const host =
+    requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host");
+  const proto = requestHeaders.get("x-forwarded-proto") ?? "http";
+  const baseUrl = host
+    ? `${proto}://${host}`
+    : (process.env.NEXT_PUBLIC_SITE_URL ?? "");
+
+  const res = await fetch(`${baseUrl}/api/status`, { cache: "no-store" });
 
   if (!res.ok) {
     return null;
@@ -27,31 +34,31 @@ const StatusPage = async () => {
     {
       name: "GymTie",
       key: "GymTie",
-      statusOn: true,
+      statusOn: statusData?.GymTie,
       comingSoon: false,
     },
     {
       name: "YoungMenu",
       key: "YoungMenu",
-      statusOn: true,
+      statusOn: statusData?.YoungMenu,
       comingSoon: false,
     },
     {
       name: "DevaPatha",
       key: "DevaPatha",
-      statusOn: true,
+      statusOn: statusData?.DevaPatha,
       comingSoon: false,
     },
     {
       name: "Livonomi",
       key: "Livonomi",
-      statusOn: true,
+      statusOn: statusData?.Livonomi,
       comingSoon: false,
     },
     {
       name: "Onebest",
       key: "Onebest",
-      statusOn: true,
+      statusOn: statusData?.Onebest,
       comingSoon: false,
     },
   ];

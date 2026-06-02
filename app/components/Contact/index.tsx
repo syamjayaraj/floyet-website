@@ -33,7 +33,11 @@ const Contact = () => {
       url: "https://www.linkedin.com/company/floyet",
       label: "LinkedIn",
     },
-    { icon: "bi-twitter-x", url: "https://x.com/floyet.tech", label: "X" },
+    {
+      icon: "bi-facebook",
+      url: "https://facebook.com/floyet.tech",
+      label: "Facebook",
+    },
     {
       icon: "bi-instagram",
       url: "https://www.instagram.com/floyet.tech",
@@ -61,12 +65,12 @@ const Contact = () => {
         <div className="contact-header liquid-glass liquid-glass--elevated reveal-blur">
           <div className="contact-eyebrow">Get in Touch</div>
           <h2 id="contact-heading" className="contact-headline">
-            Talk to the team behind GymTie.
+            Talk to the Floyet team.
           </h2>
           <p className="contact-subhead">
-            GymTie inquiries, onboarding requests, partnerships, and support
-            for all Floyet products. Send a message and our team will get back
-            with a clear next step.
+            Product inquiries, partnerships, and support across all Floyet
+            products. Send a message and our team will get back with a clear
+            next step.
           </p>
         </div>
 

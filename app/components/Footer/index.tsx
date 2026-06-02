@@ -53,7 +53,11 @@ const Footer = () => {
       url: "https://www.linkedin.com/company/floyet",
       label: "LinkedIn",
     },
-    { icon: "bi-twitter-x", url: "https://x.com/floyet.tech", label: "X" },
+    {
+      icon: "bi-facebook",
+      url: "https://facebook.com/floyet.tech",
+      label: "Facebook",
+    },
     {
       icon: "bi-instagram",
       url: "https://www.instagram.com/floyet.tech",
@@ -80,8 +84,8 @@ const Footer = () => {
               <span>FLOYET</span>
             </Link>
             <p className="footer-tagline">
-              Floyet builds GymTie - our flagship gym ecosystem - and focused
-              products for food, temples, finance, and retail.
+              Floyet builds focused digital products across fitness, food,
+              temples, finance, and retail.
             </p>
           </div>
 
