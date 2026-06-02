@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { companionProducts } from "@/app/data/products";
+import { companionProducts, isBetaProduct } from "@/app/data/products";
 import "./styles.css";
 
 const ProductTeasers = () => {
@@ -65,6 +65,9 @@ const ProductTeasers = () => {
                   {product.tagline}
                 </span>
                 <h3 className="product-teaser-name">{product.name}</h3>
+                {isBetaProduct(product.id) ? (
+                  <span className="product-teaser-beta">Beta</span>
+                ) : null}
                 <p className="product-teaser-desc">{product.description}</p>
                 <ul className="product-teaser-highlights">
                   {product.highlights.map((item) => (

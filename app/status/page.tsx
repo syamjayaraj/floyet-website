@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import PageHeader from "../components/PageHeader";
+import { isBetaProduct } from "../data/products";
 
 export const metadata: Metadata = {
   title: "System Status - GymTie & Floyet Services",
@@ -119,6 +120,7 @@ const StatusPage = async () => {
                   <div>
                     <div className="status-row-name">
                       {service.name}
+                      {isBetaProduct(service.key.toLowerCase()) ? " (Beta)" : ""}
                     </div>
                     <div className="status-row-meta">
                       Last verified recently

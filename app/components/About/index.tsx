@@ -1,6 +1,6 @@
 import "./styles.css";
 import AnimatedCounter from "../AnimatedCounter";
-import { products } from "@/app/data/products";
+import { isBetaProduct, products } from "@/app/data/products";
 
 const About = () => {
   const achievements = [
@@ -77,7 +77,10 @@ const About = () => {
                   className="about-product-pill liquid-glass liquid-glass--strong"
                 >
                   <img src={product.logo} alt="" aria-hidden="true" />
-                  <span>{product.name}</span>
+                  <span>
+                    {product.name}
+                    {isBetaProduct(product.id) ? " (Beta)" : ""}
+                  </span>
                 </a>
               ))}
             </div>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import "./styles.css";
 
 import Image from "next/image";
-import { products as productCatalog } from "@/app/data/products";
+import { isBetaProduct, products as productCatalog } from "@/app/data/products";
 
 const AppleNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -14,6 +14,7 @@ const AppleNav = () => {
 
   const products = productCatalog.map((p) => ({
     name: p.name,
+    beta: isBetaProduct(p.id),
     href: p.href,
     description: p.description,
     logo: p.logo,
@@ -90,7 +91,12 @@ const AppleNav = () => {
                         className="dropdown-product-logo"
                       />
                       <div>
-                        <div className="dropdown-title">{product.name}</div>
+                        <div className="dropdown-title-row">
+                          <span className="dropdown-title">{product.name}</span>
+                          {product.beta ? (
+                            <span className="nav-product-beta">Beta</span>
+                          ) : null}
+                        </div>
                         <div className="dropdown-description">
                           {product.description}
                         </div>
@@ -159,7 +165,12 @@ const AppleNav = () => {
                   className="mobile-product-logo"
                 />
                 <div>
-                  <div className="mobile-item-name">{product.name}</div>
+                  <div className="mobile-item-name-row">
+                    <span className="mobile-item-name">{product.name}</span>
+                    {product.beta ? (
+                      <span className="nav-product-beta">Beta</span>
+                    ) : null}
+                  </div>
                   <div className="mobile-item-description">
                     {product.description}
                   </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { isBetaProduct } from "@/app/data/products";
 import "./styles.css";
 
 const Footer = () => {
@@ -14,9 +15,21 @@ const Footer = () => {
           href: "https://gymtie.com",
           external: true,
         },
-        { label: "YoungMenu", href: "https://youngmenu.com", external: true },
-        { label: "DevaPatha", href: "https://devapatha.com", external: true },
-        { label: "Livonomi", href: "https://livonomi.com", external: true },
+        {
+          label: `YoungMenu${isBetaProduct("youngmenu") ? " (Beta)" : ""}`,
+          href: "https://youngmenu.com",
+          external: true,
+        },
+        {
+          label: `DevaPatha${isBetaProduct("devapatha") ? " (Beta)" : ""}`,
+          href: "https://devapatha.com",
+          external: true,
+        },
+        {
+          label: `Livonomi${isBetaProduct("livonomi") ? " (Beta)" : ""}`,
+          href: "https://livonomi.com",
+          external: true,
+        },
         { label: "Onebest", href: "https://onebest.in", external: true },
       ],
     },

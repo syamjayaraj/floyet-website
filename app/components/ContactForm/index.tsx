@@ -1,12 +1,48 @@
 "use client";
 
+import Script from "next/script";
 import { FormEvent, useState } from "react";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+declare global {
+  interface Window {
+    grecaptcha?: {
+      ready: (cb: () => void) => void;
+      execute: (siteKey: string, options: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
 const ContactForm = () => {
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const getRecaptchaToken = async () => {
+    if (!RECAPTCHA_SITE_KEY) return "";
+    if (!window.grecaptcha) {
+      throw new Error("Security check is still loading. Please try again.");
+    }
+
+    return new Promise<string>((resolve, reject) => {
+      window.grecaptcha?.ready(async () => {
+        try {
+          const token = await window.grecaptcha?.execute(RECAPTCHA_SITE_KEY, {
+            action: "contact_submit",
+          });
+          if (!token) {
+            reject(new Error("Security verification failed. Please try again."));
+            return;
+          }
+          resolve(token);
+        } catch {
+          reject(new Error("Security verification failed. Please try again."));
+        }
+      });
+    });
+  };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,10 +59,15 @@ const ContactForm = () => {
     };
 
     try {
+      const recaptchaToken = await getRecaptchaToken();
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        body: JSON.stringify({
+          ...payload,
+          recaptchaToken,
+          recaptchaAction: "contact_submit",
+        }),
       });
 
       const data = await res.json();
@@ -51,6 +92,12 @@ const ContactForm = () => {
 
   return (
     <>
+      {RECAPTCHA_SITE_KEY ? (
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+          strategy="afterInteractive"
+        />
+      ) : null}
       <form
         className="contact-form-apple"
         onSubmit={handleSubmit}

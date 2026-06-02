@@ -1,11 +1,15 @@
 import { NextResponse } from "next/server";
 
-const STRAPI_ENDPOINTS = [
-  "contact-submissions",
-  "contact-messages",
-  "contacts",
-  "contact-inquiries",
-];
+/** Strapi collection API ID — pluralName from Contact content-type */
+const DEFAULT_STRAPI_CONTACT_ENDPOINT = "contacts";
+
+/** contactStatus enum values in Strapi Contact collection */
+type ContactStatus =
+  | "new"
+  | "inProgress"
+  | "Contacted"
+  | "FollowUp"
+  | "closed";
 
 export async function POST(request: Request) {
   let body: {
@@ -13,6 +17,8 @@ export async function POST(request: Request) {
     email?: string;
     subject?: string;
     message?: string;
+    recaptchaToken?: string;
+    recaptchaAction?: string;
   };
 
   try {
@@ -25,26 +31,81 @@ export async function POST(request: Request) {
   const email = body.email?.trim();
   const message = body.message?.trim();
   const subject = body.subject?.trim() || "Website contact";
+  const recaptchaToken = body.recaptchaToken?.trim();
+  const recaptchaAction = body.recaptchaAction?.trim() || "contact_submit";
 
   if (!name || !email || !message) {
     return NextResponse.json(
       { error: "Name, email, and message are required." },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+    return NextResponse.json(
+      { error: "Please enter a valid email address." },
+      { status: 400 },
+    );
+  }
+
+  const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+  if (recaptchaSecret) {
+    if (!recaptchaToken) {
+      return NextResponse.json(
+        { error: "Security verification missing. Please refresh and try again." },
+        { status: 400 },
+      );
+    }
+
+    try {
+      const verifyResponse = await fetch(
+        "https://www.google.com/recaptcha/api/siteverify",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            secret: recaptchaSecret,
+            response: recaptchaToken,
+          }),
+        },
+      );
+
+      const verifyData = (await verifyResponse.json()) as {
+        success?: boolean;
+        score?: number;
+        action?: string;
+      };
+
+      const score = verifyData.score ?? 0;
+      if (
+        !verifyData.success ||
+        verifyData.action !== recaptchaAction ||
+        score < 0.5
+      ) {
+        return NextResponse.json(
+          { error: "Security verification failed. Please try again." },
+          { status: 400 },
+        );
+      }
+    } catch {
+      return NextResponse.json(
+        { error: "Unable to verify request security. Please try again." },
+        { status: 502 },
+      );
+    }
   }
 
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const endpoint =
+    process.env.STRAPI_CONTACT_ENDPOINT?.trim() || DEFAULT_STRAPI_CONTACT_ENDPOINT;
+
   const payload = {
     data: {
       name,
       email,
       subject,
       message,
-      source: "floyet-website",
+      contactStatus: "new" satisfies ContactStatus,
     },
   };
 
@@ -57,20 +118,49 @@ export async function POST(request: Request) {
       headers.Authorization = `Bearer ${process.env.STRAPI_API_TOKEN}`;
     }
 
-    for (const endpoint of STRAPI_ENDPOINTS) {
-      try {
-        const res = await fetch(`${apiUrl}/${endpoint}`, {
-          method: "POST",
-          headers,
-          body: JSON.stringify(payload),
-        });
+    const strapiUrl = `${apiUrl}/${endpoint}?status=published`;
 
-        if (res.ok) {
-          return NextResponse.json({ ok: true });
-        }
-      } catch {
-        /* try next endpoint */
+    try {
+      const res = await fetch(strapiUrl, {
+        method: "POST",
+        headers,
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        return NextResponse.json({ ok: true });
       }
+
+      let strapiMessage: string | undefined;
+      try {
+        const errJson = await res.json();
+        strapiMessage =
+          errJson?.error?.message ||
+          errJson?.error?.details?.errors?.[0]?.message;
+      } catch {
+        /* ignore parse errors */
+      }
+
+      return NextResponse.json(
+        {
+          error:
+            strapiMessage ||
+            "Message could not be saved right now. Please contact support if this continues.",
+          details:
+            process.env.NODE_ENV === "development"
+              ? { endpoint, status: res.status, strapiMessage }
+              : undefined,
+        },
+        { status: 502 },
+      );
+    } catch {
+      return NextResponse.json(
+        {
+          error:
+            "Message could not be saved right now. Please contact support if this continues.",
+        },
+        { status: 502 },
+      );
     }
   }
 
@@ -88,7 +178,7 @@ export async function POST(request: Request) {
   }
 
   const mailto = `mailto:info@floyet.com?subject=${encodeURIComponent(
-    `[Floyet] ${subject}`
+    `[Floyet] ${subject}`,
   )}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
 
   return NextResponse.json({ ok: true, mailto, fallback: true });

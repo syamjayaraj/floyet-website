@@ -2,13 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
-import { products } from "@/app/data/products";
+import { isBetaProduct, products } from "@/app/data/products";
 import "./styles.css";
 
 const Products = () => {
   const gymtie = products.find((p) => p.id === "gymtie")!;
   const otherProducts = products.filter((p) => p.id !== "gymtie");
-  const betaProductIds = new Set(["youngmenu", "devapatha", "livonomi"]);
   const gymtieSlides = useMemo(
     () => [
       {
@@ -152,9 +151,9 @@ const Products = () => {
                     Visit {product.name} <i className="bi bi-arrow-up-right" aria-hidden="true" />
                   </a>
                   <span
-                    className={`product-card-meta ${betaProductIds.has(product.id) ? "product-card-meta--beta" : ""}`}
+                    className={`product-card-meta ${isBetaProduct(product.id) ? "product-card-meta--beta" : ""}`}
                   >
-                    {betaProductIds.has(product.id) ? "Beta" : "Live product"}
+                    {isBetaProduct(product.id) ? "Beta" : "Live product"}
                   </span>
                 </div>
               </div>

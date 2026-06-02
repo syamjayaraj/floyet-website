@@ -1,6 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import { FLOYET_ECOSYSTEM_MEDIA, products } from "@/app/data/products";
+import {
+  FLOYET_ECOSYSTEM_MEDIA,
+  isBetaProduct,
+  products,
+} from "@/app/data/products";
 import AnimatedCounter from "../AnimatedCounter";
 import ProductShowcase from "../ProductShowcase";
 import "./styles.css";
@@ -56,7 +60,10 @@ const AboutTrust = () => {
                     height={16}
                     aria-hidden="true"
                   />
-                  <span>{product.name}</span>
+                  <span>
+                    {product.name}
+                    {isBetaProduct(product.id) ? " (Beta)" : ""}
+                  </span>
                 </a>
               ))}
             </div>

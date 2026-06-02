@@ -96,3 +96,7 @@ export const companionProducts = products.filter((p) => !p.flagship);
 
 export const PRODUCT_NAMES =
   "GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest";
+
+export const BETA_PRODUCT_IDS = new Set(["youngmenu", "devapatha", "livonomi"]);
+
+export const isBetaProduct = (id: string) => BETA_PRODUCT_IDS.has(id);

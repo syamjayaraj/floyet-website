@@ -100,6 +100,22 @@
   color: var(--color-text-primary);
 }
 
+.product-teaser-beta {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 179, 64, 0.32);
+  background: rgba(255, 149, 0, 0.1);
+  color: #ffbf66;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 .product-teaser-desc {
   font-size: 14px;
   line-height: 1.55;
