@@ -67,6 +67,23 @@
   margin-bottom: 22px;
 }
 
+.contact-recaptcha-notice {
+  margin: 12px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-text-tertiary);
+}
+
+.contact-recaptcha-notice a {
+  color: var(--color-text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-recaptcha-notice a:hover {
+  color: var(--color-text-primary);
+}
+
 .contact-form-note {
   margin: 0;
   font-size: 14px;

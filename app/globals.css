@@ -1516,6 +1516,11 @@ a:hover {
   min-height: 120px;
 }
 
+/* reCAPTCHA v3 badge hidden; disclosure shown on contact form per Google terms */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
 /* Success Overlay */
 .success-overlay-apple {
   position: fixed;
