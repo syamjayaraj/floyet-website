@@ -3,9 +3,9 @@ import Link from "next/link";
 import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Help Center - Floyet & GymTie",
+  title: "Help Center",
   description:
-    "Get help with GymTie, Floyet's flagship gym platform, and our other products. Documentation, billing, and support resources.",
+    "Get help with Floyet products. Documentation, billing, and support resources.",
 };
 
 const HelpCenterPage = () => {

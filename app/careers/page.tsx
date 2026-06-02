@@ -3,9 +3,9 @@ import CareersList from "../components/CareersList";
 import { fetchCareers } from "../lib/careers";
 
 export const metadata: Metadata = {
-  title: "Careers at Floyet - Build GymTie & Product Software",
+  title: "Careers",
   description:
-    "Join Floyet Labs and help build GymTie, our flagship gym ecosystem, and other focused products for real-world operations.",
+    "Join Floyet Labs and help build focused products for fitness, food, temples, finance, and retail.",
 };
 
 export const revalidate = 60;

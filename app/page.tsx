@@ -6,9 +6,9 @@ import AboutTrust from "./components/AboutTrust";
 import Contact from "./components/Contact";
 
 export const metadata: Metadata = {
-  title: "Floyet - GymTie Flagship & Focused Digital Products",
+  title: "Floyet - Focused Digital Products",
   description:
-    "Floyet Labs builds GymTie, India's flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world operations.",
+    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
 };
 
 export default function Home() {

@@ -3,9 +3,9 @@ import PageHeader from "../components/PageHeader";
 import FaqAccordion from "../components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "FAQ - GymTie & Floyet Products",
+  title: "FAQ",
   description:
-    "Answers about GymTie, Floyet's flagship gym platform, and YoungMenu, DevaPatha, Livonomi, and Onebest.",
+    "Answers about Floyet and our products — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
 };
 
 const FAQPage = () => {

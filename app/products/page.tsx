@@ -3,16 +3,16 @@ import PageHeader from "../components/PageHeader";
 import Products from "../components/Products";
 
 export const metadata: Metadata = {
-  title: "Products - GymTie, YoungMenu, DevaPatha, Livonomi & Onebest",
+  title: "Products",
   description:
-    "Explore Floyet products: GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world workflows.",
+    "Explore the Floyet product portfolio — focused software for fitness, food, temples, finance, and retail.",
   alternates: {
     canonical: "https://floyet.com/products",
   },
   openGraph: {
-    title: "Floyet Products - Modern Vertical Platforms",
+    title: "Floyet Products",
     description:
-      "GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world workflows.",
+      "GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world workflows.",
     url: "https://floyet.com/products",
     type: "website",
   },

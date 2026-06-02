@@ -11,11 +11,11 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Floyet - GymTie Flagship & Digital Products",
+    default: "Floyet - Focused Digital Products",
     template: "%s | Floyet",
   },
   description:
-    "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world operations.",
+    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
   keywords: [
     "Floyet",
     "digital products",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Floyet builds GymTie, the flagship gym management ecosystem, plus YoungMenu, DevaPatha, Livonomi, and Onebest - focused software for real-world operations.",
+      "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
     type: "website",
     url: "https://floyet.com",
     siteName: "Floyet",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     site: "@floyet",
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "GymTie flagship gym ecosystem plus YoungMenu, DevaPatha, Livonomi, and Onebest from Floyet Labs.",
+      "Focused digital products from Floyet Labs — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
     images: ["/logo.png"],
   },
   icons: {
@@ -108,7 +108,7 @@ const jsonLd = {
         url: "https://floyet.com/logo.png",
       },
       description:
-        "Floyet Labs builds GymTie, India's flagship gym management ecosystem, and vertical software for food, temples, finance, and retail.",
+        "Floyet Labs builds focused software across fitness, food, temples, finance, and retail.",
       foundingDate: "2018",
       address: {
         "@type": "PostalAddress",

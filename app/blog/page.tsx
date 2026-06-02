@@ -4,13 +4,13 @@ import { Metadata } from "next";
 import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Blog - GymTie, Product Engineering & Floyet Updates",
+  title: "Blog",
   description:
-    "Insights on GymTie, Floyet's flagship gym platform, plus digital product engineering and company updates.",
+    "Product stories, engineering notes, and updates from the Floyet team.",
   openGraph: {
-    title: "The Floyet Blog - GymTie & Product Insights",
+    title: "The Floyet Blog",
     description:
-      "Stories from the team behind GymTie and Floyet's product portfolio.",
+      "Product stories, engineering notes, and updates from the Floyet team.",
     type: "website",
   },
 };

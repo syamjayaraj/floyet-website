@@ -4,9 +4,9 @@ import PageHeader from "../components/PageHeader";
 import { isBetaProduct } from "../data/products";
 
 export const metadata: Metadata = {
-  title: "System Status - GymTie & Floyet Services",
+  title: "System Status",
   description:
-    "Real-time status for GymTie, Floyet website, and other Floyet product services.",
+    "Real-time operational status for Floyet product services.",
 };
 
 async function getStatusData() {
