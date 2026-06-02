@@ -8,14 +8,14 @@
 }
 
 .contact-section {
-  padding: 100px 0 120px;
+  padding: 96px 0 112px;
   background: var(--color-background);
 }
 
 .contact-header {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   text-align: center;
-  padding: 44px 40px;
+  padding: 36px 40px;
   border-radius: 28px;
 }
 
@@ -30,37 +30,48 @@
 
 .contact-headline {
   font-weight: 800;
-  font-size: clamp(32px, 5vw, 48px);
+  font-size: clamp(32px, 4.2vw, 46px);
   letter-spacing: -0.02em;
   color: var(--color-text-primary);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .contact-subhead {
-  font-size: clamp(17px, 2.5vw, 21px);
+  font-size: clamp(16px, 2.2vw, 19px);
   color: var(--color-text-secondary);
-  max-width: 640px;
+  max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 0.95fr 1.45fr;
   gap: 24px;
   align-items: start;
 }
 
 .contact-form-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
   color: var(--color-text-primary);
 }
 
 .contact-form-section {
   border-radius: 28px;
-  padding: 40px;
+  padding: 34px;
+}
+
+.contact-form-head {
+  margin-bottom: 22px;
+}
+
+.contact-form-note {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
 }
 
 .contact-card-wrapper {
@@ -83,15 +94,15 @@
 }
 
 .contact-info-card-apple {
-  padding: 24px;
+  padding: 22px;
   border-radius: 20px;
 }
 
 .contact-icon-apple {
-  width: 48px;
-  height: 48px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -100,26 +111,26 @@
 }
 
 .contact-icon-apple i {
-  font-size: 24px;
-  color: var(--color-text-primary);
+  font-size: 20px;
+  color: #c4b5fd;
 }
 
 .contact-info-title {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 650;
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-xs);
 }
 
 .contact-info-details p {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 .contact-link-apple {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--color-text-primary);
   text-decoration: none;
   display: block;
@@ -132,15 +143,15 @@
 }
 
 .social-section-apple {
-  padding: 24px;
+  padding: 20px 22px;
   border-radius: 20px;
 }
 
 .social-title-apple {
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 650;
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 12px;
 }
 
 .social-links-apple {
@@ -149,9 +160,9 @@
 }
 
 .social-link-apple {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,4 +201,5 @@
   .contact-form-section {
     padding: 28px 24px;
   }
+
 }

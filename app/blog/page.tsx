@@ -45,8 +45,6 @@ export default async function BlogPage() {
           style={{ width: 400, height: 400, bottom: "10%", left: "-10%" }}
         />
       </div>
-      <div className="glass-section__grid" aria-hidden="true" />
-
       <section className={styles.blogSection}>
         <div className={`${styles.container} glass-section__inner`}>
           <PageHeader

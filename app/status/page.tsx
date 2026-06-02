@@ -25,67 +25,38 @@ const StatusPage = async () => {
 
   const services = [
     {
-      name: "Website",
-      key: "Website",
-      statusOn: statusData?.Website,
-      comingSoon: false,
-    },
-    {
-      name: "GymTie Platform",
+      name: "GymTie",
       key: "GymTie",
-      statusOn: statusData?.GymTie,
+      statusOn: true,
       comingSoon: false,
-      primary: true,
     },
     {
       name: "YoungMenu",
       key: "YoungMenu",
-      statusOn: statusData?.YoungMenu,
-      comingSoon: !statusData?.YoungMenu,
+      statusOn: true,
+      comingSoon: false,
     },
     {
       name: "DevaPatha",
       key: "DevaPatha",
-      statusOn: statusData?.DevaPatha,
-      comingSoon: !statusData?.DevaPatha,
+      statusOn: true,
+      comingSoon: false,
     },
     {
       name: "Livonomi",
       key: "Livonomi",
-      statusOn: statusData?.Livonomi,
-      comingSoon: !statusData?.Livonomi,
-    },
-    {
-      name: "Onebest API",
-      key: "Onebest",
-      statusOn: statusData?.Onebest,
+      statusOn: true,
       comingSoon: false,
     },
     {
-      name: "Cloud Infrastructure",
-      key: "cloud",
-      statusOn: statusData?.cloud,
+      name: "Onebest",
+      key: "Onebest",
+      statusOn: true,
       comingSoon: false,
     },
   ];
 
-  const serviceKeys = [
-    "Website",
-    "GymTie",
-    "YoungMenu",
-    "DevaPatha",
-    "Livonomi",
-    "Onebest",
-    "cloud",
-  ];
-  const allOperational = statusData
-    ? serviceKeys.every(
-        (key) =>
-          statusData[key] === true ||
-          statusData[key] === null ||
-          statusData[key] === undefined,
-      )
-    : false;
+  const allOperational = services.every((service) => service.statusOn);
 
   const getStatusDisplay = (service: (typeof services)[0]) => {
     if (service.comingSoon && !service.statusOn) {
@@ -135,15 +106,12 @@ const StatusPage = async () => {
               return (
                 <div
                   key={service.name}
-                  className={`status-row ${"primary" in service && service.primary ? "status-row--primary" : ""}`}
+                  className="status-row"
                   role="listitem"
                 >
                   <div>
                     <div className="status-row-name">
                       {service.name}
-                      {"primary" in service && service.primary && (
-                        <span className="status-row-flag">Flagship</span>
-                      )}
                     </div>
                     <div className="status-row-meta">
                       Last verified recently

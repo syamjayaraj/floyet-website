@@ -20,8 +20,6 @@ const ProductTeasers = () => {
           style={{ width: 320, height: 320, bottom: "5%", left: "20%" }}
         />
       </div>
-      <div className="glass-section__grid" aria-hidden="true" />
-
       <div className="container glass-section__inner">
         <div className="product-teasers-header liquid-glass liquid-glass--elevated reveal-blur">
           <div className="products-eyebrow">More from Floyet</div>

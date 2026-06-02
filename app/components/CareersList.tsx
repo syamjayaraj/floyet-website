@@ -133,8 +133,6 @@ const CareersList = ({
           style={{ width: 340, height: 340, bottom: "8%", left: "25%" }}
         />
       </div>
-      <div className="glass-section__grid" aria-hidden="true" />
-
       <section className={styles.heroSection}>
         <div className="container glass-section__inner">
           <div

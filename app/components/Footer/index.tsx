@@ -10,7 +10,7 @@ const Footer = () => {
       title: "Products",
       links: [
         {
-          label: "GymTie (Flagship)",
+          label: "GymTie",
           href: "https://gymtie.com",
           external: true,
         },

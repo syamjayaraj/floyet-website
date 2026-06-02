@@ -28,8 +28,6 @@ const AboutTrust = () => {
           style={{ width: 380, height: 380, bottom: "-15%", left: "-8%" }}
         />
       </div>
-      <div className="glass-section__grid" aria-hidden="true" />
-
       <div className="container glass-section__inner">
         <div className="about-trust-inner liquid-glass liquid-glass--elevated reveal-scale">
           <div className="about-trust-copy reveal-left">

@@ -57,8 +57,6 @@ const Contact = () => {
           style={{ width: 360, height: 360, top: "5%", left: "-10%" }}
         />
       </div>
-      <div className="glass-section__grid" aria-hidden="true" />
-
       <div className="container glass-section__inner">
         <div className="contact-header liquid-glass liquid-glass--elevated reveal-blur">
           <div className="contact-eyebrow">Get in Touch</div>
@@ -66,8 +64,9 @@ const Contact = () => {
             Talk to the team behind GymTie.
           </h2>
           <p className="contact-subhead">
-            GymTie inquiries, partnerships, and support for all Floyet products
-            - send a message and we&apos;ll respond within 24 hours.
+            GymTie inquiries, onboarding requests, partnerships, and support
+            for all Floyet products. Send a message and our team will get back
+            with a clear next step.
           </p>
         </div>
 
@@ -122,7 +121,13 @@ const Contact = () => {
           </aside>
 
           <div className="contact-form-section liquid-glass liquid-glass--elevated">
-            <h3 className="contact-form-title">Send us a message</h3>
+            <div className="contact-form-head">
+              <h3 className="contact-form-title">Send us a message</h3>
+              <p className="contact-form-note">
+                Share your requirement and we&apos;ll respond with the best path
+                forward.
+              </p>
+            </div>
             <ContactForm />
           </div>
         </div>

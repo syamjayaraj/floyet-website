@@ -13,7 +13,7 @@ const AppleNav = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const products = productCatalog.map((p) => ({
-    name: p.flagship ? `${p.name} · Flagship` : p.name,
+    name: p.name,
     href: p.href,
     description: p.description,
     logo: p.logo,

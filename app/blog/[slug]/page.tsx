@@ -82,8 +82,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           style={{ width: 380, height: 380, bottom: "15%", right: "-8%" }}
         />
       </div>
-      <div className="glass-section__grid" aria-hidden="true" />
-
       <article className={`${styles.article} glass-section__inner`}>
         <div className={styles.container}>
           <Link href="/blog" className={`${styles.backLink} liquid-glass liquid-glass--interactive`}>

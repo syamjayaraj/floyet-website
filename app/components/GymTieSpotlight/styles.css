@@ -1,110 +1,472 @@
-.gymtie-spotlight {
-  padding: 0 0 48px;
+/* ================================================================
+   GymTie Spotlight — redesigned flagship card
+   ================================================================ */
+
+.gts-section {
+  padding: 0 0 56px;
   background: var(--color-background);
 }
 
-.gymtie-spotlight-card {
-  padding: 40px;
-  border-radius: 28px;
+/* ── card shell ── */
+.gts-card {
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.gymtie-spotlight-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 40px;
+/* ── top eyebrow bar ── */
+.gts-topbar {
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  flex-wrap: wrap;
 }
 
-.gymtie-spotlight-ribbon {
+.gts-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
+  gap: 8px;
+  padding: 6px 12px 6px 8px;
   border-radius: 999px;
-  margin-bottom: 20px;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
+  color: color-mix(in srgb, var(--gts-accent) 82%, white);
 }
 
-.gymtie-spotlight-title {
-  font-size: clamp(28px, 4vw, 44px);
-  font-weight: 800;
-  line-height: 1.12;
-  margin-bottom: 16px;
+.gts-badge img {
+  border-radius: 6px;
+  object-fit: contain;
 }
 
-.gymtie-spotlight-lead {
-  color: var(--color-text-secondary);
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 20px;
+.gts-slide-pills {
+  display: flex;
+  gap: 8px;
 }
 
-.gymtie-spotlight-lead strong {
-  color: var(--color-text-primary);
+.gts-slide-pill {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: var(--color-text-tertiary);
+  font-size: 11px;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
-.gymtie-spotlight-points {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px;
+.gts-slide-pill--active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-primary);
+  border-color: var(--pill-color, rgba(167, 139, 250, 0.5));
+  box-shadow: 0 0 0 1px var(--pill-color, rgba(167, 139, 250, 0.3)) inset;
 }
 
-.gymtie-spotlight-points li {
-  position: relative;
-  padding-left: 18px;
-  margin-bottom: 10px;
-  font-size: 15px;
-  line-height: 1.5;
+.gts-slide-pill:hover:not(.gts-slide-pill--active) {
   color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.gymtie-spotlight-points li::before {
+/* ── two-column body ── */
+.gts-body {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: stretch;
+  position: relative;
+  background: linear-gradient(110deg, color-mix(in srgb, var(--gts-accent) 6%, transparent) 0%, transparent 42%);
+}
+
+.gts-body::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: 9px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #a78bfa;
+  top: 0;
+  bottom: 0;
+  left: 45.45%;
+  width: 40px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    color-mix(in srgb, var(--gts-accent) 5%, transparent) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  z-index: 1;
 }
 
-.gymtie-spotlight-actions {
+/* ── copy column ── */
+.gts-copy {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  border-right: none;
+  position: relative;
+  z-index: 2;
+}
+
+
+.gts-copy-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.gts-title {
+  font-size: clamp(30px, 3vw, 40px);
+  font-weight: 780;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  background: linear-gradient(
+    135deg,
+    var(--color-text-primary) 15%,
+    color-mix(in srgb, var(--gts-accent) 72%, white) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gts-lead {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+  margin-bottom: 16px;
+  max-width: 420px;
+}
+
+.gts-lead strong {
+  color: #e9d5ff;
+  font-weight: 600;
+}
+
+/* feature chips */
+.gts-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 6px;
+  margin-bottom: 14px;
 }
 
-.gymtie-spotlight-cta {
-  background: rgba(167, 139, 250, 0.9);
-  color: #111218;
+.gts-feature {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 550;
+  color: var(--color-text-secondary);
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
-.gymtie-spotlight-cta:hover {
-  background: #c4b5fd;
-  color: #111218;
+.gts-feature i {
+  font-size: 12px;
+  color: var(--gts-accent);
 }
 
-.gymtie-spotlight-media {
+.gts-feature:hover {
+  color: var(--color-text-primary);
+  background: var(--glass-bg-elevated);
+}
+
+/* CTAs */
+.gts-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.gts-cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--gts-accent) 70%, #111 30%),
+    color-mix(in srgb, var(--gts-accent) 85%, white 15%)
+  );
+  color: #fff;
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--gts-accent) 30%, transparent);
+}
+
+.gts-cta-primary:hover {
+  opacity: 0.92;
+  color: #fff;
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--gts-accent) 36%, transparent);
+}
+
+.gts-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-secondary);
+  font-size: 13px;
+  font-weight: 550;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.gts-cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-primary);
+}
+
+/* ── media/slider column ── */
+.gts-media {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.gts-slides {
+  position: relative;
   width: 100%;
+  aspect-ratio: 1100 / 600;
+  overflow: hidden;
+  background: rgba(10, 10, 14, 0.22);
 }
 
+.gts-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1.02);
+}
+
+.gts-slide--active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.gts-slide--exit {
+  opacity: 0;
+  transform: scale(0.98);
+}
+
+/* Ghost slide keeps track height = tallest image */
+.gts-slide-sizer {
+  display: none;
+}
+
+.gts-slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* floating label */
+.gts-slide-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 3;
+}
+
+.gts-slide-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.gts-slide-app {
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--color-text-primary);
+}
+
+.gts-slide-for {
+  font-size: 10px;
+  color: var(--color-text-tertiary);
+  padding-left: 6px;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* arrow buttons */
+.gts-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--color-text-primary);
+  z-index: 4;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  padding: 0;
+}
+
+.gts-arrow--prev { left: 12px; }
+.gts-arrow--next { right: 12px; }
+
+.gts-media:hover .gts-arrow {
+  opacity: 1;
+}
+
+.gts-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* progress track */
+.gts-progress-track {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.gts-progress-seg {
+  flex: 1;
+  height: 3px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.gts-progress-fill {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  background: #a78bfa;
+  border-radius: inherit;
+  transition: width 0.04s linear;
+}
+
+
+
+.gts-section {
+  --gts-accent: #f2c94c;
+  --gts-accent-muted: rgba(242, 201, 76, 0.18);
+  --gts-accent-glow: rgba(242, 201, 76, 0.35);
+}
+
+.gts-orb--accent {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -18%;
+  left: -8%;
+  border-radius: 50%;
+  background: var(--gts-accent-muted);
+  filter: blur(120px);
+  opacity: 0.28;
+}
+
+.gts-card {
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: var(--glass-shadow), 0 0 14px color-mix(in srgb, var(--gts-accent) 9%, transparent);
+}
+
+.gts-lead-manager { color: #f2c94c; }
+.gts-lead-fit { color: #4fc3f7; }
+
+.gts-slide-pill--manager.gts-slide-pill--active {
+  border-color: rgba(242, 201, 76, 0.62);
+  box-shadow: 0 0 0 1px rgba(242, 201, 76, 0.35) inset;
+}
+
+.gts-slide-pill--fit.gts-slide-pill--active {
+  border-color: rgba(79, 195, 247, 0.62);
+  box-shadow: 0 0 0 1px rgba(79, 195, 247, 0.35) inset;
+}
+
+.gts-slide-backdrop {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, color-mix(in srgb, var(--gts-accent) 5%, transparent), transparent 72%);
+}
+
+.gts-slide-dot--manager { background: #f2c94c; }
+.gts-slide-dot--fit { background: #4fc3f7; }
+
+.gts-progress-seg--manager .gts-progress-fill { background: #f2c94c; }
+.gts-progress-seg--fit .gts-progress-fill { background: #4fc3f7; }
+
+/* ── responsive ── */
 @media (max-width: 992px) {
-  .gymtie-spotlight-card {
-    padding: 28px 22px;
-  }
-
-  .gymtie-spotlight-layout {
+  .gts-body {
     grid-template-columns: 1fr;
-    gap: 28px;
   }
 
-  .gymtie-spotlight-media {
-    order: -1;
+  .gts-body::before {
+    display: none;
+  }
+
+  .gts-copy {
+    padding: 24px 18px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .gts-lead {
+    max-width: none;
+  }
+
+  .gts-slides {
+    aspect-ratio: 11 / 6;
+  }
+
+  .gts-topbar {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gts-slide-pills {
+    flex-wrap: wrap;
+  }
+
+  .gts-topbar {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
