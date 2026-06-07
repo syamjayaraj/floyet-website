@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Floyet Products",
     description:
-      "GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest — focused software for real-world workflows.",
+      "GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest — focused software for real-world workflows.",
     url: "https://floyet.com/products",
     type: "website",
   },

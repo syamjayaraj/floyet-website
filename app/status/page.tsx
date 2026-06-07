@@ -39,6 +39,12 @@ const StatusPage = async () => {
       comingSoon: false,
     },
     {
+      name: "Livonomi",
+      key: "Livonomi",
+      statusOn: statusData?.Livonomi,
+      comingSoon: false,
+    },
+    {
       name: "YoungMenu",
       key: "YoungMenu",
       statusOn: statusData?.YoungMenu,
@@ -48,12 +54,6 @@ const StatusPage = async () => {
       name: "DevaPatha",
       key: "DevaPatha",
       statusOn: statusData?.DevaPatha,
-      comingSoon: false,
-    },
-    {
-      name: "Livonomi",
-      key: "Livonomi",
-      statusOn: statusData?.Livonomi,
       comingSoon: false,
     },
     {

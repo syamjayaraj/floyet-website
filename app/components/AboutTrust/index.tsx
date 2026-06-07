@@ -37,7 +37,7 @@ const AboutTrust = () => {
           <div className="about-trust-copy reveal-left">
             <div className="about-trust-eyebrow">About Floyet</div>
             <h2 id="about-trust-heading" className="about-trust-headline">
-              Product-led software studio. Built in Kerala.
+              Product-led software studio. Built in India.
             </h2>
             <p className="about-trust-text">
               Floyet Labs &amp; Technologies LLP builds focused digital products

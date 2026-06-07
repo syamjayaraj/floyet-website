@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Floyet",
   },
   description:
-    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
   keywords: [
     "Floyet",
     "digital products",
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
     "GymTie Manager",
     "GymTie Fit",
     "gym management software",
+    "Livonomi",
+    "personal finance app",
+    "life management",
     "YoungMenu",
     "restaurant management",
     "DevaPatha",
     "temple management platform",
     "temple management software",
     "Onebest",
-    "Livonomi",
-    "personal finance app",
-    "life management",
     "software solutions India",
     "Kozhikode tech company",
   ],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+      "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
     type: "website",
     url: "https://floyet.com",
     siteName: "Floyet",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     site: "@floyet",
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Focused digital products from Floyet Labs — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+      "Focused digital products from Floyet Labs — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
     images: ["/logo.png"],
   },
   icons: {
@@ -203,6 +203,17 @@ const jsonLd = {
         {
           "@type": "SoftwareApplication",
           position: 2,
+          name: "Livonomi",
+          applicationCategory: "FinanceApplication",
+          operatingSystem: "Android, iOS",
+          url: "https://livonomi.com",
+          image: "https://floyet.com/assets/logo/livonomi.png",
+          description:
+            "Finance-first life management OS for income, spending, wealth, subscriptions, goals, and AI-powered insights.",
+        },
+        {
+          "@type": "SoftwareApplication",
+          position: 3,
           name: "YoungMenu",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
@@ -212,7 +223,7 @@ const jsonLd = {
         },
         {
           "@type": "SoftwareApplication",
-          position: 3,
+          position: 4,
           name: "DevaPatha",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web, Android, iOS",
@@ -220,17 +231,6 @@ const jsonLd = {
           image: "https://floyet.com/assets/logo/devapatha.png",
           description:
             "Temple management platform for temple operations and devotee engagement.",
-        },
-        {
-          "@type": "SoftwareApplication",
-          position: 4,
-          name: "Livonomi",
-          applicationCategory: "FinanceApplication",
-          operatingSystem: "Android, iOS",
-          url: "https://livonomi.com",
-          image: "https://floyet.com/assets/logo/livonomi.png",
-          description:
-            "Finance-first life management OS for income, spending, wealth, subscriptions, goals, and AI-powered insights.",
         },
         {
           "@type": "Store",

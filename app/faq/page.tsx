@@ -5,7 +5,7 @@ import FaqAccordion from "../components/FaqAccordion";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers about Floyet and our products — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+    "Answers about Floyet and our products — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
 };
 
 const FAQPage = () => {
@@ -13,7 +13,7 @@ const FAQPage = () => {
     {
       question: "What does Floyet do?",
       answer:
-        "Floyet Labs & Technologies LLP is a product company from Kerala. Our primary product is GymTie - a complete gym management ecosystem. We also build YoungMenu, DevaPatha, Livonomi, and Onebest for other vertical markets.",
+        "Floyet Labs & Technologies LLP is a product company from Kerala. Our primary product is GymTie - a complete gym management ecosystem. We also build Livonomi, YoungMenu, DevaPatha, and Onebest for other vertical markets.",
     },
     {
       question: "What is GymTie?",
@@ -23,7 +23,7 @@ const FAQPage = () => {
     {
       question: "Is GymTie Floyet's only product?",
       answer:
-        "GymTie is our primary investment and flagship ecosystem, but Floyet also operates YoungMenu (food businesses), DevaPatha (temples), Livonomi (personal finance), and Onebest (gifts).",
+        "GymTie is our primary investment and flagship ecosystem, but Floyet also operates Livonomi (personal finance), YoungMenu (food businesses), DevaPatha (temples), and Onebest (gifts).",
     },
     {
       question: "How can I get started with YoungMenu?",

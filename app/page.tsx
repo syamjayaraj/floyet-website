@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 export const metadata: Metadata = {
   title: "Floyet - Focused Digital Products",
   description:
-    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
 };
 
 export default function Home() {

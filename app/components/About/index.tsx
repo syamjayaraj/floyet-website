@@ -63,7 +63,7 @@ const About = () => {
               Floyet started in 2024 with a focus on practical software for
               real-world business operations. The company was formally
               registered as Floyet Labs & Technologies LLP in February 2025.
-              Today we operate GymTie, YoungMenu, DevaPatha, Livonomi, and
+              Today we operate GymTie, Livonomi, YoungMenu, DevaPatha, and
               Onebest - each built for a specific market and workflow.
             </p>
 

@@ -39,6 +39,17 @@ export const products: ProductItem[] = [
     },
   },
   {
+    id: "livonomi",
+    name: "Livonomi",
+    href: "https://livonomi.com",
+    description: "Finance-first life management for personal and business",
+    tagline: "Life management OS",
+    logo: "/assets/logo/livonomi.png",
+    accent: "green",
+    highlights: ["Wealth tracking", "AI insights", "Dual workspaces"],
+    media: { showcase: "/assets/livonomi/livonomi.png" },
+  },
+  {
     id: "youngmenu",
     name: "YoungMenu",
     href: "https://youngmenu.com",
@@ -59,17 +70,6 @@ export const products: ProductItem[] = [
     accent: "gold",
     highlights: ["Temple manager", "Devotee app", "Donations & events"],
     media: { showcase: "/assets/devapatha/devapatha.png" },
-  },
-  {
-    id: "livonomi",
-    name: "Livonomi",
-    href: "https://livonomi.com",
-    description: "Finance-first life management for personal and business",
-    tagline: "Life management OS",
-    logo: "/assets/logo/livonomi.png",
-    accent: "green",
-    highlights: ["Wealth tracking", "AI insights", "Dual workspaces"],
-    media: { showcase: "/assets/livonomi/livonomi.png" },
   },
   {
     id: "onebest",
@@ -95,8 +95,8 @@ export const flagshipProduct = products.find((p) => p.flagship)!;
 export const companionProducts = products.filter((p) => !p.flagship);
 
 export const PRODUCT_NAMES =
-  "GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest";
+  "GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest";
 
-export const BETA_PRODUCT_IDS = new Set(["youngmenu", "devapatha", "livonomi"]);
+export const BETA_PRODUCT_IDS = new Set(["youngmenu", "devapatha"]);
 
 export const isBetaProduct = (id: string) => BETA_PRODUCT_IDS.has(id);

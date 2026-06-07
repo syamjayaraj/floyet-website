@@ -16,6 +16,11 @@ const Footer = () => {
           external: true,
         },
         {
+          label: `Livonomi${isBetaProduct("livonomi") ? " (Beta)" : ""}`,
+          href: "https://livonomi.com",
+          external: true,
+        },
+        {
           label: `YoungMenu${isBetaProduct("youngmenu") ? " (Beta)" : ""}`,
           href: "https://youngmenu.com",
           external: true,
@@ -23,11 +28,6 @@ const Footer = () => {
         {
           label: `DevaPatha${isBetaProduct("devapatha") ? " (Beta)" : ""}`,
           href: "https://devapatha.com",
-          external: true,
-        },
-        {
-          label: `Livonomi${isBetaProduct("livonomi") ? " (Beta)" : ""}`,
-          href: "https://livonomi.com",
           external: true,
         },
         { label: "Onebest", href: "https://onebest.in", external: true },

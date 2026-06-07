@@ -23,7 +23,7 @@ const HelpCenterPage = () => {
       title: "All Products FAQ",
       icon: "bi-question-circle",
       description:
-        "Answers about GymTie, YoungMenu, DevaPatha, Livonomi, and Onebest.",
+        "Answers about GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
       link: "/faq",
       external: false,
     },
