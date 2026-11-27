@@ -50,7 +50,7 @@ const About = () => {
           </h2>
           <p className="about-subhead">
             Floyet Labs & Technologies LLP is headquartered in Kerala, India.
-            We build focused software across fitness, food, temples, finance,
+            We build focused software across fitness, education, food, temples, finance,
             and retail with strong product discipline and practical execution.
           </p>
         </div>
@@ -63,7 +63,7 @@ const About = () => {
               Floyet started in 2024 with a focus on practical software for
               real-world business operations. The company was formally
               registered as Floyet Labs & Technologies LLP in February 2025.
-              Today we operate GymTie, Livonomi, YoungMenu, DevaPatha, and
+              Today we operate GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and
               Onebest - each built for a specific market and workflow.
             </p>
 

@@ -39,6 +39,12 @@ const StatusPage = async () => {
       comingSoon: false,
     },
     {
+      name: "ClassTie",
+      key: "ClassTie",
+      statusOn: statusData?.ClassTie,
+      comingSoon: false,
+    },
+    {
       name: "Livonomi",
       key: "Livonomi",
       statusOn: statusData?.Livonomi,

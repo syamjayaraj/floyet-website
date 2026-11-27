@@ -5,14 +5,14 @@ import Products from "../components/Products";
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Explore the Floyet product portfolio — focused software for fitness, food, temples, finance, and retail.",
+    "Explore the Floyet product portfolio — focused software for fitness, education, food, temples, finance, and retail.",
   alternates: {
     canonical: "https://floyet.com/products",
   },
   openGraph: {
     title: "Floyet Products",
     description:
-      "GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest — focused software for real-world workflows.",
+      "GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest — focused software for real-world workflows.",
     url: "https://floyet.com/products",
     type: "website",
   },
@@ -25,7 +25,7 @@ export default function ProductsPage() {
         <PageHeader
           eyebrow="Products"
           title="Products built for specific workflows."
-          subtitle="Explore the Floyet portfolio across fitness, food, temple, finance, and retail markets."
+          subtitle="Explore the Floyet portfolio across fitness, education, food, temple, finance, and retail markets."
         />
       </div>
       <Products />

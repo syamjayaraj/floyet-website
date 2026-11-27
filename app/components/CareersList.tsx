@@ -143,7 +143,7 @@ const CareersList = ({
             </h1>
             <p className={styles.sectionDescription}>
               We are a product team from Kerala building software across
-              fitness, food, temples, personal finance, and retail. We value
+              fitness, education, food, temples, personal finance, and retail. We value
               ownership, clarity, and craft in every product we ship.
             </p>
             <div className={styles.careerHighlights}>

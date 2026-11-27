@@ -27,8 +27,8 @@ const ProductTeasers = () => {
             Additional product lines, same engineering discipline.
           </h2>
           <p className="products-subhead">
-            Beyond GymTie, we build focused software for food businesses,
-            temples, personal finance, and retail - each designed for a specific
+            Beyond GymTie, we build focused software for education, food businesses,
+            temples, personal finance, and retail — each designed for a specific
             real-world workflow.
           </p>
         </div>

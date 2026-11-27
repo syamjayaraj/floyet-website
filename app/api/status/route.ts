@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const DEFAULT_STATUS = {
   Website: true,
   GymTie: true,
+  ClassTie: true,
   YoungMenu: true,
   DevaPatha: true,
   Livonomi: true,

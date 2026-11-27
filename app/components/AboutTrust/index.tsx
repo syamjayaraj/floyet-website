@@ -13,7 +13,7 @@ const AboutTrust = () => {
   const stats = [
     { value: "100+", label: "Gyms & businesses on GymTie" },
     { value: "50K+", label: "End users reached" },
-    { value: "5", label: "Product lines total" },
+    { value: "6", label: "Product lines total" },
     { value: "2025", label: "Registered LLP" },
   ];
 
@@ -41,7 +41,7 @@ const AboutTrust = () => {
             </h2>
             <p className="about-trust-text">
               Floyet Labs &amp; Technologies LLP builds focused digital products
-              for fitness, food, temples, personal finance, and retail. We
+              for fitness, education, food, temples, personal finance, and retail. We
               prioritize practical workflows, clear UX, and reliable operations.
             </p>
             <div className="about-trust-products" aria-label="Floyet products">

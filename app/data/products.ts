@@ -1,4 +1,4 @@
-export type ProductAccent = "purple" | "orange" | "gold" | "green" | "rose";
+export type ProductAccent = "purple" | "orange" | "gold" | "green" | "rose" | "blue";
 
 export interface ProductMedia {
   /** Main product screenshot (16:9) - replace in /public/placeholders/ */
@@ -37,6 +37,17 @@ export const products: ProductItem[] = [
       manager: "/assets/gymtie/manager.png",
       fit: "/assets/gymtie/fit.png",
     },
+  },
+  {
+    id: "classtie",
+    name: "ClassTie",
+    href: "https://classtie.com",
+    description: "Education and institute management for coaching centres, schools, and tutors",
+    tagline: "Education platform",
+    logo: "/assets/logo/classtie.png",
+    accent: "blue",
+    highlights: ["Admissions & attendance", "WhatsApp fee receipts", "Student & parent portal"],
+    media: { showcase: "/assets/classtie/classtie.png" },
   },
   {
     id: "livonomi",
@@ -95,8 +106,8 @@ export const flagshipProduct = products.find((p) => p.flagship)!;
 export const companionProducts = products.filter((p) => !p.flagship);
 
 export const PRODUCT_NAMES =
-  "GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest";
+  "GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest";
 
-export const BETA_PRODUCT_IDS = new Set(["youngmenu", "devapatha"]);
+export const BETA_PRODUCT_IDS = new Set(["youngmenu"]);
 
 export const isBetaProduct = (id: string) => BETA_PRODUCT_IDS.has(id);

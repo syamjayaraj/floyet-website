@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Floyet",
   },
   description:
-    "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
+    "Floyet Labs builds focused software across fitness, education, food, temples, finance, and retail — GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
   keywords: [
     "Floyet",
     "digital products",
@@ -23,6 +23,11 @@ export const metadata: Metadata = {
     "GymTie Manager",
     "GymTie Fit",
     "gym management software",
+    "ClassTie",
+    "ClassTie Manager",
+    "ClassTie Student",
+    "education management software",
+    "tuition management software",
     "Livonomi",
     "personal finance app",
     "life management",
@@ -47,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Floyet Labs builds focused software across fitness, food, temples, finance, and retail — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
+      "Floyet Labs builds focused software across fitness, education, food, temples, finance, and retail — GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
     type: "website",
     url: "https://floyet.com",
     siteName: "Floyet",
@@ -66,7 +71,7 @@ export const metadata: Metadata = {
     site: "@floyet",
     title: "Floyet - Focused Digital Products for Real-World Impact",
     description:
-      "Focused digital products from Floyet Labs — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
+      "Focused digital products from Floyet Labs — GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
     images: ["/logo.png"],
   },
   icons: {
@@ -108,7 +113,7 @@ const jsonLd = {
         url: "https://floyet.com/logo.png",
       },
       description:
-        "Floyet Labs builds focused software across fitness, food, temples, finance, and retail.",
+        "Floyet Labs builds focused software across fitness, education, food, temples, finance, and retail.",
       foundingDate: "2018",
       address: {
         "@type": "PostalAddress",
@@ -203,6 +208,17 @@ const jsonLd = {
         {
           "@type": "SoftwareApplication",
           position: 2,
+          name: "ClassTie",
+          applicationCategory: "EducationalApplication",
+          operatingSystem: "Web, Android, iOS",
+          url: "https://classtie.com",
+          image: "https://floyet.com/assets/logo/classtie.png",
+          description:
+            "All-in-one education and institute management platform for tuition centers, coaching academies, schools, and tutors.",
+        },
+        {
+          "@type": "SoftwareApplication",
+          position: 3,
           name: "Livonomi",
           applicationCategory: "FinanceApplication",
           operatingSystem: "Android, iOS",
@@ -213,7 +229,7 @@ const jsonLd = {
         },
         {
           "@type": "SoftwareApplication",
-          position: 3,
+          position: 4,
           name: "YoungMenu",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web",
@@ -223,7 +239,7 @@ const jsonLd = {
         },
         {
           "@type": "SoftwareApplication",
-          position: 4,
+          position: 5,
           name: "DevaPatha",
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web, Android, iOS",
@@ -234,7 +250,7 @@ const jsonLd = {
         },
         {
           "@type": "Store",
-          position: 5,
+          position: 6,
           name: "Onebest Gifts",
           url: "https://onebest.in",
           description: "Curated gift shop for special occasions.",

@@ -16,6 +16,11 @@ const Footer = () => {
           external: true,
         },
         {
+          label: `ClassTie${isBetaProduct("classtie") ? " (Beta)" : ""}`,
+          href: "https://classtie.com",
+          external: true,
+        },
+        {
           label: `Livonomi${isBetaProduct("livonomi") ? " (Beta)" : ""}`,
           href: "https://livonomi.com",
           external: true,
@@ -97,8 +102,8 @@ const Footer = () => {
               <span>FLOYET</span>
             </Link>
             <p className="footer-tagline">
-              Floyet builds focused digital products across fitness, food,
-              temples, finance, and retail.
+              Floyet builds focused digital products across fitness, education,
+              food, temples, finance, and retail.
             </p>
           </div>
 

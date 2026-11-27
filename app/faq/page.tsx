@@ -5,7 +5,7 @@ import FaqAccordion from "../components/FaqAccordion";
 export const metadata: Metadata = {
   title: "FAQ",
   description:
-    "Answers about Floyet and our products — GymTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
+    "Answers about Floyet and our products — GymTie, ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest.",
 };
 
 const FAQPage = () => {
@@ -13,7 +13,7 @@ const FAQPage = () => {
     {
       question: "What does Floyet do?",
       answer:
-        "Floyet Labs & Technologies LLP is a product company from Kerala. Our primary product is GymTie - a complete gym management ecosystem. We also build Livonomi, YoungMenu, DevaPatha, and Onebest for other vertical markets.",
+        "Floyet Labs & Technologies LLP is a product company from Kerala. Our primary product is GymTie - a complete gym management ecosystem. We also build ClassTie, Livonomi, YoungMenu, DevaPatha, and Onebest for other vertical markets.",
     },
     {
       question: "What is GymTie?",
@@ -21,9 +21,14 @@ const FAQPage = () => {
         "GymTie is Floyet's flagship product and main company focus. GymTie Manager helps gym owners run billing, attendance, WhatsApp automation, and operations. GymTie Fit connects members to workouts, nutrition, and their fitness journey. Visit gymtie.com to learn more.",
     },
     {
+      question: "What is ClassTie?",
+      answer:
+        "ClassTie is Floyet's education and institute management platform. ClassTie Manager streamlines admissions, batch schedules, attendance, fee collection, and WhatsApp parent updates for tuition centers, coaching academies, and tutors, while ClassTie Student connects learners and parents. Visit classtie.com to learn more.",
+    },
+    {
       question: "Is GymTie Floyet's only product?",
       answer:
-        "GymTie is our primary investment and flagship ecosystem, but Floyet also operates Livonomi (personal finance), YoungMenu (food businesses), DevaPatha (temples), and Onebest (gifts).",
+        "GymTie is our primary investment and flagship ecosystem, but Floyet also operates ClassTie (education & tuition management), Livonomi (personal finance), YoungMenu (food businesses), DevaPatha (temples), and Onebest (gifts).",
     },
     {
       question: "How can I get started with YoungMenu?",

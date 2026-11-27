@@ -5,7 +5,7 @@ import { fetchCareers } from "../lib/careers";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join Floyet Labs and help build focused products for fitness, food, temples, finance, and retail.",
+    "Join Floyet Labs and help build focused products for fitness, education, food, temples, finance, and retail.",
 };
 
 export const revalidate = 60;
